@@ -1,7 +1,7 @@
 import os
 import pathlib
-import yaml
-from yaml import CLoader as Loader, CDumper as Dumper
+import ruamel.yaml
+from ruamel.yaml.scalarstring import DoubleQuotedScalarString
 
 non_english_languages = [
     'french',
@@ -22,7 +22,8 @@ def get_all_localization(language):
 
             filepath = os.path.join(root, filename)
             with open(filepath, 'r', encoding='utf-8-sig') as file:
-                doc = yaml.load(file, Loader=Loader)
+                yaml = ruamel.yaml.YAML()
+                doc = yaml.load(file)
                 localization.update(doc[f"l_{language}"])
 
     return localization
@@ -37,13 +38,15 @@ def generate_localization():
         missing_keys = [key for key in english_loc.keys() if key not in language_loc]
 
         if missing_keys:
-            generated_dict = {f"l_{language}": {key: english_loc[key] for key in missing_keys}}
+            generated_dict = {f"l_{language}": {key: DoubleQuotedScalarString(english_loc[key]) for key in missing_keys}}
 
             language_dir = os.path.join('.', 'localization', language)
             pathlib.Path(language_dir).mkdir(parents=True, exist_ok=True)
             filepath = os.path.join(language_dir, f"newsfeed_generated_l_{language}.yml")
 
             with open(filepath, 'w', encoding='utf-8-sig') as file:
-                file.write(yaml.dump(generated_dict, Dumper=Dumper))
+                yaml = ruamel.yaml.YAML()
+                yaml.width = 4096
+                yaml.dump(generated_dict, file)
 
 generate_localization()
