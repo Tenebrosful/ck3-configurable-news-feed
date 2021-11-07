@@ -363,7 +363,7 @@ event_captured_combatants_good = {
 	icon = "prison"
     tooltip = "newsfeed_type_prison"
 	title = event_message_title
-	desc = event_message_effect_and_text
+	desc = event_message_text
 	style = good
 	soundeffect = @msg_good_soundeffect
 }
@@ -372,7 +372,7 @@ event_captured_combatants_neutral = {
 	icon = "prison"
     tooltip = "newsfeed_type_prison"
 	title = event_message_title
-	desc = event_message_effect_and_text
+	desc = event_message_text
 	style = neutral
 	soundeffect = @msg_neutral_soundeffect
 }
@@ -381,7 +381,7 @@ event_captured_combatants_bad = {
 	icon = "prison"
     tooltip = "newsfeed_type_prison"
 	title = event_message_title
-	desc = event_message_effect_and_text
+	desc = event_message_text
 	style = bad
 	soundeffect = @msg_bad_soundeffect
 }
@@ -390,7 +390,7 @@ event_slain_combatants_good = {
 	icon = "death_desease"
     tooltip = "newsfeed_type_death_desease"
 	title = event_message_title
-	desc = event_message_effect_and_text
+	desc = event_message_text
 	style = good
 	soundeffect = @msg_good_soundeffect
 }
@@ -399,7 +399,7 @@ event_slain_combatants_neutral = {
 	icon = "death_natural"
     tooltip = "newsfeed_type_death_natural"
 	title = event_message_title
-	desc = event_message_effect_and_text
+	desc = event_message_text
 	style = neutral
 	soundeffect = @msg_neutral_soundeffect
 }
@@ -408,7 +408,7 @@ event_slain_combatants_bad = {
 	icon = "death_murder"
     tooltip = "newsfeed_type_death_murder"
 	title = event_message_title
-	desc = event_message_effect_and_text
+	desc = event_message_text
 	style = bad
 	soundeffect = @msg_bad_soundeffect
 }
