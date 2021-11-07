@@ -1,0 +1,28 @@
+﻿newsfeed_write_message_gui = {
+    scope = character
+
+    saved_scopes = {
+        newsfeed_message_tooltip
+        newsfeed_message_title
+        newsfeed_message_desc
+        newsfeed_message_date
+    }
+
+    effect = {
+        if = {
+            limit = {
+                NOR = {
+                    scope:newsfeed_message_title = flag:newsfeed_suppress
+                    scope:newsfeed_message_tooltip = flag:newsfeed_suppress
+                }
+            }
+            
+            newsfeed_write_message_effect = {
+                type = scope:newsfeed_message_tooltip
+                title = scope:newsfeed_message_title
+                desc = scope:newsfeed_message_desc
+                date = scope:newsfeed_message_date
+            }
+        }
+    }
+}

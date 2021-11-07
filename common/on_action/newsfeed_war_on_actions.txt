@@ -1,0 +1,218 @@
+﻿on_war_started = {
+    on_actions = {
+        newsfeed_on_war_started
+    }
+}
+
+newsfeed_on_war_started = {
+    effect = {
+        every_player = {
+            if = {
+                limit = {
+                    newsfeed_is_interested_in_war = { PERSON = scope:attacker }
+                    NAND = {
+                        this = scope:defender
+                        newsfeed_is_interested_in_war = { PERSON = scope:defender }
+                    }
+                }
+
+                send_interface_message = {
+                    type = newsfeed_war_neutral
+                    title = newsfeed_war_declared_by_subject
+                    desc = newsfeed_war_declared_by_subject_desc
+                }
+            }
+            else_if = {  
+                limit = {
+                    newsfeed_is_interested_in_war = { PERSON = scope:defender }
+                }
+
+                send_interface_message = {
+                    type = newsfeed_war_neutral
+                    title = newsfeed_war_declared_on_subject
+                    desc = newsfeed_war_declared_on_subject_desc
+                }
+            }
+        }
+    }
+}
+
+on_war_won_attacker = {
+    on_actions = {
+        newsfeed_on_war_won_attacker
+    }
+}
+
+newsfeed_on_war_won_attacker = {
+    effect = {
+        every_player = {
+            if = {
+                limit = {
+                    newsfeed_is_interested_in_war = { PERSON = scope:attacker }
+                    NAND = {
+                        this = scope:defender
+                        newsfeed_is_interested_in_war = { PERSON = scope:defender }
+                    }
+                }
+
+                scope:attacker = { save_scope_as = protagonist }
+                scope:defender = { save_scope_as = antagonist }
+
+                send_interface_message = {
+                    type = newsfeed_war_neutral
+                    title = newsfeed_war_won
+                    desc = newsfeed_war_won_desc
+                }
+            }
+            else_if = {  
+                limit = {
+                    newsfeed_is_interested_in_war = { PERSON = scope:defender }
+                }
+
+                scope:defender = { save_scope_as = protagonist }
+                scope:attacker = { save_scope_as = antagonist }
+
+                send_interface_message = {
+                    type = newsfeed_war_neutral
+                    title = newsfeed_war_lost
+                    desc = newsfeed_war_lost_desc
+                }
+            }
+        }
+    }
+}
+
+on_war_won_defender = {
+    on_actions = {
+        newsfeed_on_war_won_defender
+    }
+}
+
+newsfeed_on_war_won_defender = {
+    effect = {
+        every_player = {
+            if = {
+                limit = {
+                    newsfeed_is_interested_in_war = { PERSON = scope:attacker }
+                    NAND = {
+                        this = scope:defender
+                        newsfeed_is_interested_in_war = { PERSON = scope:defender }
+                    }
+                }
+
+                scope:attacker = { save_scope_as = protagonist }
+                scope:defender = { save_scope_as = antagonist }
+
+                send_interface_message = {
+                    type = newsfeed_war_neutral
+                    title = newsfeed_war_lost
+                    desc = newsfeed_war_lost_desc
+                }
+            }
+            else_if = {  
+                limit = {
+                    newsfeed_is_interested_in_war = { PERSON = scope:defender }
+                }
+
+                scope:defender = { save_scope_as = protagonist }
+                scope:attacker = { save_scope_as = antagonist }
+
+                send_interface_message = {
+                    type = newsfeed_war_neutral
+                    title = newsfeed_war_won
+                    desc = newsfeed_war_won_desc
+                }
+            }
+        }
+    }
+}
+
+on_war_white_peace = {
+    on_actions = {
+        newsfeed_on_war_white_peace
+    }
+}
+
+newsfeed_on_war_white_peace = {
+    effect = {
+        every_player = {
+            if = {
+                limit = {
+                    newsfeed_is_interested_in_war = { PERSON = scope:attacker }
+                    NAND = {
+                        this = scope:defender
+                        newsfeed_is_interested_in_war = { PERSON = scope:defender }
+                    }
+                }
+
+                scope:attacker = { save_scope_as = protagonist }
+                scope:defender = { save_scope_as = antagonist }
+
+                send_interface_message = {
+                    type = newsfeed_war_neutral
+                    title = newsfeed_war_white_peace
+                    desc = newsfeed_war_white_peace_desc
+                }
+            }
+            else_if = {  
+                limit = {
+                    newsfeed_is_interested_in_war = { PERSON = scope:defender }
+                }
+
+                scope:defender = { save_scope_as = protagonist }
+                scope:attacker = { save_scope_as = antagonist }
+
+                send_interface_message = {
+                    type = newsfeed_war_neutral
+                    title = newsfeed_war_white_peace
+                    desc = newsfeed_war_white_peace_desc
+                }
+            }
+        }
+    }
+}
+
+on_war_invalidated = {
+    on_actions = {
+        newsfeed_on_war_invalidated
+    }
+}
+
+newsfeed_on_war_invalidated = {
+    effect = {
+        every_player = {
+            if = {
+                limit = {
+                    newsfeed_is_interested_in_war = { PERSON = scope:attacker }
+                    NAND = {
+                        this = scope:defender
+                        newsfeed_is_interested_in_war = { PERSON = scope:defender }
+                    }
+                }
+
+                scope:attacker = { save_scope_as = protagonist }
+                scope:defender = { save_scope_as = antagonist }
+
+                send_interface_message = {
+                    type = newsfeed_war_neutral
+                    title = newsfeed_war_invalidated
+                    desc = newsfeed_war_invalidated_desc
+                }
+            }
+            else_if = {  
+                limit = {
+                    newsfeed_is_interested_in_war = { PERSON = scope:defender }
+                }
+
+                scope:defender = { save_scope_as = protagonist }
+                scope:attacker = { save_scope_as = antagonist }
+
+                send_interface_message = {
+                    type = newsfeed_war_neutral
+                    title = newsfeed_war_invalidated
+                    desc = newsfeed_war_invalidated_desc
+                }
+            }
+        }
+    }
+}

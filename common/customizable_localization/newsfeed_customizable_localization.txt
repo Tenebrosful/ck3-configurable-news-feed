@@ -1,0 +1,76 @@
+﻿newsfeed_relation_if_not_acquaintance = {
+    type = character
+
+    text = {
+        fallback = yes
+        localization_key = "[Select_CString(Or(EqualTo_string(Scope.Char.Custom2('RelationToMe', second.Self), Localize('relation_acquaintance_female')), EqualTo_string(Scope.Char.Custom2('RelationToMe', second.Self), Localize('relation_acquaintance_male'))), '', Concatenate(Concatenate(Concatenate(Localize('CHARACTER_NAME_MY'), ' '), Scope.Char.Custom2('RelationToMe', second.Self)), ' '))]"
+    }
+}
+
+newsfeed_relation_or_me = {
+    type = character
+
+    text = {
+        trigger = {
+            root = scope:second
+        }
+
+        localization_key = CHARACTER_NAME_ME
+    }
+
+    text = {
+        fallback = yes
+        localization_key = "[Scope.Char.Custom2('RelationToMeShort', second.Self)]"
+    }
+}
+
+newsfeed_relation_name_or_me = {
+    type = character
+
+    text = {
+        trigger = {
+            root = scope:second
+        }
+
+        localization_key = CHARACTER_NAME_ME
+    }
+
+    text = {
+        fallback = yes
+        localization_key = "[Scope.Char.Custom2('newsfeed_relation_if_not_acquaintance', second.Self)][second.GetUIName]"
+    }
+}
+
+newsfeed_relation_prefix = {
+    type = character
+
+    text = {
+        trigger = {
+            root = scope:second
+        }
+
+        localization_key = ""
+    }
+
+    text = {
+        fallback = yes
+        localization_key = "[Scope.Char.Custom2('RelationToMeShort', second.Self)] "
+    }
+}
+
+newsfeed_her_his_my = {
+    type = character
+
+    text = {
+        trigger = {
+            root = scope:second
+        }
+
+        localization_key = CHARACTER_NAME_MY
+    }
+
+    text = {
+        fallback = yes
+        localization_key = "[Scope.Char.GetHerHis]"
+    }
+}

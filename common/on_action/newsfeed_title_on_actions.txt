@@ -1,0 +1,273 @@
+﻿on_title_gain = {
+    on_actions = {
+        newsfeed_on_title_gain
+    }
+}
+
+newsfeed_on_title_gain = {
+    first_valid_on_action = {
+        newsfeed_on_title_created
+        newsfeed_on_title_inherited
+        newsfeed_on_title_abdicated
+        newsfeed_on_title_usurped
+        newsfeed_on_title_granted
+        newsfeed_on_title_revoked
+        newsfeed_on_title_gained
+    }
+}
+
+newsfeed_on_title_created = {
+    trigger = {
+        scope:transfer_type = flag:created
+
+        # Dead people creating titles is from confederate partition.
+        # There should be inheritance messages, if we care, so skip this.
+        is_alive = yes
+    }
+
+    effect = {
+        every_player = {
+            limit = {
+                newsfeed_is_interested_in_titles = { PERSON = root }
+            }
+
+            send_interface_message = {
+                type = newsfeed_titles
+                title = newsfeed_title_created
+                desc = newsfeed_title_created_desc
+            }
+        }
+    }
+}
+
+newsfeed_on_title_inherited = {
+    trigger = {
+        scope:transfer_type = flag:inheritance
+        scope:title = { is_landless_type_title = no }
+    }
+
+    effect = {
+        set_variable = {
+            name = newsfeed_inherited_titles_from
+            value = scope:previous_holder
+        }
+
+        add_to_variable_list = {
+            name = newsfeed_inherited_titles
+            target = scope:title
+        }
+
+        add_to_global_variable_list = {
+            name = newsfeed_inheritors
+            target = root
+        }
+    }
+}
+
+newsfeed_on_title_abdicated = {
+    trigger = { scope:transfer_type = flag:abdication }
+
+    effect = {
+        every_player = {
+            if = {
+                limit = {
+                    newsfeed_is_interested_in_titles = { PERSON = root }
+                }
+
+                send_interface_message = {
+                    type = newsfeed_titles
+                    title = newsfeed_title_abdicated_recipient
+                    desc = newsfeed_title_abdicated_desc
+                }
+            }
+            else_if = {
+                limit = {
+                    newsfeed_is_interested_in_titles = { PERSON = scope:previous_holder }
+                }
+
+                send_interface_message = {
+                    type = newsfeed_titles
+                    title = newsfeed_title_abdicated_predecessor
+                    desc = newsfeed_title_abdicated_desc
+                }
+            }
+        }
+    }
+}
+
+newsfeed_on_title_usurped = {
+    trigger = { scope:transfer_type = flag:usurped }
+
+    effect = {
+        every_player = {
+            if = {
+                limit = {
+                    newsfeed_is_interested_in_titles = { PERSON = root }
+                }
+
+                send_interface_message = {
+                    type = newsfeed_titles
+                    title = newsfeed_title_usurped_recipient
+                    desc = newsfeed_title_usurped_desc
+                }
+            }
+            else_if = {
+                limit = {
+                    newsfeed_is_interested_in_titles = { PERSON = scope:previous_holder }
+                }
+
+                send_interface_message = {
+                    type = newsfeed_titles
+                    title = newsfeed_title_usurped_predecessor
+                    desc = newsfeed_title_usurped_desc
+                }
+            }
+        }
+    }
+}
+
+newsfeed_on_title_granted = {
+    trigger = { scope:transfer_type = flag:granted }
+
+    effect = {
+        every_player = {
+            if = {
+                limit = {
+                    newsfeed_is_interested_in_titles = { PERSON = root }
+                }
+
+                send_interface_message = {
+                    type = newsfeed_titles
+                    title = newsfeed_title_granted_recipient
+                    desc = newsfeed_title_granted_desc
+                }
+            }
+            else_if = {
+                limit = {
+                    newsfeed_is_interested_in_titles = { PERSON = scope:previous_holder }
+                }
+
+                send_interface_message = {
+                    type = newsfeed_titles
+                    title = newsfeed_title_granted_predecessor
+                    desc = newsfeed_title_granted_desc
+                }
+            }
+        }
+    }
+}
+
+newsfeed_on_title_revoked = {
+    trigger = { scope:transfer_type = flag:revoked }
+
+    effect = {
+        every_player = {
+            if = {
+                limit = {
+                    newsfeed_is_interested_in_titles = { PERSON = root }
+                }
+
+                send_interface_message = {
+                    type = newsfeed_titles
+                    title = newsfeed_title_revoked_recipient
+                    desc = newsfeed_title_revoked_desc
+                }
+            }
+            else_if = {
+                limit = {
+                    newsfeed_is_interested_in_titles = { PERSON = scope:previous_holder }
+                }
+
+                send_interface_message = {
+                    type = newsfeed_titles
+                    title = newsfeed_title_revoked_predecessor
+                    desc = newsfeed_title_revoked_desc
+                }
+            }
+        }
+    }
+}
+
+newsfeed_on_title_gained = {
+    effect = {
+        every_player = {
+            if = {
+                limit = {
+                    exists = scope:previous_holder
+                    newsfeed_is_interested_in_titles = { PERSON = root }
+                }
+
+                send_interface_message = {
+                    type = newsfeed_titles
+                    title = newsfeed_title_gained_from
+                    desc = newsfeed_title_gained_from_desc
+                }
+            }
+            else_if = {
+                limit = {
+                    newsfeed_is_interested_in_titles = { PERSON = root }
+                }
+
+                send_interface_message = {
+                    type = newsfeed_titles
+                    title = newsfeed_title_gained
+                    desc = newsfeed_title_gained_desc
+                }
+            }
+            else_if = {
+                limit = {
+                    exists = scope:previous_holder
+                    newsfeed_is_interested_in_titles = { PERSON = scope:previous_holder }
+                }
+
+                send_interface_message = {
+                    type = newsfeed_titles
+                    title = newsfeed_title_lost_to
+                    desc = newsfeed_title_lost_to_desc
+                }
+            }
+        }
+    }
+}
+
+on_title_lost = {
+    on_actions = {
+        newsfeed_on_title_lost
+    }
+}
+
+newsfeed_on_title_lost = {
+    trigger = {
+        NOT = { exists = scope:new_holder } # will be handled by on_title_gain
+        NOT = { scope:transfer_type = flag:destroyed } # will be handled by on_title_destroyed
+        newsfeed_is_interested_in_titles = { PERSON = root }
+    }
+
+    effect = {
+        send_interface_message = {
+            type = newsfeed_titles
+            title = newsfeed_title_lost
+            desc = newsfeed_title_lost_desc
+        }
+    }
+}
+
+on_title_destroyed = {
+    on_actions = {
+        newsfeed_on_title_destroyed
+    }
+}
+
+newsfeed_on_title_destroyed = {
+    trigger = {
+        newsfeed_is_interested_in_titles = { PERSON = root }
+    }
+
+    effect = {
+        send_interface_message = {
+            type = newsfeed_titles
+            title = newsfeed_title_destroyed
+            desc = newsfeed_title_destroyed_desc
+        }
+    }
+}

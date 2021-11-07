@@ -1,0 +1,73 @@
+﻿newsfeed_notify_of_death_effect = {
+    send_interface_message = {
+        type = newsfeed_death
+        title = {
+            first_valid = {
+                triggered_desc = {
+                    trigger = { exists = scope:killer }
+                    desc = newsfeed_death_murder
+                }
+                desc = newsfeed_death
+            }
+        }
+        desc = {
+            first_valid = {
+                triggered_desc = {
+                    trigger = { exists = scope:killer }
+                    desc = newsfeed_death_murder_desc
+                }
+                desc = newsfeed_death_desc
+            }
+        }
+    }
+}
+
+newsfeed_check_relative_of_deceased_effect = {
+    if = {
+        limit = {
+            NOT = {
+                exists = scope:newsfeed_related
+            }
+        }
+
+        save_temporary_scope_as = newsfeed_observer
+        
+        root = {
+            ordered_$type$ = {
+                limit = {
+                    scope:newsfeed_observer = {
+                        newsfeed_is_interested_in_death = { PERSON = prev }
+                    }
+                }
+
+                max = 1
+
+                save_scope_as = newsfeed_related
+
+                scope:newsfeed_observer = {
+                    send_interface_message = {
+                        type = newsfeed_death
+                        title = {
+                            first_valid = {
+                                triggered_desc = {
+                                    trigger = { exists = scope:killer }
+                                    desc = newsfeed_death_related_murder
+                                }
+                                desc = newsfeed_death_related
+                            }
+                        }
+                        desc = {
+                            first_valid = {
+                                triggered_desc = {
+                                    trigger = { exists = scope:killer }
+                                    desc = newsfeed_death_related_murder_desc
+                                }
+                                desc = newsfeed_death_related_desc
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

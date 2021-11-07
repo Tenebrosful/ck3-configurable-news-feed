@@ -1,0 +1,103 @@
+﻿@default_msg_soundeffect = "event:/SFX/UI/Notifications/Messages/sfx_ui_message_theme_neutral"
+@msg_neutral_soundeffect = "event:/SFX/UI/Notifications/Messages/sfx_ui_message_theme_neutral"
+@msg_good_soundeffect = "event:/SFX/UI/Notifications/Messages/sfx_ui_message_theme_positive"
+@msg_bad_soundeffect = "event:/SFX/UI/Notifications/Messages/sfx_ui_message_theme_negative"
+
+newsfeed_pregnancy = {
+	icon = "child"
+	tooltip = "newsfeed_type_child"
+	title = event_message_title
+    desc = event_message_text
+	style = good
+	soundeffect = @msg_good_soundeffect
+}
+
+newsfeed_pregnancy_ended = {
+	icon = "death_natural"
+	tooltip = "newsfeed_type_death_natural"
+	title = event_message_title
+    desc = event_message_text
+	style = bad
+	soundeffect = @msg_bad_soundeffect
+}
+
+newsfeed_birth = {
+	icon = "child"
+	tooltip = "newsfeed_type_child"
+	title = event_message_title
+    desc = event_message_text
+	style = good
+	soundeffect = @msg_good_soundeffect
+}
+
+newsfeed_titles = {
+    icon = "titles"
+    tooltip = "newsfeed_type_titles"
+	title = event_message_title
+    desc = event_message_text
+	style = neutral
+	soundeffect = @msg_neutral_soundeffect
+}
+
+newsfeed_powerful_vassal = {
+    icon = "council"
+    tooltip = "newsfeed_type_council"
+	title = event_message_title
+    desc = event_message_text
+	style = bad
+	soundeffect = @msg_bad_soundeffect
+}
+
+newsfeed_relation_good = {
+    icon = "sway_scheme"
+    tooltip = "newsfeed_type_sway_scheme"
+	title = event_message_title
+    desc = event_message_text
+    style = good
+	soundeffect = @msg_good_soundeffect
+}
+
+newsfeed_relation_bad = {
+    icon = "sway_scheme"
+    tooltip = "newsfeed_type_sway_scheme"
+	title = event_message_title
+    desc = event_message_text
+    style = bad
+	soundeffect = @msg_bad_soundeffect
+}
+
+newsfeed_war_neutral = {
+	icon = "war"
+	tooltip = "newsfeed_type_war"
+	title = event_message_title
+	desc = event_message_text
+	style = neutral
+	soundeffect = @msg_neutral_soundeffect
+}
+
+newsfeed_war_bad = {
+	icon = "war"
+	tooltip = "newsfeed_type_war"
+	title = event_message_title
+	desc = event_message_text
+	style = bad
+	soundeffect = @msg_bad_soundeffect
+}
+
+newsfeed_marriage = {
+    icon = "marriage"
+    tooltip = "newsfeed_type_marriage"
+	title = event_message_title
+    desc = event_message_text
+	style = neutral
+	soundeffect = @msg_neutral_soundeffect
+}
+
+newsfeed_death = {
+    icon = "death_murder"
+    tooltip = "newsfeed_type_death_murder"
+	title = event_message_title
+    desc = event_message_text
+	style = bad
+	soundeffect = @msg_bad_soundeffect
+}

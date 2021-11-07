@@ -1,0 +1,18 @@
+﻿newsfeed_settings_initialized = {
+    any_in_list = {
+        variable = newsfeed_setting_containers
+    }
+}
+
+newsfeed_is_setting_enabled = {
+    is_ai = no
+    any_in_list = {
+        variable = newsfeed_setting_containers
+        var:newsfeed_subject = $SUBJECT$
+
+        any_in_list = {
+            variable = newsfeed_enabled_types
+            this = $type$
+        }
+    }
+}

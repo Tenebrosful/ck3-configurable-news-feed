@@ -1,0 +1,102 @@
+﻿on_set_relation_lover = {
+    on_actions = {
+        newsfeed_on_set_relation_lover
+    }
+}
+
+on_set_relation_friend = {
+    on_actions = {
+        newsfeed_on_set_relation_friend
+    }
+}
+
+on_set_relation_rival = {
+    on_actions = {
+        newsfeed_on_set_relation_rival
+    }
+}
+
+on_remove_relation_lover = {
+    on_actions = {
+        # There's a vanilla notification for this already
+        # newsfeed_on_remove_relation_lover
+    }
+}
+
+on_remove_relation_friend = {
+    on_actions = {
+        newsfeed_on_remove_relation_friend
+    }
+}
+
+on_remove_relation_rival = {
+    on_actions = {
+        newsfeed_on_remove_relation_rival
+    }
+}
+
+newsfeed_on_set_relation_lover = {
+    effect = {
+        send_interface_message = {
+            type = newsfeed_relation_good
+            title = newsfeed_lover_added
+            desc = newsfeed_lover_added_desc
+            right_icon = scope:target
+        }
+    }
+}
+
+newsfeed_on_set_relation_friend = {
+    effect = {
+        send_interface_message = {
+            type = newsfeed_relation_good
+            title = newsfeed_friend_added
+            desc = newsfeed_friend_added_desc
+            right_icon = scope:target
+        }
+    }
+}
+
+newsfeed_on_set_relation_rival = {
+    effect = {
+        send_interface_message = {
+            type = newsfeed_relation_bad
+            title = newsfeed_rival_added
+            desc = newsfeed_rival_added_desc
+            right_icon = scope:target
+        }
+    }
+}
+
+newsfeed_on_remove_relation_lover = {
+    effect = {
+        send_interface_message = {
+            type = newsfeed_relation_bad
+            title = newsfeed_lover_removed
+            desc = newsfeed_lover_removed_desc
+            right_icon = scope:target
+        }
+    }
+}
+
+newsfeed_on_remove_relation_friend = {
+    effect = {
+        send_interface_message = {
+            type = newsfeed_relation_bad
+            title = newsfeed_friend_removed
+            desc = newsfeed_friend_removed_desc
+            right_icon = scope:target
+        }
+    }
+}
+
+newsfeed_on_remove_relation_rival = {
+    effect = {
+        send_interface_message = {
+            type = newsfeed_relation_good
+            title = newsfeed_rival_removed
+            desc = newsfeed_rival_removed_desc
+            right_icon = scope:target
+        }
+    }
+}

@@ -1,0 +1,34 @@
+﻿newsfeed_notify_marriage_effect = {
+    if = {
+        limit = {
+            NOR = {
+                this = root
+                newsfeed_is_interested_in_marriage = { PERSON = root }
+            }
+        }
+
+        scope:spouse = { save_scope_as = newsfeed_spouse1 }
+        root = { save_scope_as = newsfeed_spouse2 }
+    }
+    else = {
+        root = { save_scope_as = newsfeed_spouse1 }
+        scope:spouse = { save_scope_as = newsfeed_spouse2 }
+    }
+
+    if = {
+        limit = { this = scope:newsfeed_spouse1 }
+
+        send_interface_message = {
+            type = newsfeed_marriage
+            title = newsfeed_marriage_me
+            desc = newsfeed_marriage_me_desc
+        }
+    }
+    else = {
+        send_interface_message = {
+            type = newsfeed_marriage
+            title = newsfeed_marriage
+            desc = newsfeed_marriage_desc
+        }
+    }
+}

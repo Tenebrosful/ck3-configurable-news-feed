@@ -1,0 +1,20 @@
+﻿on_marriage = {
+    on_actions = {
+        newsfeed_on_marriage
+    }
+}
+
+newsfeed_on_marriage = {
+    effect = {
+        every_player = {
+            limit = {
+                OR = {
+                    newsfeed_is_interested_in_marriage = { PERSON = root }
+                    newsfeed_is_interested_in_marriage = { PERSON = scope:spouse }
+                }
+            }
+
+            newsfeed_notify_marriage_effect = yes
+        }
+    }
+}

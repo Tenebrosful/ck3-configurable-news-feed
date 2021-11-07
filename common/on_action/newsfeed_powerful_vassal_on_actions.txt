@@ -1,0 +1,21 @@
+﻿on_vassal_become_powerful = {
+    on_actions = {
+        newsfeed_on_vassal_become_powerful
+    }
+}
+
+newsfeed_on_vassal_become_powerful = {
+    trigger = {
+        scope:vassal = {
+            is_councillor = no
+        }
+    }
+
+    effect = {
+        send_interface_message = {
+            type = newsfeed_powerful_vassal
+            title = newsfeed_powerful_vassal
+            desc = newsfeed_powerful_vassal_desc
+        }
+    }
+}

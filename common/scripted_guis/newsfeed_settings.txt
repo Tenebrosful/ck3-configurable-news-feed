@@ -1,0 +1,44 @@
+﻿newsfeed_ensure_settings_initialized_gui = {
+    scope = character
+
+    is_valid = {
+        newsfeed_settings_initialized = no
+    }
+
+    effect = {
+        newsfeed_initialize_settings = yes
+        newsfeed_set_default_settings = yes
+    }    
+}
+
+newsfeed_setting_state_gui = {
+    scope = character
+
+    saved_scopes = {
+        newsfeed_subject
+        newsfeed_type
+    }
+
+    is_valid = {
+        newsfeed_is_setting_enabled = {
+            SUBJECT = scope:newsfeed_subject
+            type = scope:newsfeed_type
+        }
+    }
+}
+
+newsfeed_setting_toggle_gui = {
+    scope = character
+
+    saved_scopes = {
+        newsfeed_subject
+        newsfeed_type
+    }
+
+    effect = {
+        newsfeed_toggle_setting = {
+            SUBJECT = scope:newsfeed_subject
+            type = scope:newsfeed_type
+        }
+    }
+}

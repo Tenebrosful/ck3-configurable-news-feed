@@ -1,0 +1,107 @@
+﻿newsfeed_is_setting_enabled_for_person = {
+    is_ai = no
+    
+    $PERSON$ = {
+        save_temporary_scope_as = newsfeed_person
+
+        prev = {
+            save_temporary_scope_as = newsfeed_observer
+
+            any_in_global_list = {
+                variable = newsfeed_subjects
+
+                save_temporary_scope_as = newsfeed_subject
+
+                scope:newsfeed_observer = {
+                    newsfeed_is_person_subject = {
+                        SUBJECT = scope:newsfeed_subject
+                        PERSON = scope:newsfeed_person
+                    }
+                    newsfeed_is_setting_enabled = {
+                        SUBJECT = scope:newsfeed_subject
+                        type = $type$
+                    }
+                }
+            }
+        }
+    }
+}
+
+newsfeed_is_person_subject = {
+    OR = {
+        newsfeed_subject_matches = { PERSON = $PERSON$ SUBJECT = $SUBJECT$ check_subject = self }
+        newsfeed_subject_matches = { PERSON = $PERSON$ SUBJECT = $SUBJECT$ check_subject = spouse }
+        newsfeed_subject_matches = { PERSON = $PERSON$ SUBJECT = $SUBJECT$ check_subject = close_dynastic_family }
+        newsfeed_subject_matches = { PERSON = $PERSON$ SUBJECT = $SUBJECT$ check_subject = extended_dynastic_family }
+        newsfeed_subject_matches = { PERSON = $PERSON$ SUBJECT = $SUBJECT$ check_subject = liege }
+        newsfeed_subject_matches = { PERSON = $PERSON$ SUBJECT = $SUBJECT$ check_subject = direct_vassal }
+        newsfeed_subject_matches = { PERSON = $PERSON$ SUBJECT = $SUBJECT$ check_subject = pinned_character }
+    }
+}
+
+newsfeed_subject_matches = {
+    $SUBJECT$ = flag:newsfeed_subject_$check_subject$
+    newsfeed_is_my_$check_subject$ = { PERSON = $PERSON$ }
+}
+
+newsfeed_is_interested_in_marriage = {
+    newsfeed_is_setting_enabled_for_person = {
+        PERSON = $PERSON$
+        type = flag:newsfeed_type_marriage
+    }
+}
+
+newsfeed_is_interested_in_birth = {
+    newsfeed_is_setting_enabled_for_person = {
+        PERSON = $PERSON$
+        type = flag:newsfeed_type_birth
+    }
+}
+
+newsfeed_is_interested_in_pregnancy = {
+    newsfeed_is_setting_enabled_for_person = {
+        PERSON = $PERSON$
+        type = flag:newsfeed_type_pregnancy
+    }
+}
+
+newsfeed_is_interested_in_titles = {
+    newsfeed_is_setting_enabled_for_person = {
+        PERSON = $PERSON$
+        type = flag:newsfeed_type_titles
+    }
+}
+
+newsfeed_is_interested_in_war = {
+    newsfeed_is_setting_enabled_for_person = {
+        PERSON = $PERSON$
+        type = flag:newsfeed_type_war
+    }
+}
+
+newsfeed_is_interested_in_death = {
+    newsfeed_is_setting_enabled_for_person = {
+        PERSON = $PERSON$
+        type = flag:newsfeed_type_death
+    }
+}
+
+newsfeed_is_closer_than = {
+    OR = {
+        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = self }
+        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = child }
+        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = grandchild }
+        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = spouse }
+        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = sibling }
+        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = parent }
+        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = grandparent }
+        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = extended_dynastic_family }
+    }
+}
+
+newsfeed_beats_by_relation = {
+    AND = {
+        $first$ = { prev = { newsfeed_is_my_$relation$ = { PERSON = prev } } }
+        NOT = { $second$ = { prev = { newsfeed_is_my_$relation$ = { PERSON = prev } } } }
+    }
+}

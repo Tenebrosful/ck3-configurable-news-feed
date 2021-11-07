@@ -1,0 +1,108 @@
+﻿newsfeed_write_message_effect = {
+    set_variable = {
+        name = newsfeed_next_message_index
+        value = {
+            value = 1
+            if = {
+                limit = {
+                    has_variable = newsfeed_next_message_index
+                }
+                add = var:newsfeed_next_message_index
+            }
+        }
+    }
+
+    create_story = {
+        type = story_newsfeed_message
+        save_scope_as = newsfeed_new_container
+    }
+
+    scope:newsfeed_new_container = {
+        set_variable = {
+            name = newsfeed_message_index
+            value = prev.var:newsfeed_next_message_index
+        }
+        set_variable = {
+            name = newsfeed_message_type
+            value = $type$
+        }
+        set_variable = {
+            name = newsfeed_message_title
+            value = $title$
+        }
+        set_variable = {
+            name = newsfeed_message_desc
+            value = $desc$
+        }
+        set_variable = {
+            name = newsfeed_message_date
+            value = $date$
+        }
+    }
+
+    newsfeed_resort_message_containers = yes
+    newsfeed_prune_message_containers = yes
+}
+
+newsfeed_clear_message_containers_for_all_players = {
+    every_player = {
+        newsfeed_clear_message_containers = yes
+    }
+}
+
+newsfeed_clear_message_containers = {
+    every_owned_story = {
+        limit = {
+            story_type = story_newsfeed_message
+        }
+
+        end_story = yes
+    }
+
+    clear_variable_list = newsfeed_message_containers
+
+    set_variable = {
+        name = newsfeed_next_message_index
+        value = 0
+    }
+}
+
+newsfeed_resort_message_containers = {
+    clear_variable_list = newsfeed_message_containers
+
+    ordered_owned_story = {
+        limit = { story_type = story_newsfeed_message }
+        order_by = var:newsfeed_message_index
+        max = newsfeed_scrollback
+        check_range_bounds = no
+
+        limit = {
+            story_type = story_newsfeed_message
+        }
+
+        prev = {
+            add_to_variable_list = {
+                name = newsfeed_message_containers
+                target = prev
+            }
+        }
+    }
+}
+
+newsfeed_prune_message_containers = {
+    every_owned_story = {
+        limit = {
+            story_type = story_newsfeed_message
+            prev = {
+                NOT = {
+                    is_target_in_variable_list = {
+                        name = newsfeed_message_containers
+                        target = prev
+                    }
+                }
+            }
+        }
+
+        end_story = yes
+    }
+}

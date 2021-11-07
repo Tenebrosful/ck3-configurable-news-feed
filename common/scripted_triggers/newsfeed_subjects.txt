@@ -1,0 +1,63 @@
+﻿newsfeed_is_my_self = {
+    this = $PERSON$
+}
+
+newsfeed_is_my_spouse = {
+    is_spouse_of = $PERSON$
+}
+
+newsfeed_is_my_child = {
+    is_parent_of = $PERSON$
+}
+
+newsfeed_is_my_parent = {
+    is_child_of = $PERSON$
+}
+
+newsfeed_is_my_sibling = {
+    is_sibling_of = $PERSON$
+}
+
+newsfeed_is_my_grandchild = {
+    is_grandparent_of = $PERSON$
+}
+
+newsfeed_is_my_grandparent = {
+    is_grandchild_of = $PERSON$
+}
+
+newsfeed_is_my_liege = {
+    NOT = { this = $PERSON$ }
+    this.liege = $PERSON$
+}
+
+newsfeed_is_my_direct_vassal = {
+    NOT = { this = $PERSON$ }
+    this = $PERSON$.liege
+}
+
+newsfeed_is_my_close_dynastic_family = {
+    NOT = { this = $PERSON$ }
+    this.dynasty = $PERSON$.dynasty
+    is_close_family_of = $PERSON$
+}
+
+newsfeed_is_my_extended_dynastic_family = {
+    NOT = { this = $PERSON$ }
+    this.dynasty = $PERSON$.dynasty
+    is_extended_family_of = $PERSON$
+}
+
+newsfeed_is_my_pinned_character = {
+    save_temporary_scope_as = newsfeed_observer
+
+    $PERSON$ = {
+        save_temporary_scope_as = newsfeed_person
+
+        scope:newsfeed_observer = {
+            any_pinned_character = {
+                this = scope:newsfeed_person
+            }
+        }
+    }
+}

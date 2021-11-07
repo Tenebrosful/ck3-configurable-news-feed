@@ -1,0 +1,154 @@
+﻿newsfeed_initialize_settings = {
+    newsfeed_ensure_all_subjects_and_types = yes
+    newsfeed_ensure_setting_containers = yes
+}
+
+newsfeed_set_default_settings = {
+    save_temporary_scope_as = newsfeed_set_default_settings_player
+
+    every_in_global_list = {
+        variable = newsfeed_subjects
+        
+        save_temporary_scope_as = newsfeed_set_default_settings_subject
+
+        every_in_global_list = {
+            variable = newsfeed_types
+
+            save_temporary_scope_as = newsfeed_set_default_settings_type
+
+            scope:newsfeed_set_default_settings_player = {
+                newsfeed_enable_setting = {
+                    SUBJECT = scope:newsfeed_set_default_settings_subject
+                    type = scope:newsfeed_set_default_settings_type
+                }
+            }
+        }
+    }
+}
+
+newsfeed_ensure_all_subjects_and_types = {
+    newsfeed_create_subject = { SUBJECT = self }
+    newsfeed_create_subject = { SUBJECT = spouse }
+    newsfeed_create_subject = { SUBJECT = close_dynastic_family }
+    newsfeed_create_subject = { SUBJECT = extended_dynastic_family }
+    newsfeed_create_subject = { SUBJECT = liege }
+    newsfeed_create_subject = { SUBJECT = direct_vassal }
+    newsfeed_create_subject = { SUBJECT = pinned_character }
+
+    newsfeed_create_type = { type = marriage }
+    newsfeed_create_type = { type = pregnancy }
+    newsfeed_create_type = { type = birth }
+    newsfeed_create_type = { type = death }
+    newsfeed_create_type = { type = war }
+    newsfeed_create_type = { type = titles }
+}
+
+newsfeed_ensure_setting_containers = {
+    every_in_global_list = {
+        variable = newsfeed_subjects
+        save_temporary_scope_as = newsfeed_subject
+        
+        if = {
+            limit = {
+                NOT = {
+                    prev = {
+                        any_in_list = {
+                            variable = newsfeed_setting_containers
+                            has_variable = newsfeed_subject
+                            var:newsfeed_subject = scope:newsfeed_subject
+                        }
+                    }
+                }
+            }
+
+            prev = {
+                newsfeed_create_setting_container = {
+                    SUBJECT = scope:newsfeed_subject
+                }
+            }
+        }
+    }
+}
+
+newsfeed_create_setting_container = {
+    create_story = {
+        type = story_newsfeed_setting
+        save_scope_as = newsfeed_new_container
+    }
+
+    scope:newsfeed_new_container = {
+        set_variable = {
+            name = newsfeed_subject
+            value = $SUBJECT$
+        }
+    }
+
+    add_to_variable_list = {
+        name = newsfeed_setting_containers
+        target = scope:newsfeed_new_container
+    }
+}
+
+newsfeed_create_subject = {
+    add_to_global_variable_list = {
+        name = newsfeed_subjects
+        target = flag:newsfeed_subject_$SUBJECT$
+    }
+}
+
+newsfeed_create_type = {
+    add_to_global_variable_list = {
+        name = newsfeed_types
+        target = flag:newsfeed_type_$type$
+    }
+}
+
+newsfeed_enable_setting = {
+    ordered_in_list = {
+        variable = newsfeed_setting_containers
+        limit = {
+            var:newsfeed_subject = $SUBJECT$
+        }
+        max = 1
+        add_to_variable_list = {
+            name = newsfeed_enabled_types
+            target = $type$
+        }
+    }
+}
+
+newsfeed_disable_setting = {
+    ordered_in_list = {
+        variable = newsfeed_setting_containers
+        limit = {
+            var:newsfeed_subject = $SUBJECT$
+        }
+        max = 1
+        remove_list_variable = {
+            name = newsfeed_enabled_types
+            target = $type$
+        }
+    }
+}
+
+newsfeed_toggle_setting = {
+    if = {
+        limit = {
+            newsfeed_is_setting_enabled = {
+                SUBJECT = $SUBJECT$
+                type = $type$
+            }
+        }
+
+        newsfeed_disable_setting = {
+            SUBJECT = $SUBJECT$
+            type = $type$
+        }
+    }
+    else = {
+        newsfeed_enable_setting = {
+            SUBJECT = $SUBJECT$
+            type = $type$
+        }
+    }
+}

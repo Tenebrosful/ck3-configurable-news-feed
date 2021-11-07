@@ -1,0 +1,35 @@
+﻿msg_siege_started = {
+    tooltip = newsfeed_suppress
+}
+
+msg_siege_won = {
+    tooltip = newsfeed_suppress
+}
+
+event_siege_lost_bad = {
+    tooltip = newsfeed_suppress
+}
+
+msg_marriage = {
+    tooltip = newsfeed_suppress
+}
+
+msg_war_declared_on_me = {
+    tooltip = newsfeed_suppress
+}
+
+msg_war_declared_on_liege = {
+    tooltip = newsfeed_suppress
+}
+
+msg_war_declared_by_liege = {
+    tooltip = newsfeed_suppress
+}
+
+msg_inherited_single_title = {
+    tooltip = newsfeed_suppress
+}
+
+msg_inherited_titles = {
+    tooltip = newsfeed_suppress
+}

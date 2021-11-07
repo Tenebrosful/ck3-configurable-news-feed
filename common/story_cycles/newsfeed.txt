@@ -1,0 +1,15 @@
+﻿story_newsfeed_message = {
+    on_setup = {}
+	on_end = {}
+	on_owner_death = {
+        make_story_owner = story_owner.player_heir
+    }
+}
+
+story_newsfeed_setting = {
+    on_setup = {}
+	on_end = {}
+	on_owner_death = {
+        make_story_owner = story_owner.player_heir
+    }
+}

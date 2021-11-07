@@ -1,0 +1,179 @@
+types NewsFeed {
+    type newsfeed_window = window {
+        name = "message_feed_widget"
+        visible = "[And(And(And( Not(SinglePlayerShowingPausedSuccession), IsDefaultGUIMode), Not(IsPauseMenuShown)), Not(IsRightWindowOpen))]"
+        parentanchor = bottom|right
+        resizable = yes
+        size = { 600 400 }
+        using = Background_Area_ExtraDark
+        allow_outside = yes
+
+        state = {
+            name = _show
+            using = Animation_FadeIn_Quick
+        }
+    
+        state = {
+            name = _hide
+            using = Animation_FadeOut_Quick
+        }
+
+        state = {
+            name = _mouse_hierarchy_enter
+            on_start = "[PdxGuiWidget.FindChild('button_settings').TriggerAnimation('hover_enter')]"
+        }
+
+        state = {
+            name = _mouse_hierarchy_leave
+            on_start = "[PdxGuiWidget.FindChild('button_settings').TriggerAnimation('hover_leave')]"
+        }
+
+        state = {
+            name = newsfeed_initialize
+            trigger_when = "[GetScriptedGui('newsfeed_ensure_settings_initialized_gui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            on_start = "[GetScriptedGui('newsfeed_ensure_settings_initialized_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        }
+
+        state = {
+            name = flush_inherited_titles
+            trigger_when = "[GetScriptedGui('newsfeed_flush_inherited_titles').IsValid(GuiScope.End)]"
+            on_start = "[GetScriptedGui('newsfeed_flush_inherited_titles').Execute(GuiScope.End)]"
+        }
+
+        vbox = {
+            margin_left = 20
+
+            layoutpolicy_vertical = expanding
+            layoutpolicy_horizontal = expanding
+
+            scrollarea = {
+                layoutpolicy_vertical = expanding
+                layoutpolicy_horizontal = expanding
+                
+                scrollbarpolicy_horizontal = always_off
+
+                scrollbar_vertical = {
+                    using = Scrollbar_Vertical
+		            wheelstep = 80
+                }
+                
+        		scrollwidget = {
+                    fixedgridbox = {
+                        allow_outside = yes
+                        maxhorizontalslots = 1
+                        maxverticalslots = 1000
+                        addrow = 85
+                        addcolumn = 1
+                        datamodel_reuse_widgets = yes
+                        layoutpolicy_horizontal = expanding
+                        
+                        datamodel = "[GetPlayer.MakeScope.GetList('newsfeed_message_containers')]"
+
+                        item = {
+                            newsfeed_item = {}
+                        }
+                    }
+                }
+            }
+        }
+        
+        vbox = {
+            layoutpolicy_vertical = expanding
+            layoutpolicy_horizontal = expanding
+
+            visible = "[IsDataModelEmpty(GetPlayer.MakeScope.GetList('newsfeed_message_containers'))]"
+
+            expand = {}
+
+            text_single = {
+                text = newsfeed_empty_text
+                default_format = "#weak"
+                align = center
+            }
+
+            expand = {}
+        }
+
+        button_icon = {
+            name = "button_settings"
+
+            parentanchor = top|right
+            position = { -10 5 }
+            size = { 40 40 }
+            texture = "gfx/interface/icons/flat_icons/menu.dds"
+            onclick = "[GetVariableSystem.Toggle('newsfeed_settings_shown')]"
+
+            alpha = 0.5
+
+            state = {
+                name = hover_enter
+                alpha = 1
+                duration = 0.05
+                using = Animation_Curve_Default
+            }
+
+            state = {
+                name = hover_leave
+                alpha = 0.2
+                duration = 0.2
+                using = Animation_Curve_Default
+            }
+        }
+
+        newsfeed_settings_menu = {
+            visible = "[GetVariableSystem.Exists('newsfeed_settings_shown')]"
+        }
+    }
+
+    type newsfeed_item = flowcontainer {
+        margin_top = 20
+        layoutpolicy_horizontal = expanding
+
+        datacontext = "[FeedMessageItem.GetPlayerMessageItem]"
+
+        direction = vertical
+
+        flowcontainer = {
+            flowcontainer = {
+                margin_right = 6
+                newsfeed_type_icon = {}
+            }
+
+            text_single = {
+                layoutpolicy_horizontal = expanding
+                text = "[Scope.GetVariable('newsfeed_message_title').GetFlagName]"
+                default_format = "#high"
+                fontsize = 14
+                align = left|nobaseline
+            }
+
+            text_single = {
+                layoutpolicy_horizontal = expanding
+                text = "[Scope.GetVariable('newsfeed_message_date').GetFlagName]"
+                default_format = "#weak"
+                fontsize = 14
+                align = left|nobaseline
+                margin_left = 8
+            }
+
+            text_single = {
+        		visible = "[InDebugMode]"
+                layoutpolicy_horizontal = expanding
+                text = "#D [Scope.GetVariable('newsfeed_message_index').GetValue|0] #!"
+                default_format = "#weak"
+                fontsize = 14
+                align = left|nobaseline
+                margin_left = 8
+            }
+        }
+    
+        text_multi = {
+            max_width = 550
+            autoresize = yes
+            layoutpolicy_horizontal = expanding
+            text = "[Scope.GetVariable('newsfeed_message_desc').GetFlagName]"
+            fontsize = 14
+            align = left|nobaseline
+        }
+    }
+}

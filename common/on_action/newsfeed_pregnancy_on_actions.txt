@@ -1,0 +1,47 @@
+﻿on_pregnancy_mother = {
+    on_actions = {
+        newsfeed_on_pregnancy_mother
+    }
+}
+
+newsfeed_on_pregnancy_mother = {
+    effect = {
+        every_player = {
+            limit = {
+                OR = {
+                    newsfeed_is_interested_in_pregnancy = { PERSON = scope:mother }
+                    AND = {
+                        exists = scope:father
+                        newsfeed_is_interested_in_pregnancy = { PERSON = scope:father }
+                    }
+                }
+            }
+
+            newsfeed_notify_pregnancy_effect = yes
+        }
+    }
+}
+
+on_pregnancy_ended_mother = {
+    on_actions = {
+        newsfeed_on_pregnancy_ended_mother
+    }
+}
+
+newsfeed_on_pregnancy_ended_mother = {
+    effect = {
+        every_player = {
+            limit = {
+                OR = {
+                    newsfeed_is_interested_in_pregnancy = { PERSON = scope:mother }
+                    AND = {
+                        exists = scope:father
+                        newsfeed_is_interested_in_pregnancy = { PERSON = scope:father }
+                    }
+                }
+            }
+
+            newsfeed_notify_pregnancy_ended_effect = yes
+        }
+    }
+}

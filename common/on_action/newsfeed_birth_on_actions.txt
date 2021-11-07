@@ -1,0 +1,23 @@
+﻿on_birth_mother = {
+    on_actions = {
+        newsfeed_on_birth_mother
+    }
+}
+
+newsfeed_on_birth_mother = {
+    effect = {
+        every_player = {
+            limit = {
+                OR = {
+                    newsfeed_is_interested_in_birth = { PERSON = scope:mother }
+                    AND = {
+                        exists = scope:father
+                        newsfeed_is_interested_in_birth = { PERSON = scope:father }
+                    }
+                }
+            }
+
+            newsfeed_notify_birth_effect = yes
+        }
+    }
+}

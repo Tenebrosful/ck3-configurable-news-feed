@@ -1,0 +1,122 @@
+types NewsFeed {
+    type newsfeed_settings_menu = window {
+        using = Window_Background
+        using = Window_Decoration_Spike
+
+        parentanchor = center
+        layer = top
+
+        state = {
+            name = _show
+            using = Animation_FadeIn_Quick
+            trigger_on_create = yes
+        }
+    
+        state = {
+            name = _hide
+            using = Animation_FadeOut_Quick
+        }
+
+        vbox = {
+		    resizeparent = yes
+            using = Window_Margins
+
+            header_pattern = {
+                layoutpolicy_horizontal = expanding
+
+                blockoverride "header_text"
+                {
+                    text = "newsfeed_settings_header"
+                }
+                blockoverride "button_back"
+                {
+                    visible = no
+                }
+                blockoverride "button_close"
+                {
+                    onclick = "[GetVariableSystem.Clear('newsfeed_settings_shown')]"
+                }
+            }
+
+            vbox = {
+                layoutpolicy_vertical = expanding
+
+                expand = {}
+
+                flowcontainer = {
+                    margin_top = 20
+                    margin_left = 50
+                    margin_right = 50
+                    text_multi = {
+                        text = newsfeed_settings_explanation
+                        align = center
+                        autoresize = yes
+                        max_width = 350
+                    }
+                }
+                
+                expand = {}
+
+                flowcontainer = {
+                    margin_top = 40
+                    margin_bottom = 50
+                    margin_left = 50
+                    margin_right = 50
+                    datamodel = "[GetPlayer.MakeScope.GetList('newsfeed_setting_containers')]"
+
+                    newsfeed_settings_label_column = {}
+
+                    item = {
+                        newsfeed_settings_subject_column = {}
+                    }
+                }
+
+                expand = {}
+            }
+        }
+    }
+
+    type newsfeed_settings_label_column = flowcontainer {
+        direction = vertical
+        datamodel = "[GetGlobalList('newsfeed_types')]"
+
+        margin_top = 45
+        margin_right = 8
+
+        item = {
+            flowcontainer = {
+                margin_bottom = 9
+                text_single = {
+                    align = right
+                    text = "[Localize(Concatenate(Scope.GetFlagName, '_label'))]"
+                    default_format = "#high"
+                }
+            }
+        }
+    }
+
+    type newsfeed_settings_subject_column = flowcontainer {
+        direction = vertical
+        datacontext = "[Scope.Story]"
+        datamodel = "[GetGlobalList('newsfeed_types')]"
+
+        flowcontainer = {
+            text_single = {
+                align = center
+                text = "[Localize(Concatenate(Story.MakeScope.GetVariable('newsfeed_subject').GetFlagName, '_icon'))]"
+                tooltip = "[Localize(Concatenate(Story.MakeScope.GetVariable('newsfeed_subject').GetFlagName, '_label'))]"
+            }
+            margin_bottom = 8
+        }
+
+        item = {
+            flowcontainer = {
+                margin_right = 8
+                button_checkbox = {
+                    checked = "[GetScriptedGui('newsfeed_setting_state_gui').IsValid( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('newsfeed_subject', MakeScopeFlag(Story.MakeScope.GetVariable('newsfeed_subject').GetFlagName)).AddScope('newsfeed_type', MakeScopeFlag(Scope.GetFlagName)).End )]"
+                    onclick = "[GetScriptedGui('newsfeed_setting_toggle_gui').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('newsfeed_subject', MakeScopeFlag(Story.MakeScope.GetVariable('newsfeed_subject').GetFlagName)).AddScope('newsfeed_type', MakeScopeFlag(Scope.GetFlagName)).End )]"
+                }
+            }
+        }
+    }
+}
