@@ -124,12 +124,3 @@
 
   newsfeed_rival_removed: "[Concept('rival', 'Rivalry')|E] Ended"
   newsfeed_rival_removed_desc: "Your rivalry with [SCOPE.sC('target').GetUIName] has ended"
-
-  newsfeed_marriage_main_spouse_root: "Your [GetPlayer.Custom2('RelationToMe', ROOT.Char)] [ROOT.Char.GetUIName]"
-  newsfeed_marriage_main_spouse_second: "Your [GetPlayer.Custom2('RelationToMe', SCOPE.sC('second'))] [SCOPE.sC('second').GetUIName]"
-
-  newsfeed_marriage_main_spouse_relation_root: "[GetPlayer.Custom2('newsfeed_relation_or_me', ROOT.Char)]"
-  newsfeed_marriage_main_spouse_relation_second: "[GetPlayer.Custom2('newsfeed_relation_or_me', SCOPE.sC('second'))]"
-
-  newsfeed_marriage_other_spouse_root: "[ROOT.Char.GetUIName]"
-  newsfeed_marriage_other_spouse_second: "[SCOPE.sC('second').GetUIName]"
