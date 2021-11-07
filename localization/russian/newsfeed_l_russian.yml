@@ -102,10 +102,10 @@
   newsfeed_war_lost_desc: "[SCOPE.sC('protagonist').GetUIName|U] терпит поражение [GetPlayer.Custom2('newsfeed_relation_name_or_me', SCOPE.sC('antagonist'))] по итогам [SCOPE.sWar('war').GetName]"
 
   newsfeed_war_white_peace: "[GetPlayer.Custom2('newsfeed_relation_or_me', SCOPE.sC('protagonist'))|U] Negotiated a [white_peace|E]"
-  newsfeed_war_white_peace_desc: "[SCOPE.sC('protagonist').GetUIName|U] ended the [SCOPE.sWar('war').GetName] with [GetPlayer.Custom2('newsfeed_relation_name_or_me', SCOPE.sC('defender'))] by white peace"
+  newsfeed_war_white_peace_desc: "[SCOPE.sC('protagonist').GetUIName|U] ended the [SCOPE.sWar('war').GetName] with [GetPlayer.Custom2('newsfeed_relation_name_or_me', SCOPE.sC('antagonist'))] by white peace"
 
   newsfeed_war_invalidated: "[GetPlayer.Custom2('newsfeed_relation_or_me', SCOPE.sC('protagonist'))|U] завершает [war|E]"
-  newsfeed_war_invalidated_desc: "[SCOPE.sC('protagonist').GetUINamePossessive|U] [SCOPE.sWar('war').GetName] с [GetPlayer.Custom2('newsfeed_relation_name_or_me', SCOPE.sC('defender'))] завершается прекращением повода для войны (отмена казус-белли)"
+  newsfeed_war_invalidated_desc: "[SCOPE.sC('protagonist').GetUINamePossessive|U] [SCOPE.sWar('war').GetName] с [GetPlayer.Custom2('newsfeed_relation_name_or_me', SCOPE.sC('antagonist'))] завершается прекращением повода для войны (отмена казус-белли)"
 
   newsfeed_lover_added: "У вас есть [lover|E]"
   newsfeed_lover_added_desc: "[SCOPE.sC('target').GetUIName|U] становится вашим любовником"
