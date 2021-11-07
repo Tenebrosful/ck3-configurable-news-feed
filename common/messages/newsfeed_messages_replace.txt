@@ -63,7 +63,6 @@ event_chancellor_task_bad = {
     tooltip = "newsfeed_type_chancellor_job"
 	title = event_message_title
 	desc = event_message_effect_and_text
-	tooltip = task_generic_notification_tooltip
 	style = bad
 	soundeffect = @msg_bad_soundeffect
 }
@@ -73,7 +72,6 @@ event_chancellor_task_good = {
     tooltip = "newsfeed_type_chancellor_job"
 	title = event_message_title
 	desc = event_message_effect_and_text
-	tooltip = task_generic_notification_tooltip
 	style = good
 	soundeffect = @msg_good_soundeffect
 }
@@ -83,7 +81,6 @@ event_marshal_task_bad = {
     tooltip = "newsfeed_type_marshal_job"
 	title = event_message_title
 	desc = event_message_effect_and_text
-	tooltip = task_generic_notification_tooltip
 	style = bad
 	soundeffect = @msg_bad_soundeffect
 }
@@ -93,7 +90,6 @@ event_marshal_task_good = {
     tooltip = "newsfeed_type_marshal_job"
 	title = event_message_title
 	desc = event_message_effect_and_text
-	tooltip = task_generic_notification_tooltip
 	style = good
 	soundeffect = @msg_good_soundeffect
 }
@@ -103,7 +99,6 @@ event_steward_task_bad = {
     tooltip = "newsfeed_type_steward_job"
 	title = event_message_title
 	desc = event_message_effect_and_text
-	tooltip = task_generic_notification_tooltip
 	style = bad
 	soundeffect = @msg_bad_soundeffect
 }
@@ -113,7 +108,6 @@ event_steward_task_good = {
     tooltip = "newsfeed_type_steward_job"
 	title = event_message_title
 	desc = event_message_effect_and_text
-	tooltip = task_generic_notification_tooltip
 	style = good
 	soundeffect = @msg_good_soundeffect
 }
@@ -123,7 +117,6 @@ event_spymaster_task_bad = {
     tooltip = "newsfeed_type_spy_master"
 	title = event_message_title
 	desc = event_message_effect_and_text
-	tooltip = task_generic_notification_tooltip
 	style = bad
 	soundeffect = @msg_bad_soundeffect
 }
@@ -133,7 +126,6 @@ event_spymaster_task_good = {
     tooltip = "newsfeed_type_spy_master"
 	title = event_message_title
 	desc = event_message_effect_and_text
-	tooltip = task_generic_notification_tooltip
 	style = good
 	soundeffect = @msg_good_soundeffect
 }
@@ -143,7 +135,6 @@ event_court_chaplain_task_bad = {
     tooltip = "newsfeed_type_religious_councillor_job"
 	title = event_message_title
 	desc = event_message_effect_and_text
-	tooltip = task_generic_notification_tooltip
 	style = bad
 	soundeffect = @msg_bad_soundeffect
 }
@@ -153,7 +144,6 @@ event_court_chaplain_task_good = {
     tooltip = "newsfeed_type_religious_councillor_job"
 	title = event_message_title
 	desc = event_message_effect_and_text
-	tooltip = task_generic_notification_tooltip
 	style = good
 	soundeffect = @msg_good_soundeffect
 }
@@ -373,8 +363,7 @@ event_captured_combatants_good = {
 	icon = "prison"
     tooltip = "newsfeed_type_prison"
 	title = event_message_title
-	desc = event_message_text
-	tooltip = event_message_effect
+	desc = event_message_effect_and_text
 	style = good
 	soundeffect = @msg_good_soundeffect
 }
@@ -383,8 +372,7 @@ event_captured_combatants_neutral = {
 	icon = "prison"
     tooltip = "newsfeed_type_prison"
 	title = event_message_title
-	desc = event_message_text
-	tooltip = event_message_effect
+	desc = event_message_effect_and_text
 	style = neutral
 	soundeffect = @msg_neutral_soundeffect
 }
@@ -393,8 +381,7 @@ event_captured_combatants_bad = {
 	icon = "prison"
     tooltip = "newsfeed_type_prison"
 	title = event_message_title
-	desc = event_message_text
-	tooltip = event_message_effect
+	desc = event_message_effect_and_text
 	style = bad
 	soundeffect = @msg_bad_soundeffect
 }
@@ -403,8 +390,7 @@ event_slain_combatants_good = {
 	icon = "death_desease"
     tooltip = "newsfeed_type_death_desease"
 	title = event_message_title
-	desc = event_message_text
-	tooltip = event_message_effect
+	desc = event_message_effect_and_text
 	style = good
 	soundeffect = @msg_good_soundeffect
 }
@@ -413,8 +399,7 @@ event_slain_combatants_neutral = {
 	icon = "death_natural"
     tooltip = "newsfeed_type_death_natural"
 	title = event_message_title
-	desc = event_message_text
-	tooltip = event_message_effect
+	desc = event_message_effect_and_text
 	style = neutral
 	soundeffect = @msg_neutral_soundeffect
 }
@@ -423,8 +408,7 @@ event_slain_combatants_bad = {
 	icon = "death_murder"
     tooltip = "newsfeed_type_death_murder"
 	title = event_message_title
-	desc = event_message_text
-	tooltip = event_message_effect
+	desc = event_message_effect_and_text
 	style = bad
 	soundeffect = @msg_bad_soundeffect
 }
@@ -493,7 +477,6 @@ event_heresy_outbreak_neutral = {
     tooltip = "newsfeed_type_heresy"
 	title = event_message_title
 	desc = event_message_effect
-	tooltip = send_interface_message_tooltip
 	soundeffect = @msg_neutral_soundeffect
 }
 
@@ -502,7 +485,6 @@ event_heresy_outbreak_bad = {
     tooltip = "newsfeed_type_heresy"
 	title = event_message_title
 	desc = event_message_effect
-	tooltip = send_interface_message_tooltip
 	style = bad
 	soundeffect = @msg_bad_soundeffect
 }
@@ -512,7 +494,6 @@ event_heresy_outbreak_good = {
     tooltip = "newsfeed_type_heresy"
 	title = event_message_title
 	desc = event_message_effect
-	tooltip = send_interface_message_tooltip
 	style = good
 	soundeffect = @msg_good_soundeffect
 }
