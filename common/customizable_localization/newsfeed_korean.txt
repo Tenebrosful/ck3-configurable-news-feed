@@ -1,0 +1,50 @@
+﻿newsfeed_korean_name_subject = {
+	type = character
+
+	text = {
+		trigger = {
+			root = scope:second
+		}
+
+		localization_key = newsfeed_korean_name_subject_me
+	}
+
+	text = {
+		fallback = yes
+		localization_key = newsfeed_korean_name_subject_other
+	}
+}
+
+newsfeed_korean_relation_subject = {
+	type = character
+
+	text = {
+		trigger = {
+			root = scope:second
+		}
+
+		localization_key = newsfeed_korean_relation_subject_me
+	}
+
+	text = {
+		fallback = yes
+		localization_key = newsfeed_korean_relation_subject_other
+	}
+}
+
+newsfeed_korean_relation_possessive = {
+	type = character
+
+	text = {
+		trigger = {
+			root = scope:second
+		}
+
+		localization_key = newsfeed_korean_relation_possessive_me
+	}
+
+	text = {
+		fallback = yes
+		localization_key = newsfeed_korean_relation_possessive_other
+	}
+}
