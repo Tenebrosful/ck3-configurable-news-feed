@@ -5,6 +5,12 @@
 }
 
 newsfeed_on_character_culture_change = {
+	trigger = {
+		any_player = {
+			newsfeed_is_interested_in_culture = { PERSON = root }
+		}
+	}
+
     effect = {
         every_player = {
             limit = {
