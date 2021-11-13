@@ -1,0 +1,3 @@
+﻿l_english:
+  newsfeed_relation_name: "[Scope.Char.Custom2('newsfeed_relation_prefix', second.Self)][second.GetUIName]"
+  newsfeed_relation_prefix: "[Localize('CHARACTER_NAME_MY')] [Scope.Char.Custom2('RelationToMe', second.Self)] "
