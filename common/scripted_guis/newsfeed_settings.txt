@@ -4,8 +4,8 @@
     is_valid = {
         is_alive = yes
         NAND = {
-            exists = var:newsfeed_migrated_v4
-            var:newsfeed_migrated_v4 = yes
+            exists = var:newsfeed_migrated_v5
+            var:newsfeed_migrated_v5 = yes
         }
     }
 
@@ -40,7 +40,7 @@
         }
 
         set_variable = {
-            name = newsfeed_migrated_v4
+            name = newsfeed_migrated_v5
             value = yes
         }
     }

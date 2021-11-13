@@ -10,7 +10,7 @@ types NewsFeed {
         parentanchor = center
         layer = top
 
-        size = { 720 720 }
+        size = { 720 800 }
 
         state = {
             name = _show

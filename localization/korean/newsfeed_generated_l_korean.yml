@@ -1,4 +1,6 @@
 ﻿l_korean:
+  newsfeed_type_faith_label: "[faith|E]"
+  newsfeed_type_culture_label: "[culture|E]"
   newsfeed_suppress: "newsfeed_suppress"
   declare_war_interaction_notification: "$newsfeed_suppress$"
   pregnancy_not_first_child_message: "$newsfeed_suppress$"

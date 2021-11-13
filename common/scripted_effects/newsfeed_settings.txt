@@ -6,6 +6,8 @@
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_offensive_war }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_defensive_war }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_titles }
+    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_faith }
+    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_culture }
     
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_pregnancy }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_birth }
@@ -13,6 +15,8 @@
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_offensive_war }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_defensive_war }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_titles }
+    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_faith }
+    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_culture }
     
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_marriage }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_birth }
@@ -20,6 +24,8 @@
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_offensive_war }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_defensive_war }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_titles }
+    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_faith }
+    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_culture }
     
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_extended_dynastic_family type = flag:newsfeed_type_birth }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_extended_dynastic_family type = flag:newsfeed_type_death }
@@ -28,11 +34,15 @@
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_liege type = flag:newsfeed_type_offensive_war }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_liege type = flag:newsfeed_type_defensive_war }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_liege type = flag:newsfeed_type_titles }
+    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_liege type = flag:newsfeed_type_faith }
+    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_liege type = flag:newsfeed_type_culture }
     
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_direct_vassal type = flag:newsfeed_type_death }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_direct_vassal type = flag:newsfeed_type_offensive_war }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_direct_vassal type = flag:newsfeed_type_defensive_war }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_direct_vassal type = flag:newsfeed_type_titles }
+    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_direct_vassal type = flag:newsfeed_type_faith }
+    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_direct_vassal type = flag:newsfeed_type_culture }
 
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_courtier type = flag:newsfeed_type_marriage }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_courtier type = flag:newsfeed_type_birth }
@@ -45,6 +55,8 @@
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_pinned_character type = flag:newsfeed_type_offensive_war }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_pinned_character type = flag:newsfeed_type_defensive_war }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_pinned_character type = flag:newsfeed_type_titles }
+    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_pinned_character type = flag:newsfeed_type_faith }
+    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_pinned_character type = flag:newsfeed_type_culture }
 }
 
 newsfeed_reset_settings_to_default = {
@@ -103,6 +115,8 @@ newsfeed_ensure_global_subjects_and_types = {
     newsfeed_create_type = { type = offensive_war }
     newsfeed_create_type = { type = defensive_war }
     newsfeed_create_type = { type = titles }
+    newsfeed_create_type = { type = faith }
+    newsfeed_create_type = { type = culture }
 
     newsfeed_remove_type = { type = war }
 }

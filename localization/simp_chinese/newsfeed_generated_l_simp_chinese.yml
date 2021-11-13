@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+  newsfeed_faith_changed: "[GetPlayer.Custom2('newsfeed_relation', ROOT.Char)|U] Converted Faith"
+  newsfeed_faith_changed_same: "[GetPlayer.Custom2('newsfeed_relation', ROOT.Char)|U] Embraces the True Faith"
+  newsfeed_faith_changed_heresy: "[GetPlayer.Custom2('newsfeed_relation', ROOT.Char)|U] Embraces Heresy"
+  newsfeed_faith_changed_desc: "[ROOT.Char.GetUIName|U] converted from [SCOPE.sFaith('old_faith').GetName] to [ROOT.Char.GetFaith.GetName]"
+  newsfeed_culture_changed: "[GetPlayer.Custom2('newsfeed_relation', ROOT.Char)|U] Changed Culture"
+  newsfeed_culture_changed_desc: "[ROOT.Char.GetUINamePossessive|U] culture changed to [ROOT.Char.GetCulture.GetName]"
+  newsfeed_type_faith_label: "[faith|E]"
+  newsfeed_type_culture_label: "[culture|E]"

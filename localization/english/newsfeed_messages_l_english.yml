@@ -97,6 +97,14 @@
   newsfeed_war_invalidated: "[GetPlayer.Custom2('newsfeed_relation', SCOPE.sC('protagonist'))|U] Concluded a [war|E]"
   newsfeed_war_invalidated_desc: "[SCOPE.sC('protagonist').GetUINamePossessive|U] [SCOPE.sWar('war').GetName] with [GetPlayer.Custom2('newsfeed_relation_name', SCOPE.sC('antagonist'))] ended by invalid casus belli"
 
+  newsfeed_faith_changed: "[GetPlayer.Custom2('newsfeed_relation', ROOT.Char)|U] Converted Faith"
+  newsfeed_faith_changed_same: "[GetPlayer.Custom2('newsfeed_relation', ROOT.Char)|U] Embraces the True Faith"
+  newsfeed_faith_changed_heresy: "[GetPlayer.Custom2('newsfeed_relation', ROOT.Char)|U] Embraces Heresy"
+  newsfeed_faith_changed_desc: "[ROOT.Char.GetUIName|U] converted from [SCOPE.sFaith('old_faith').GetName] to [ROOT.Char.GetFaith.GetName]"
+
+  newsfeed_culture_changed: "[GetPlayer.Custom2('newsfeed_relation', ROOT.Char)|U] Changed Culture"
+  newsfeed_culture_changed_desc: "[ROOT.Char.GetUINamePossessive|U] culture changed to [ROOT.Char.GetCulture.GetName]"
+
   newsfeed_lover_added: "New [lover|E]"
   newsfeed_lover_added_desc: "[SCOPE.sC('target').GetUIName|U] has become your lover"
 

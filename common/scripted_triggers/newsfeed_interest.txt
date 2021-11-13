@@ -93,3 +93,17 @@ newsfeed_is_interested_in_death = {
         type = flag:newsfeed_type_death
     }
 }
+
+newsfeed_is_interested_in_faith = {
+    newsfeed_is_setting_enabled_for_person = {
+        PERSON = $PERSON$
+        type = flag:newsfeed_type_faith
+    }
+}
+
+newsfeed_is_interested_in_culture = {
+    newsfeed_is_setting_enabled_for_person = {
+        PERSON = $PERSON$
+        type = flag:newsfeed_type_culture
+    }
+}

@@ -1,0 +1,53 @@
+﻿on_character_faith_change = {
+    on_actions = {
+        newsfeed_on_character_faith_change
+    }
+}
+
+newsfeed_on_character_faith_change = {
+    effect = {
+        every_player = {
+            limit = {
+				newsfeed_is_interested_in_faith = { PERSON = root }
+            }
+
+			if = {
+				limit = {
+					NOT = { this = root }
+					this.faith = root.faith
+				}
+
+				send_interface_message = {
+					type = newsfeed_faith
+					title = newsfeed_faith_changed_same
+					desc = newsfeed_faith_changed_desc
+				}
+			}
+			else_if = {
+				limit = {
+					this.faith = scope:old_faith
+					this.faith.religion = root.faith.religion
+					this.faith = {
+						faith_hostility_level = {
+							target = root.faith
+							value >= 1
+						}
+					}
+				}
+
+				send_interface_message = {
+					type = newsfeed_faith
+					title = newsfeed_faith_changed_heresy
+					desc = newsfeed_faith_changed_desc
+				}
+			}
+			else = {
+				send_interface_message = {
+					type = newsfeed_faith
+					title = newsfeed_faith_changed
+					desc = newsfeed_faith_changed_desc
+				}
+			}
+        }
+    }
+}

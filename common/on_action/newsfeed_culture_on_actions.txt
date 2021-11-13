@@ -1,0 +1,21 @@
+﻿on_character_culture_change = {
+    on_actions = {
+        newsfeed_on_character_culture_change
+    }
+}
+
+newsfeed_on_character_culture_change = {
+    effect = {
+        every_player = {
+            limit = {
+				newsfeed_is_interested_in_culture = { PERSON = root }
+            }
+
+			send_interface_message = {
+				type = newsfeed_culture
+				title = newsfeed_culture_changed
+				desc = newsfeed_culture_changed_desc
+			}
+        }
+    }
+}

@@ -51,6 +51,11 @@ types NewsFeed {
         }
 
         newsfeed_message_icon = {
+            visible = "[EqualTo_string('newsfeed_type_culture', Scope.GetVariable('newsfeed_message_type').GetFlagName)]"
+            texture = "gfx/interface/icons/icon_culture.dds"
+        }
+
+        newsfeed_message_icon = {
             visible = "[EqualTo_string('newsfeed_type_death_desease', Scope.GetVariable('newsfeed_message_type').GetFlagName)]"
             texture = "gfx/interface/icons/message_feed/death_desease.dds"
         }

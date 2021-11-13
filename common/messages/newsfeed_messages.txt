@@ -106,3 +106,21 @@ newsfeed_death = {
 	style = neutral
 	soundeffect = @msg_neutral_soundeffect
 }
+
+newsfeed_faith = {
+    icon = "religious"
+    tooltip = "newsfeed_type_religious"
+	title = event_message_title
+    desc = event_message_text
+	style = neutral
+	soundeffect = @msg_neutral_soundeffect
+}
+
+newsfeed_culture = {
+    icon = "culture"
+    tooltip = "newsfeed_type_culture"
+	title = event_message_title
+    desc = event_message_text
+	style = neutral
+	soundeffect = @msg_neutral_soundeffect
+}

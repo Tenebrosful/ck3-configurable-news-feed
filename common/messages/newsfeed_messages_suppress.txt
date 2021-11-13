@@ -41,3 +41,7 @@ msg_lost_single_title = {
 msg_lost_titles = {
     tooltip = newsfeed_suppress
 }
+
+culture_conversion = {
+    tooltip = newsfeed_suppress
+}
