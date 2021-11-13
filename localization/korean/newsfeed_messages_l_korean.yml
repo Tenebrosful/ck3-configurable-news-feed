@@ -102,7 +102,7 @@
   newsfeed_faith_changed_heresy: "[GetPlayer.Custom2('newsfeed_korean_relation_subject', ROOT.Char)|U]이단을 받아들임"
   newsfeed_faith_changed_desc: "[GetPlayer.Custom2('newsfeed_korean_name_subject', ROOT.Char)|U][SCOPE.sFaith('old_faith').GetName]에서 [ROOT.Char.GetFaith.GetName] 신앙으로 개종했습니다."
 
-  newsfeed_culture_changed: "[GetPlayer.Custom2('newsfeed_korean_relation_possessive', ROOT.Char)|U] [culture|E]"
+  newsfeed_culture_changed: "[GetPlayer.Custom2('newsfeed_korean_relation_possessive', ROOT.Char)|U][culture|E]"
   newsfeed_culture_changed_desc: "[GetPlayer.Custom2('newsfeed_korean_name_subject', ROOT.Char)|U][ROOT.Char.GetCulture.GetName] 문화로 전향했습니다."
 
   newsfeed_lover_added: "새로운 [lover|E]"
