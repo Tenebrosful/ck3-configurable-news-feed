@@ -4,11 +4,5 @@
 	effect = {
 		newsfeed_send_test_message = yes
 		newsfeed_send_test_toast = yes
-
-		every_religion_global = {
-			every_faith = {
-				trigger_event = heresy.0001
-			}
-		}
 	}
 }
