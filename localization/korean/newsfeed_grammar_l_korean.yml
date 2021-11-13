@@ -1,6 +1,6 @@
 ﻿l_korean:
   newsfeed_relation_prefix: "당신의 [Scope.Char.Custom2('RelationToMe', second.Self)]인 "
-  newsfeed_relation_and_name: "[Scope.Char.Custom2('newsfeed_relation_prefix', second.Self)][second.GetUIName]"
+  newsfeed_relation_name: "[Scope.Char.Custom2('newsfeed_relation_prefix', second.Self)][second.GetUIName]"
 
   newsfeed_korean_name_subject_me: ""
   newsfeed_korean_name_subject_other: "[second.GetUIName](이)가 "

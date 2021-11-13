@@ -1,5 +1,4 @@
 ﻿l_korean:
-  newsfeed_relation_name: "[Scope.Char.Custom2('newsfeed_relation_prefix', second.Self)][second.GetUIName]"
   newsfeed_suppress: "newsfeed_suppress"
   declare_war_interaction_notification: "$newsfeed_suppress$"
   pregnancy_not_first_child_message: "$newsfeed_suppress$"

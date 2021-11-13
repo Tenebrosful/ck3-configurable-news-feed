@@ -80,22 +80,22 @@
   newsfeed_powerful_vassal_desc: "[GetPlayer.Custom2('newsfeed_korean_name_subject', SCOPE.sC('vassal'))|U][council|E] 위원이 되기를 기대하고 있습니다."
 
   newsfeed_war_declared_by_subject: "[GetPlayer.Custom2('newsfeed_korean_relation_subject', SCOPE.sC('attacker'))|U][war|E]을 선포함"
-  newsfeed_war_declared_by_subject_desc: "[GetPlayer.Custom2('newsfeed_korean_name_subject', SCOPE.sC('attacker'))|U][GetPlayer.Custom2('newsfeed_relation_and_name', SCOPE.sC('defender'))]에게 [SCOPE.sWar('war').GetName] 전쟁을 선포핬습니다."
+  newsfeed_war_declared_by_subject_desc: "[GetPlayer.Custom2('newsfeed_korean_name_subject', SCOPE.sC('attacker'))|U][GetPlayer.Custom2('newsfeed_relation_name', SCOPE.sC('defender'))]에게 [SCOPE.sWar('war').GetName] 전쟁을 선포핬습니다."
 
   newsfeed_war_declared_on_subject: "[GetPlayer.Custom2('newsfeed_korean_relation_subject', SCOPE.sC('defender'))|U]에게 [war|E]이 선포됨"
-  newsfeed_war_declared_on_subject_desc: "[GetPlayer.Custom2('newsfeed_korean_name_subject', SCOPE.sC('attacker'))|U][GetPlayer.Custom2('newsfeed_relation_and_name', SCOPE.sC('defender'))]에게 [SCOPE.sWar('war').GetName] 전쟁을 선포핬습니다."
+  newsfeed_war_declared_on_subject_desc: "[GetPlayer.Custom2('newsfeed_korean_name_subject', SCOPE.sC('attacker'))|U][GetPlayer.Custom2('newsfeed_relation_name', SCOPE.sC('defender'))]에게 [SCOPE.sWar('war').GetName] 전쟁을 선포핬습니다."
 
   newsfeed_war_won: "[GetPlayer.Custom2('newsfeed_korean_relation_possessive', SCOPE.sC('protagonist'))|U][war|E] 승리"
-  newsfeed_war_won_desc: "[GetPlayer.Custom2('newsfeed_korean_name_subject', SCOPE.sC('protagonist'))|U][GetPlayer.Custom2('newsfeed_relation_and_name', SCOPE.sC('antagonist'))](와)과의 [SCOPE.sWar('war').GetName] 전쟁에서 승리핬습니다."
+  newsfeed_war_won_desc: "[GetPlayer.Custom2('newsfeed_korean_name_subject', SCOPE.sC('protagonist'))|U][GetPlayer.Custom2('newsfeed_relation_name', SCOPE.sC('antagonist'))](와)과의 [SCOPE.sWar('war').GetName] 전쟁에서 승리핬습니다."
 
   newsfeed_war_lost: "[GetPlayer.Custom2('newsfeed_korean_relation_possessive', SCOPE.sC('protagonist'))|U][war|E] 패배"
-  newsfeed_war_lost_desc: "[GetPlayer.Custom2('newsfeed_korean_name_subject', SCOPE.sC('protagonist'))|U][GetPlayer.Custom2('newsfeed_relation_and_name', SCOPE.sC('antagonist'))](와)과의 [SCOPE.sWar('war').GetName] 전쟁에서 패배핬습니다."
+  newsfeed_war_lost_desc: "[GetPlayer.Custom2('newsfeed_korean_name_subject', SCOPE.sC('protagonist'))|U][GetPlayer.Custom2('newsfeed_relation_name', SCOPE.sC('antagonist'))](와)과의 [SCOPE.sWar('war').GetName] 전쟁에서 패배핬습니다."
 
   newsfeed_war_white_peace: "[GetPlayer.Custom2('newsfeed_korean_relation_subject', SCOPE.sC('protagonist'))|U](이)가 [white_peace|E]를 협상함"
-  newsfeed_war_white_peace_desc: "[SCOPE.sC('protagonist').GetUIName|U](와)과 [GetPlayer.Custom2('newsfeed_relation_and_name', SCOPE.sC('antagonist'))] [SCOPE.sWar('war').GetName] 전쟁이 무조건 평화로 끝났습니다."
+  newsfeed_war_white_peace_desc: "[SCOPE.sC('protagonist').GetUIName|U](와)과 [GetPlayer.Custom2('newsfeed_relation_name', SCOPE.sC('antagonist'))] [SCOPE.sWar('war').GetName] 전쟁이 무조건 평화로 끝났습니다."
 
   newsfeed_war_invalidated: "[GetPlayer.Custom2('newsfeed_korean_relation_possessive', SCOPE.sC('protagonist'))|U][war|E]이 끝남"
-  newsfeed_war_invalidated_desc: "[SCOPE.sC('protagonist').GetUIName|U](와)과 [GetPlayer.Custom2('newsfeed_relation_and_name', SCOPE.sC('antagonist'))] [SCOPE.sWar('war').GetName] 전쟁이 무효화로 끝났습니다."
+  newsfeed_war_invalidated_desc: "[SCOPE.sC('protagonist').GetUIName|U](와)과 [GetPlayer.Custom2('newsfeed_relation_name', SCOPE.sC('antagonist'))] [SCOPE.sWar('war').GetName] 전쟁이 무효화로 끝났습니다."
 
   newsfeed_lover_added: "새로운 [lover|E]"
   newsfeed_lover_added_desc: "[SCOPE.sC('target').GetUIName|U](와)과 연인이 됬습니다"
