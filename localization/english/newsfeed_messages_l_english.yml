@@ -24,7 +24,7 @@
   newsfeed_birth_twins_desc: "#high [SCOPE.sC('child').GetFirstName|U]#! and [SCOPE.sC('second_child').GetShortUIName|U] were born to [SCOPE.sC('father').GetUIName] and [SCOPE.sC('mother').GetUIName]"
   newsfeed_birth_twins_no_father_desc: "#high [SCOPE.sC('child').GetFirstName|U]#! and [SCOPE.sC('second_child').GetShortUIName|U] were born to [SCOPE.sC('mother').GetUIName]"
 
-  newsfeed_death: "[Localize(SCOPE.GetFlagName('newsfeed_dead_character_relation'))|U] Died"
+  newsfeed_death: "[Localize(SCOPE.GetFlagName('newsfeed_dead_character_relation'))|U] Passed Away"
   newsfeed_death_desc: "[SCOPE.sC('newsfeed_dead_character').GetUIName|U] [SCOPE.sC('newsfeed_dead_character').GetDeathReason]"
 
   newsfeed_title_created: "[GetPlayer.Custom2('newsfeed_relation', ROOT.Char)|U] Created Title"
