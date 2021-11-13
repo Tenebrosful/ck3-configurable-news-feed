@@ -1,4 +1,4 @@
-﻿newsfeed_relation_if_not_acquaintance = {
+﻿newsfeed_relation_prefix = {
     type = character
 
     text = {
