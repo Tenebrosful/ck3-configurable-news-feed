@@ -116,6 +116,13 @@ types NewsFeed {
             parentanchor = top|right
             margin = { 8 8 }
             button_close = {
+                name = "button_close"
+                shortcut = "close_window"
+                tooltip = "CLOSE_TOOLTIP"
+                clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_close"
+    
+                using = Animation_ShowHide_Standard
+
                 block "button_close" {}
             }
         }
