@@ -93,23 +93,3 @@ newsfeed_is_interested_in_death = {
         type = flag:newsfeed_type_death
     }
 }
-
-newsfeed_is_closer_than = {
-    OR = {
-        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = self }
-        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = child }
-        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = grandchild }
-        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = spouse }
-        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = sibling }
-        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = parent }
-        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = grandparent }
-        newsfeed_beats_by_relation = { first = $first$ second = $second$ relation = extended_dynastic_family }
-    }
-}
-
-newsfeed_beats_by_relation = {
-    AND = {
-        $first$ = { prev = { newsfeed_is_my_$relation$ = { PERSON = prev } } }
-        NOT = { $second$ = { prev = { newsfeed_is_my_$relation$ = { PERSON = prev } } } }
-    }
-}
