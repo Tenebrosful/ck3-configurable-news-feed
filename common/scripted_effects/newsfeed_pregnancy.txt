@@ -10,6 +10,7 @@
             type = newsfeed_pregnancy
             title = newsfeed_pregnancy_mother
             desc = newsfeed_pregnancy_no_father_desc
+            right_icon = scope:mother
         }
     }
     else_if = {
@@ -21,6 +22,7 @@
             type = newsfeed_pregnancy
             title = newsfeed_pregnancy_mother
             desc = newsfeed_pregnancy_desc
+            right_icon = scope:mother
         }
     }
     else = {
@@ -28,6 +30,8 @@
             type = newsfeed_pregnancy
             title = newsfeed_pregnancy_father
             desc = newsfeed_pregnancy_desc
+            right_icon = scope:mother
+            left_icon = scope:father
         }
     }
 }
@@ -44,6 +48,7 @@ newsfeed_notify_pregnancy_ended_effect = {
             type = newsfeed_pregnancy_ended
             title = newsfeed_pregnancy_ended_mother
             desc = newsfeed_pregnancy_ended_no_father_desc
+            right_icon = scope:mother
         }
     }
     else_if = {
@@ -55,6 +60,7 @@ newsfeed_notify_pregnancy_ended_effect = {
             type = newsfeed_pregnancy_ended
             title = newsfeed_pregnancy_ended_mother
             desc = newsfeed_pregnancy_ended_desc
+            right_icon = scope:mother
         }
     }
     else = {
@@ -62,6 +68,8 @@ newsfeed_notify_pregnancy_ended_effect = {
             type = newsfeed_pregnancy_ended
             title = newsfeed_pregnancy_ended_father
             desc = newsfeed_pregnancy_ended_desc
+            right_icon = scope:mother
+            left_icon = scope:father
         }
     }
 }

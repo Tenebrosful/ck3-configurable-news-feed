@@ -20,6 +20,8 @@ newsfeed_on_war_started = {
                     type = newsfeed_war
                     title = newsfeed_war_declared_by_subject
                     desc = newsfeed_war_declared_by_subject_desc
+                    right_icon = scope:attacker
+                    left_icon = scope:defender
                 }
             }
             else_if = {  
@@ -31,6 +33,8 @@ newsfeed_on_war_started = {
                     type = newsfeed_war
                     title = newsfeed_war_declared_on_subject
                     desc = newsfeed_war_declared_on_subject_desc
+                    right_icon = scope:attacker
+                    left_icon = scope:defender
                 }
             }
         }
@@ -62,6 +66,8 @@ newsfeed_on_war_won_attacker = {
                     type = newsfeed_war
                     title = newsfeed_war_won
                     desc = newsfeed_war_won_desc
+                    right_icon = scope:attacker
+                    left_icon = scope:defender
                 }
             }
             else_if = {  
@@ -76,6 +82,8 @@ newsfeed_on_war_won_attacker = {
                     type = newsfeed_war
                     title = newsfeed_war_lost
                     desc = newsfeed_war_lost_desc
+                    right_icon = scope:attacker
+                    left_icon = scope:defender
                 }
             }
         }
@@ -107,6 +115,8 @@ newsfeed_on_war_won_defender = {
                     type = newsfeed_war
                     title = newsfeed_war_lost
                     desc = newsfeed_war_lost_desc
+                    right_icon = scope:attacker
+                    left_icon = scope:defender
                 }
             }
             else_if = {  
@@ -121,6 +131,8 @@ newsfeed_on_war_won_defender = {
                     type = newsfeed_war
                     title = newsfeed_war_won
                     desc = newsfeed_war_won_desc
+                    right_icon = scope:attacker
+                    left_icon = scope:defender
                 }
             }
         }
@@ -152,6 +164,8 @@ newsfeed_on_war_white_peace = {
                     type = newsfeed_war
                     title = newsfeed_war_white_peace
                     desc = newsfeed_war_white_peace_desc
+                    right_icon = scope:attacker
+                    left_icon = scope:defender
                 }
             }
             else_if = {  
@@ -166,6 +180,8 @@ newsfeed_on_war_white_peace = {
                     type = newsfeed_war
                     title = newsfeed_war_white_peace
                     desc = newsfeed_war_white_peace_desc
+                    right_icon = scope:attacker
+                    left_icon = scope:defender
                 }
             }
         }
@@ -197,6 +213,8 @@ newsfeed_on_war_invalidated = {
                     type = newsfeed_war
                     title = newsfeed_war_invalidated
                     desc = newsfeed_war_invalidated_desc
+                    right_icon = scope:attacker
+                    left_icon = scope:defender
                 }
             }
             else_if = {  
@@ -211,6 +229,8 @@ newsfeed_on_war_invalidated = {
                     type = newsfeed_war
                     title = newsfeed_war_invalidated
                     desc = newsfeed_war_invalidated_desc
+                    right_icon = scope:attacker
+                    left_icon = scope:defender
                 }
             }
         }

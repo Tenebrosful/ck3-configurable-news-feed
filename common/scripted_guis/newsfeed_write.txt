@@ -6,9 +6,12 @@
         newsfeed_message_title
         newsfeed_message_desc
         newsfeed_message_date
+        newsfeed_message_left_character
+        newsfeed_message_right_character
     }
 
     effect = {
+        debug_log_scopes = yes
         if = {
             limit = {
                 NOR = {
@@ -23,6 +26,8 @@
                 title = scope:newsfeed_message_title
                 desc = scope:newsfeed_message_desc
                 date = scope:newsfeed_message_date
+                left_character = scope:newsfeed_message_left_character
+                right_character = scope:newsfeed_message_right_character
             }
         }
     }

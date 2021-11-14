@@ -21,6 +21,7 @@ newsfeed_on_character_culture_change = {
 				type = newsfeed_culture
 				title = newsfeed_culture_changed
 				desc = newsfeed_culture_changed_desc
+				right_icon = root
 			}
         }
     }

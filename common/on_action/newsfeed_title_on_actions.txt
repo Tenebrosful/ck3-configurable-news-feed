@@ -35,6 +35,7 @@ newsfeed_on_title_created = {
                 type = newsfeed_titles
                 title = newsfeed_title_created
                 desc = newsfeed_title_created_desc
+                left_icon = root
             }
         }
     }
@@ -110,6 +111,8 @@ newsfeed_on_title_abdicated = {
                     type = newsfeed_titles
                     title = newsfeed_title_abdicated_recipient
                     desc = newsfeed_title_abdicated_desc
+                    right_icon = root
+                    left_icon = scope:previous_holder
                 }
             }
             else_if = {
@@ -121,6 +124,8 @@ newsfeed_on_title_abdicated = {
                     type = newsfeed_titles
                     title = newsfeed_title_abdicated_predecessor
                     desc = newsfeed_title_abdicated_desc
+                    right_icon = root
+                    left_icon = scope:previous_holder
                 }
             }
         }
@@ -141,6 +146,8 @@ newsfeed_on_title_usurped = {
                     type = newsfeed_titles
                     title = newsfeed_title_usurped_recipient
                     desc = newsfeed_title_usurped_desc
+                    right_icon = root
+                    left_icon = scope:previous_holder
                 }
             }
             else_if = {
@@ -152,6 +159,8 @@ newsfeed_on_title_usurped = {
                     type = newsfeed_titles
                     title = newsfeed_title_usurped_predecessor
                     desc = newsfeed_title_usurped_desc
+                    right_icon = root
+                    left_icon = scope:previous_holder
                 }
             }
         }
@@ -172,6 +181,8 @@ newsfeed_on_title_granted = {
                     type = newsfeed_titles
                     title = newsfeed_title_granted_predecessor
                     desc = newsfeed_title_granted_desc
+                    right_icon = root
+                    left_icon = scope:previous_holder
                 }
             }
             else_if = {
@@ -183,6 +194,8 @@ newsfeed_on_title_granted = {
                     type = newsfeed_titles
                     title = newsfeed_title_granted_recipient
                     desc = newsfeed_title_granted_desc
+                    right_icon = root
+                    left_icon = scope:previous_holder
                 }
             }
         }
@@ -203,6 +216,8 @@ newsfeed_on_title_revoked = {
                     type = newsfeed_titles
                     title = newsfeed_title_revoked_recipient
                     desc = newsfeed_title_revoked_desc
+                    right_icon = root
+                    left_icon = scope:previous_holder
                 }
             }
             else_if = {

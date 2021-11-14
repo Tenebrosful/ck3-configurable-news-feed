@@ -27,6 +27,7 @@ newsfeed_on_character_faith_change = {
 					type = newsfeed_faith
 					title = newsfeed_faith_changed_same
 					desc = newsfeed_faith_changed_desc
+					right_icon = root
 				}
 			}
 			else_if = {
@@ -45,6 +46,7 @@ newsfeed_on_character_faith_change = {
 					type = newsfeed_faith
 					title = newsfeed_faith_changed_heresy
 					desc = newsfeed_faith_changed_desc
+					right_icon = root
 				}
 			}
 			else = {
@@ -52,6 +54,7 @@ newsfeed_on_character_faith_change = {
 					type = newsfeed_faith
 					title = newsfeed_faith_changed
 					desc = newsfeed_faith_changed_desc
+					right_icon = root
 				}
 			}
         }

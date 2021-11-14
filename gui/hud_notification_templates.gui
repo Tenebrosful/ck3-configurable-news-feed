@@ -1412,7 +1412,7 @@
                     state = {
                         name = write_message
                         trigger_on_create = yes
-                        on_start = "[GetScriptedGui('newsfeed_write_message_gui').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('newsfeed_message_title', MakeScopeFlag(PlayerMessageItem.GetTitle)).AddScope('newsfeed_message_desc', MakeScopeFlag(PlayerMessageItem.GetDescription)).AddScope('newsfeed_message_tooltip', MakeScopeFlag(Select_CString(StringIsEmpty(PlayerMessageItem.GetTooltip), 'newsfeed_type__default', PlayerMessageItem.GetTooltip))).AddScope('newsfeed_message_date', MakeScopeFlag(PlayerMessageItem.GetDate.GetStringShort)).End )]"
+                        on_start = "[GetScriptedGui('newsfeed_write_message_gui').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('newsfeed_message_title', MakeScopeFlag(PlayerMessageItem.GetTitle)).AddScope('newsfeed_message_desc', MakeScopeFlag(PlayerMessageItem.GetDescription)).AddScope('newsfeed_message_tooltip', MakeScopeFlag(Select_CString(StringIsEmpty(PlayerMessageItem.GetTooltip), 'newsfeed_type__default', PlayerMessageItem.GetTooltip))).AddScope('newsfeed_message_date', MakeScopeFlag(PlayerMessageItem.GetDate.GetStringShort)).AddScope('newsfeed_message_left_character', PlayerMessageItem.GetLeftCharacter.MakeScope).AddScope('newsfeed_message_right_character', PlayerMessageItem.GetRightCharacter.MakeScope).End )]"
                         next = delete_message
                     }
 

@@ -10,6 +10,7 @@ newsfeed_death.0001 = {
             type = newsfeed_death
             title = newsfeed_death
             desc = newsfeed_death_desc
+            right_icon = scope:newsfeed_dead_character
         }
 	}
 }

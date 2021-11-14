@@ -29,6 +29,8 @@
                 type = newsfeed_titles
                 title = newsfeed_titles_inherited
                 desc = newsfeed_titles_inherited_desc
+                right_icon = scope:newsfeed_inheritor
+                left_icon = scope:newsfeed_previous_holder
             }
         }
 

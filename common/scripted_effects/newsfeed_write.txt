@@ -38,6 +38,14 @@
             name = newsfeed_message_date
             value = $date$
         }
+        set_variable = {
+            name = newsfeed_message_left_character
+            value = $left_character$
+        }
+        set_variable = {
+            name = newsfeed_message_right_character
+            value = $right_character$
+        }
     }
 
     newsfeed_resort_message_containers = yes

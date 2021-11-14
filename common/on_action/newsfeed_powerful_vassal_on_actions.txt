@@ -16,6 +16,7 @@ newsfeed_on_vassal_become_powerful = {
             type = newsfeed_powerful_vassal
             title = newsfeed_powerful_vassal
             desc = newsfeed_powerful_vassal_desc
+            right_icon = scope:vassal
         }
     }
 }

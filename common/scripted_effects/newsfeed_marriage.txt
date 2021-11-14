@@ -22,6 +22,8 @@
             type = newsfeed_marriage
             title = newsfeed_marriage_me
             desc = newsfeed_marriage_me_desc
+            right_icon = scope:newsfeed_spouse1
+            left_icon = scope:newsfeed_spouse2
         }
     }
     else = {
@@ -29,6 +31,8 @@
             type = newsfeed_marriage
             title = newsfeed_marriage
             desc = newsfeed_marriage_desc
+            right_icon = scope:newsfeed_spouse1
+            left_icon = scope:newsfeed_spouse2
         }
     }
 }

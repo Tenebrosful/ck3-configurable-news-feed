@@ -24,6 +24,8 @@ newsfeed_notify_birth_single_child_effect = {
             type = newsfeed_birth
             title = newsfeed_birth_mother
             desc = newsfeed_birth_no_father_desc
+            right_icon = scope:child
+            left_icon = scope:mother
         }
     }
     else_if = {
@@ -35,6 +37,8 @@ newsfeed_notify_birth_single_child_effect = {
             type = newsfeed_birth
             title = newsfeed_birth_mother
             desc = newsfeed_birth_desc
+            right_icon = scope:child
+            left_icon = scope:mother
         }
     }
     else = {
@@ -42,6 +46,8 @@ newsfeed_notify_birth_single_child_effect = {
             type = newsfeed_birth
             title = newsfeed_birth_father
             desc = newsfeed_birth_desc
+            right_icon = scope:child
+            left_icon = scope:father
         }
     }
 }
@@ -65,6 +71,8 @@ newsfeed_notify_birth_twins_effect = {
             type = newsfeed_birth
             title = newsfeed_birth_twins_mother
             desc = newsfeed_birth_twins_no_father_desc
+            right_icon = scope:child
+            left_icon = scope:mother
         }
     }
     else_if = {
@@ -76,6 +84,8 @@ newsfeed_notify_birth_twins_effect = {
             type = newsfeed_birth
             title = newsfeed_birth_twins_mother
             desc = newsfeed_birth_twins_desc
+            right_icon = scope:child
+            left_icon = scope:mother
         }
     }
     else = {
@@ -83,6 +93,8 @@ newsfeed_notify_birth_twins_effect = {
             type = newsfeed_birth
             title = newsfeed_birth_twins_father
             desc = newsfeed_birth_twins_desc
+            right_icon = scope:child
+            left_icon = scope:father
         }
     }
 }
