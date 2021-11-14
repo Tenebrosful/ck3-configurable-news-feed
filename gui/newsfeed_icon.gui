@@ -339,6 +339,22 @@ types NewsFeed {
         }
         newsfeed_subject_icon_template = {
             visible = "[EqualTo_string('newsfeed_subject_extended_dynastic_family', Scope.GetFlagName)]"
+            texture = "gfx/interface/icons/portraits/relation.dds"
+            framesize = { 40 40 }
+            frame = 5
+            position = { 10 0 }
+            size = { 20 20 }
+        }
+        newsfeed_subject_icon_template = {
+            visible = "[EqualTo_string('newsfeed_subject_extended_dynastic_family', Scope.GetFlagName)]"
+            texture = "gfx/interface/icons/portraits/relation.dds"
+            framesize = { 40 40 }
+            frame = 5
+            position = { 0 10 }
+            size = { 20 20 }
+        }
+        newsfeed_subject_icon_template = {
+            visible = "[EqualTo_string('newsfeed_subject_dynasty', Scope.GetFlagName)]"
             texture = "gfx/interface/icons/flat_icons/dynasty.dds"
         }
         newsfeed_subject_icon_template = {

@@ -31,6 +31,7 @@ newsfeed_is_person_subject = {
     OR = {
         newsfeed_subject_matches = { PERSON = $PERSON$ SUBJECT = $SUBJECT$ check_subject = self }
         newsfeed_subject_matches = { PERSON = $PERSON$ SUBJECT = $SUBJECT$ check_subject = spouse }
+        newsfeed_subject_matches = { PERSON = $PERSON$ SUBJECT = $SUBJECT$ check_subject = dynasty }
         newsfeed_subject_matches = { PERSON = $PERSON$ SUBJECT = $SUBJECT$ check_subject = close_dynastic_family }
         newsfeed_subject_matches = { PERSON = $PERSON$ SUBJECT = $SUBJECT$ check_subject = extended_dynastic_family }
         newsfeed_subject_matches = { PERSON = $PERSON$ SUBJECT = $SUBJECT$ check_subject = liege }

@@ -56,6 +56,11 @@ newsfeed_is_my_extended_dynastic_family = {
     is_extended_family_of = $PERSON$
 }
 
+newsfeed_is_my_dynasty = {
+    NOT = { this = $PERSON$ }
+    this.dynasty = $PERSON$.dynasty
+}
+
 newsfeed_is_my_pinned_character = {
     save_temporary_scope_as = newsfeed_observer
 

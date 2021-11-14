@@ -1,4 +1,41 @@
-﻿newsfeed_set_default_settings = {
+﻿newsfeed_reinitialize_settings_for_all_players = {
+    every_player = {
+        newsfeed_reinitialize_settings = yes
+    }
+}
+newsfeed_reinitialize_settings = {
+    newsfeed_ensure_global_subjects_and_types = yes
+        
+    if = {
+        limit = {
+            newsfeed_has_any_setting_containers = no
+        }
+
+        save_scope_value_as = {
+            name = newsfeed_should_set_defaults
+            value = yes
+        }
+    }
+    else = {
+        save_scope_value_as = {
+            name = newsfeed_should_set_defaults
+            value = no
+        }
+    }
+
+    newsfeed_ensure_correct_setting_containers = yes
+    newsfeed_sort_setting_containers = yes
+
+    if = {
+        limit = {
+            scope:newsfeed_should_set_defaults = yes
+        }
+
+        newsfeed_set_default_settings = yes
+    }
+}
+
+newsfeed_set_default_settings = {
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_marriage }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_pregnancy }
     newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_birth }
@@ -64,17 +101,6 @@ newsfeed_reset_settings_to_default = {
     newsfeed_set_default_settings = yes
 }
 
-newsfeed_test_wipe_settings = {
-    every_player = {
-        every_newsfeed_setting_container = {
-            end_story = yes
-        }
-
-        clear_variable_list = newsfeed_setting_containers
-        remove_variable = newsfeed_migrated_v4
-    }
-}
-
 newsfeed_clear_all_settings = {
     save_temporary_scope_as = newsfeed_clear_all_settings_player
 
@@ -103,6 +129,7 @@ newsfeed_ensure_global_subjects_and_types = {
     newsfeed_create_subject = { SUBJECT = spouse }
     newsfeed_create_subject = { SUBJECT = close_dynastic_family }
     newsfeed_create_subject = { SUBJECT = extended_dynastic_family }
+    newsfeed_create_subject = { SUBJECT = dynasty }
     newsfeed_create_subject = { SUBJECT = liege }
     newsfeed_create_subject = { SUBJECT = direct_vassal }
     newsfeed_create_subject = { SUBJECT = courtier }
@@ -222,6 +249,46 @@ newsfeed_create_setting_container = {
         name = newsfeed_setting_containers
         target = scope:newsfeed_new_container
     }
+}
+
+newsfeed_sort_setting_containers = {
+    every_newsfeed_setting_container = {
+        prev = {
+            add_to_variable_list = {
+                name = newsfeed_temp_setting_containers
+                target = prev
+            }
+        }
+    }
+
+    clear_variable_list = newsfeed_setting_containers
+
+    ordered_in_list = {
+        variable = newsfeed_temp_setting_containers
+        order_by = {
+            value = 0
+            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_self } add = 100 }
+            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_spouse } add = 90 }
+            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_close_dynastic_family } add = 80 }
+            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_extended_dynastic_family } add = 70 }
+            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_dynasty } add = 60 }
+            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_liege } add = 50 }
+            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_direct_vassal } add = 40 }
+            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_courtier } add = 30 }
+            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_pinned_character } add = 20 }
+        }
+        max = 1000
+        check_range_bounds = no
+
+        prev = {
+            add_to_variable_list = {
+                name = newsfeed_setting_containers
+                target = prev
+            }
+        }
+    }
+    
+    clear_variable_list = newsfeed_temp_setting_containers
 }
 
 newsfeed_create_subject = {

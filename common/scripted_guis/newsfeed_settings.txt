@@ -4,43 +4,16 @@
     is_valid = {
         is_alive = yes
         NAND = {
-            exists = var:newsfeed_migrated_v5
-            var:newsfeed_migrated_v5 = yes
+            exists = var:newsfeed_migrated_v7
+            var:newsfeed_migrated_v7 = yes
         }
     }
 
     effect = {
-        newsfeed_ensure_global_subjects_and_types = yes
-        
-        if = {
-            limit = {
-                newsfeed_has_any_setting_containers = no
-            }
-
-            save_scope_value_as = {
-                name = newsfeed_should_set_defaults
-                value = yes
-            }
-        }
-        else = {
-            save_scope_value_as = {
-                name = newsfeed_should_set_defaults
-                value = no
-            }
-        }
-
-        newsfeed_ensure_correct_setting_containers = yes
-
-        if = {
-            limit = {
-                scope:newsfeed_should_set_defaults = yes
-            }
-
-            newsfeed_set_default_settings = yes
-        }
+        newsfeed_reinitialize_settings = yes
 
         set_variable = {
-            name = newsfeed_migrated_v5
+            name = newsfeed_migrated_v7
             value = yes
         }
     }
