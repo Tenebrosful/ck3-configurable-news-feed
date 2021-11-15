@@ -3,6 +3,7 @@
         newsfeed_reinitialize_settings = yes
     }
 }
+
 newsfeed_reinitialize_settings = {
     newsfeed_ensure_global_subjects_and_types = yes
         
@@ -125,6 +126,7 @@ newsfeed_clear_all_settings = {
 }
 
 newsfeed_ensure_global_subjects_and_types = {
+    clear_global_variable_list = newsfeed_subjects
     newsfeed_create_subject = { SUBJECT = self }
     newsfeed_create_subject = { SUBJECT = spouse }
     newsfeed_create_subject = { SUBJECT = close_dynastic_family }
@@ -135,6 +137,7 @@ newsfeed_ensure_global_subjects_and_types = {
     newsfeed_create_subject = { SUBJECT = courtier }
     newsfeed_create_subject = { SUBJECT = pinned_character }
 
+    clear_global_variable_list = newsfeed_types
     newsfeed_create_type = { type = marriage }
     newsfeed_create_type = { type = pregnancy }
     newsfeed_create_type = { type = birth }
@@ -144,8 +147,6 @@ newsfeed_ensure_global_subjects_and_types = {
     newsfeed_create_type = { type = titles }
     newsfeed_create_type = { type = faith }
     newsfeed_create_type = { type = culture }
-
-    newsfeed_remove_type = { type = war }
 }
 
 newsfeed_ensure_correct_setting_containers = {
@@ -154,7 +155,6 @@ newsfeed_ensure_correct_setting_containers = {
     every_in_global_list = {
         variable = newsfeed_subjects
         save_temporary_scope_as = newsfeed_subject
-        
         prev = {
             ordered_in_list = {
                 variable = newsfeed_setting_containers
@@ -179,36 +179,32 @@ newsfeed_ensure_correct_setting_containers = {
                     SUBJECT = scope:newsfeed_subject
                 }
             }
+
+            clear_saved_scope = newsfeed_initialization_setting_container
         }
     }
 }
 
 newsfeed_remove_obsolete_setting_containers = {
-    if = {
+    every_in_list = {
+        variable = newsfeed_setting_containers
         limit = {
-            has_variable = newsfeed_setting_containers
-        }
-
-        every_in_list = {
-            variable = newsfeed_setting_containers
-            limit = {
-                NOT = {
-                    is_target_in_global_variable_list = {
-                        name = newsfeed_types
-                        target = this
-                    }
+            NOT = {
+                is_target_in_global_variable_list = {
+                    name = newsfeed_subjects
+                    target = var:newsfeed_subject
                 }
             }
-
-            prev = {
-                remove_list_variable = {
-                    name = newsfeed_setting_containers
-                    target = prev
-                }
-            }
-
-            end_story = yes
         }
+
+        prev = {
+            remove_list_variable = {
+                name = newsfeed_setting_containers
+                target = prev
+            }
+        }
+
+        end_story = yes
     }
 }
 
