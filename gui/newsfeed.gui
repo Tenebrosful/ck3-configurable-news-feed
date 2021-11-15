@@ -315,7 +315,7 @@ types NewsFeed {
             parentanchor = bottom|hcenter
             size = { 60 60 }
             using = portrait_base
-            portrait_texture = "[Character.GetPortrait('environment_head', 'camera_head', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
+            portrait_texture = "[Character.GetCachedPortrait('environment_head', 'camera_head', 'idle', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
             mask = "gfx/portraits/portrait_mask_head.dds"
             effectname = "NoHighlight"
         }
