@@ -48,5 +48,3 @@ def generate_localization():
                 yaml = ruamel.yaml.YAML()
                 yaml.width = 4096
                 yaml.dump(generated_dict, file)
-
-generate_localization()

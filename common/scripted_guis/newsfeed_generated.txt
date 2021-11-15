@@ -1,0 +1,1827 @@
+﻿newsfeed_setting_toggle_subject_self_type_marriage = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = self
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_state_subject_self_type_marriage = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = self
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_toggle_subject_self_type_pregnancy = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = self
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_state_subject_self_type_pregnancy = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = self
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_toggle_subject_self_type_birth = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = self
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_state_subject_self_type_birth = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = self
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_toggle_subject_self_type_death = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = self
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_state_subject_self_type_death = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = self
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_toggle_subject_self_type_offensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = self
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_self_type_offensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = self
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_self_type_defensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = self
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_self_type_defensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = self
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_self_type_titles = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = self
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_state_subject_self_type_titles = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = self
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_toggle_subject_self_type_faith = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = self
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_state_subject_self_type_faith = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = self
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_toggle_subject_self_type_culture = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = self
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_state_subject_self_type_culture = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = self
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_toggle_subject_spouse_type_marriage = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = spouse
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_state_subject_spouse_type_marriage = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = spouse
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_toggle_subject_spouse_type_pregnancy = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = spouse
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_state_subject_spouse_type_pregnancy = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = spouse
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_toggle_subject_spouse_type_birth = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = spouse
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_state_subject_spouse_type_birth = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = spouse
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_toggle_subject_spouse_type_death = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = spouse
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_state_subject_spouse_type_death = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = spouse
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_toggle_subject_spouse_type_offensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = spouse
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_spouse_type_offensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = spouse
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_spouse_type_defensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = spouse
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_spouse_type_defensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = spouse
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_spouse_type_titles = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = spouse
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_state_subject_spouse_type_titles = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = spouse
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_toggle_subject_spouse_type_faith = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = spouse
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_state_subject_spouse_type_faith = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = spouse
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_toggle_subject_spouse_type_culture = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = spouse
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_state_subject_spouse_type_culture = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = spouse
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_toggle_subject_close_dynastic_family_type_marriage = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = close_dynastic_family
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_state_subject_close_dynastic_family_type_marriage = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = close_dynastic_family
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_toggle_subject_close_dynastic_family_type_pregnancy = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = close_dynastic_family
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_state_subject_close_dynastic_family_type_pregnancy = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = close_dynastic_family
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_toggle_subject_close_dynastic_family_type_birth = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = close_dynastic_family
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_state_subject_close_dynastic_family_type_birth = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = close_dynastic_family
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_toggle_subject_close_dynastic_family_type_death = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = close_dynastic_family
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_state_subject_close_dynastic_family_type_death = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = close_dynastic_family
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_toggle_subject_close_dynastic_family_type_offensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = close_dynastic_family
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_close_dynastic_family_type_offensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = close_dynastic_family
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_close_dynastic_family_type_defensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = close_dynastic_family
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_close_dynastic_family_type_defensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = close_dynastic_family
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_close_dynastic_family_type_titles = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = close_dynastic_family
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_state_subject_close_dynastic_family_type_titles = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = close_dynastic_family
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_toggle_subject_close_dynastic_family_type_faith = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = close_dynastic_family
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_state_subject_close_dynastic_family_type_faith = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = close_dynastic_family
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_toggle_subject_close_dynastic_family_type_culture = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = close_dynastic_family
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_state_subject_close_dynastic_family_type_culture = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = close_dynastic_family
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_toggle_subject_extended_dynastic_family_type_marriage = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = extended_dynastic_family
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_state_subject_extended_dynastic_family_type_marriage = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = extended_dynastic_family
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_toggle_subject_extended_dynastic_family_type_pregnancy = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = extended_dynastic_family
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_state_subject_extended_dynastic_family_type_pregnancy = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = extended_dynastic_family
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_toggle_subject_extended_dynastic_family_type_birth = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = extended_dynastic_family
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_state_subject_extended_dynastic_family_type_birth = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = extended_dynastic_family
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_toggle_subject_extended_dynastic_family_type_death = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = extended_dynastic_family
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_state_subject_extended_dynastic_family_type_death = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = extended_dynastic_family
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_toggle_subject_extended_dynastic_family_type_offensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = extended_dynastic_family
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_extended_dynastic_family_type_offensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = extended_dynastic_family
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_extended_dynastic_family_type_defensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = extended_dynastic_family
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_extended_dynastic_family_type_defensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = extended_dynastic_family
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_extended_dynastic_family_type_titles = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = extended_dynastic_family
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_state_subject_extended_dynastic_family_type_titles = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = extended_dynastic_family
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_toggle_subject_extended_dynastic_family_type_faith = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = extended_dynastic_family
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_state_subject_extended_dynastic_family_type_faith = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = extended_dynastic_family
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_toggle_subject_extended_dynastic_family_type_culture = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = extended_dynastic_family
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_state_subject_extended_dynastic_family_type_culture = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = extended_dynastic_family
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_toggle_subject_dynasty_type_marriage = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = dynasty
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_state_subject_dynasty_type_marriage = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = dynasty
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_toggle_subject_dynasty_type_pregnancy = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = dynasty
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_state_subject_dynasty_type_pregnancy = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = dynasty
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_toggle_subject_dynasty_type_birth = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = dynasty
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_state_subject_dynasty_type_birth = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = dynasty
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_toggle_subject_dynasty_type_death = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = dynasty
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_state_subject_dynasty_type_death = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = dynasty
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_toggle_subject_dynasty_type_offensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = dynasty
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_dynasty_type_offensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = dynasty
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_dynasty_type_defensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = dynasty
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_dynasty_type_defensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = dynasty
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_dynasty_type_titles = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = dynasty
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_state_subject_dynasty_type_titles = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = dynasty
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_toggle_subject_dynasty_type_faith = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = dynasty
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_state_subject_dynasty_type_faith = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = dynasty
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_toggle_subject_dynasty_type_culture = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = dynasty
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_state_subject_dynasty_type_culture = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = dynasty
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_toggle_subject_liege_type_marriage = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = liege
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_state_subject_liege_type_marriage = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = liege
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_toggle_subject_liege_type_pregnancy = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = liege
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_state_subject_liege_type_pregnancy = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = liege
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_toggle_subject_liege_type_birth = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = liege
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_state_subject_liege_type_birth = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = liege
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_toggle_subject_liege_type_death = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = liege
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_state_subject_liege_type_death = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = liege
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_toggle_subject_liege_type_offensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = liege
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_liege_type_offensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = liege
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_liege_type_defensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = liege
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_liege_type_defensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = liege
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_liege_type_titles = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = liege
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_state_subject_liege_type_titles = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = liege
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_toggle_subject_liege_type_faith = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = liege
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_state_subject_liege_type_faith = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = liege
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_toggle_subject_liege_type_culture = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = liege
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_state_subject_liege_type_culture = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = liege
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_toggle_subject_direct_vassal_type_marriage = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = direct_vassal
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_state_subject_direct_vassal_type_marriage = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = direct_vassal
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_toggle_subject_direct_vassal_type_pregnancy = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = direct_vassal
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_state_subject_direct_vassal_type_pregnancy = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = direct_vassal
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_toggle_subject_direct_vassal_type_birth = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = direct_vassal
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_state_subject_direct_vassal_type_birth = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = direct_vassal
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_toggle_subject_direct_vassal_type_death = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = direct_vassal
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_state_subject_direct_vassal_type_death = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = direct_vassal
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_toggle_subject_direct_vassal_type_offensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = direct_vassal
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_direct_vassal_type_offensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = direct_vassal
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_direct_vassal_type_defensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = direct_vassal
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_direct_vassal_type_defensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = direct_vassal
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_direct_vassal_type_titles = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = direct_vassal
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_state_subject_direct_vassal_type_titles = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = direct_vassal
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_toggle_subject_direct_vassal_type_faith = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = direct_vassal
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_state_subject_direct_vassal_type_faith = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = direct_vassal
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_toggle_subject_direct_vassal_type_culture = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = direct_vassal
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_state_subject_direct_vassal_type_culture = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = direct_vassal
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_toggle_subject_courtier_type_marriage = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = courtier
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_state_subject_courtier_type_marriage = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = courtier
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_toggle_subject_courtier_type_pregnancy = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = courtier
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_state_subject_courtier_type_pregnancy = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = courtier
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_toggle_subject_courtier_type_birth = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = courtier
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_state_subject_courtier_type_birth = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = courtier
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_toggle_subject_courtier_type_death = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = courtier
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_state_subject_courtier_type_death = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = courtier
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_toggle_subject_courtier_type_offensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = courtier
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_courtier_type_offensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = courtier
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_courtier_type_defensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = courtier
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_courtier_type_defensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = courtier
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_courtier_type_titles = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = courtier
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_state_subject_courtier_type_titles = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = courtier
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_toggle_subject_courtier_type_faith = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = courtier
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_state_subject_courtier_type_faith = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = courtier
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_toggle_subject_courtier_type_culture = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = courtier
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_state_subject_courtier_type_culture = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = courtier
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_toggle_subject_pinned_character_type_marriage = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = pinned_character
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_state_subject_pinned_character_type_marriage = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = pinned_character
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_setting_toggle_subject_pinned_character_type_pregnancy = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = pinned_character
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_state_subject_pinned_character_type_pregnancy = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = pinned_character
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_setting_toggle_subject_pinned_character_type_birth = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = pinned_character
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_state_subject_pinned_character_type_birth = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = pinned_character
+			TYPE = birth
+		}
+	}
+}
+newsfeed_setting_toggle_subject_pinned_character_type_death = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = pinned_character
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_state_subject_pinned_character_type_death = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = pinned_character
+			TYPE = death
+		}
+	}
+}
+newsfeed_setting_toggle_subject_pinned_character_type_offensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = pinned_character
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_pinned_character_type_offensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = pinned_character
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_pinned_character_type_defensive_war = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = pinned_character
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_state_subject_pinned_character_type_defensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = pinned_character
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_setting_toggle_subject_pinned_character_type_titles = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = pinned_character
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_state_subject_pinned_character_type_titles = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = pinned_character
+			TYPE = titles
+		}
+	}
+}
+newsfeed_setting_toggle_subject_pinned_character_type_faith = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = pinned_character
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_state_subject_pinned_character_type_faith = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = pinned_character
+			TYPE = faith
+		}
+	}
+}
+newsfeed_setting_toggle_subject_pinned_character_type_culture = {
+	scope = character
+	effect = {
+		custom_tooltip = newsfeed_setting_tooltip
+		newsfeed_toggle_setting = {
+			SUBJECT = pinned_character
+			TYPE = culture
+		}
+	}
+}
+newsfeed_setting_state_subject_pinned_character_type_culture = {
+	scope = character
+	is_valid = {
+		newsfeed_is_setting_enabled = {
+			SUBJECT = pinned_character
+			TYPE = culture
+		}
+	}
+}
+newsfeed_select_all_state_subject_self = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_subject = {
+			SUBJECT = self
+		}
+	}
+}
+newsfeed_select_all_toggle_subject_self = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_subject = {
+			SUBJECT = self
+		}
+	}
+}
+newsfeed_select_all_state_subject_spouse = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_subject = {
+			SUBJECT = spouse
+		}
+	}
+}
+newsfeed_select_all_toggle_subject_spouse = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_subject = {
+			SUBJECT = spouse
+		}
+	}
+}
+newsfeed_select_all_state_subject_close_dynastic_family = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_subject = {
+			SUBJECT = close_dynastic_family
+		}
+	}
+}
+newsfeed_select_all_toggle_subject_close_dynastic_family = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_subject = {
+			SUBJECT = close_dynastic_family
+		}
+	}
+}
+newsfeed_select_all_state_subject_extended_dynastic_family = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_subject = {
+			SUBJECT = extended_dynastic_family
+		}
+	}
+}
+newsfeed_select_all_toggle_subject_extended_dynastic_family = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_subject = {
+			SUBJECT = extended_dynastic_family
+		}
+	}
+}
+newsfeed_select_all_state_subject_dynasty = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_subject = {
+			SUBJECT = dynasty
+		}
+	}
+}
+newsfeed_select_all_toggle_subject_dynasty = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_subject = {
+			SUBJECT = dynasty
+		}
+	}
+}
+newsfeed_select_all_state_subject_liege = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_subject = {
+			SUBJECT = liege
+		}
+	}
+}
+newsfeed_select_all_toggle_subject_liege = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_subject = {
+			SUBJECT = liege
+		}
+	}
+}
+newsfeed_select_all_state_subject_direct_vassal = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_subject = {
+			SUBJECT = direct_vassal
+		}
+	}
+}
+newsfeed_select_all_toggle_subject_direct_vassal = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_subject = {
+			SUBJECT = direct_vassal
+		}
+	}
+}
+newsfeed_select_all_state_subject_courtier = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_subject = {
+			SUBJECT = courtier
+		}
+	}
+}
+newsfeed_select_all_toggle_subject_courtier = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_subject = {
+			SUBJECT = courtier
+		}
+	}
+}
+newsfeed_select_all_state_subject_pinned_character = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_subject = {
+			SUBJECT = pinned_character
+		}
+	}
+}
+newsfeed_select_all_toggle_subject_pinned_character = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_subject = {
+			SUBJECT = pinned_character
+		}
+	}
+}
+newsfeed_select_all_state_type_marriage = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_type = {
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_select_all_toggle_type_marriage = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_type = {
+			TYPE = marriage
+		}
+	}
+}
+newsfeed_select_all_state_type_pregnancy = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_type = {
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_select_all_toggle_type_pregnancy = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_type = {
+			TYPE = pregnancy
+		}
+	}
+}
+newsfeed_select_all_state_type_birth = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_type = {
+			TYPE = birth
+		}
+	}
+}
+newsfeed_select_all_toggle_type_birth = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_type = {
+			TYPE = birth
+		}
+	}
+}
+newsfeed_select_all_state_type_death = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_type = {
+			TYPE = death
+		}
+	}
+}
+newsfeed_select_all_toggle_type_death = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_type = {
+			TYPE = death
+		}
+	}
+}
+newsfeed_select_all_state_type_offensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_type = {
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_select_all_toggle_type_offensive_war = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_type = {
+			TYPE = offensive_war
+		}
+	}
+}
+newsfeed_select_all_state_type_defensive_war = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_type = {
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_select_all_toggle_type_defensive_war = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_type = {
+			TYPE = defensive_war
+		}
+	}
+}
+newsfeed_select_all_state_type_titles = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_type = {
+			TYPE = titles
+		}
+	}
+}
+newsfeed_select_all_toggle_type_titles = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_type = {
+			TYPE = titles
+		}
+	}
+}
+newsfeed_select_all_state_type_faith = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_type = {
+			TYPE = faith
+		}
+	}
+}
+newsfeed_select_all_toggle_type_faith = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_type = {
+			TYPE = faith
+		}
+	}
+}
+newsfeed_select_all_state_type_culture = {
+	scope = character
+	is_valid = {
+		newsfeed_selected_all_for_type = {
+			TYPE = culture
+		}
+	}
+}
+newsfeed_select_all_toggle_type_culture = {
+	scope = character
+	effect = {
+		newsfeed_toggle_select_all_for_type = {
+			TYPE = culture
+		}
+	}
+}

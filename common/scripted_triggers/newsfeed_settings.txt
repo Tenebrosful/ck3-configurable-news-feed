@@ -1,56 +1,14 @@
-﻿newsfeed_has_any_setting_containers = {
-    any_in_list = {
-        variable = newsfeed_setting_containers
-    }
+﻿newsfeed_is_setting_enabled = {
+    has_variable = newsfeed_enabled_setting_subject_$SUBJECT$_type_$TYPE$
+	var:newsfeed_enabled_setting_subject_$SUBJECT$_type_$TYPE$ = yes
 }
 
-newsfeed_is_setting_enabled = {
-    is_ai = no
-    any_in_list = {
-        variable = newsfeed_setting_containers
-        var:newsfeed_subject = $SUBJECT$
-
-        any_in_list = {
-            variable = newsfeed_enabled_types
-            this = $type$
-        }
+newsfeed_is_interested_in_as_subject = {
+    newsfeed_is_setting_enabled = {
+        SUBJECT = $SUBJECT$
+        TYPE = $TYPE$
     }
-}
-
-newsfeed_is_type_enabled_for_all_subjects = {
-    NOT = {
-        any_in_global_list = {
-            variable = newsfeed_subjects
-
-            save_temporary_scope_as = newsfeed_subject
-
-            NOT = {
-                root = {
-                    newsfeed_is_setting_enabled = {
-                        SUBJECT = scope:newsfeed_subject
-                        type = $TYPE$
-                    }
-                }
-            }
-        }
-    }
-}
-
-newsfeed_is_subject_enabled_for_all_types = {
-    NOT = {
-        any_in_global_list = {
-            variable = newsfeed_types
-
-            save_temporary_scope_as = newsfeed_type
-
-            NOT = {
-                root = {
-                    newsfeed_is_setting_enabled = {
-                        SUBJECT = $SUBJECT$
-                        type = scope:newsfeed_type
-                    }
-                }
-            }
-        }
+    newsfeed_is_my_$SUBJECT$ = {
+        PERSON = $PERSON$
     }
 }

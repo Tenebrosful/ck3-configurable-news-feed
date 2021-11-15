@@ -1,339 +1,19 @@
-﻿newsfeed_reinitialize_settings_for_all_players = {
-    every_player = {
-        newsfeed_reinitialize_settings = yes
-    }
-}
-
-newsfeed_reinitialize_settings = {
-    newsfeed_ensure_global_subjects_and_types = yes
-        
-    if = {
-        limit = {
-            newsfeed_has_any_setting_containers = no
-        }
-
-        save_scope_value_as = {
-            name = newsfeed_should_set_defaults
-            value = yes
-        }
-    }
-    else = {
-        save_scope_value_as = {
-            name = newsfeed_should_set_defaults
-            value = no
-        }
-    }
-
-    newsfeed_ensure_correct_setting_containers = yes
-    newsfeed_sort_setting_containers = yes
-
-    if = {
-        limit = {
-            scope:newsfeed_should_set_defaults = yes
-        }
-
-        newsfeed_set_default_settings = yes
-    }
-}
-
-newsfeed_set_default_settings = {
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_marriage }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_pregnancy }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_birth }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_death }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_offensive_war }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_defensive_war }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_titles }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_faith }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_self type = flag:newsfeed_type_culture }
-    
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_pregnancy }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_birth }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_death }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_offensive_war }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_defensive_war }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_titles }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_faith }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_spouse type = flag:newsfeed_type_culture }
-    
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_marriage }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_birth }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_death }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_offensive_war }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_defensive_war }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_titles }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_faith }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_close_dynastic_family type = flag:newsfeed_type_culture }
-    
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_extended_dynastic_family type = flag:newsfeed_type_birth }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_extended_dynastic_family type = flag:newsfeed_type_death }
-    
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_liege type = flag:newsfeed_type_death }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_liege type = flag:newsfeed_type_offensive_war }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_liege type = flag:newsfeed_type_defensive_war }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_liege type = flag:newsfeed_type_titles }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_liege type = flag:newsfeed_type_faith }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_liege type = flag:newsfeed_type_culture }
-    
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_direct_vassal type = flag:newsfeed_type_death }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_direct_vassal type = flag:newsfeed_type_offensive_war }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_direct_vassal type = flag:newsfeed_type_defensive_war }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_direct_vassal type = flag:newsfeed_type_titles }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_direct_vassal type = flag:newsfeed_type_faith }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_direct_vassal type = flag:newsfeed_type_culture }
-
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_courtier type = flag:newsfeed_type_marriage }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_courtier type = flag:newsfeed_type_birth }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_courtier type = flag:newsfeed_type_death }
-    
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_pinned_character type = flag:newsfeed_type_marriage }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_pinned_character type = flag:newsfeed_type_pregnancy }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_pinned_character type = flag:newsfeed_type_birth }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_pinned_character type = flag:newsfeed_type_death }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_pinned_character type = flag:newsfeed_type_offensive_war }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_pinned_character type = flag:newsfeed_type_defensive_war }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_pinned_character type = flag:newsfeed_type_titles }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_pinned_character type = flag:newsfeed_type_faith }
-    newsfeed_enable_setting = { SUBJECT = flag:newsfeed_subject_pinned_character type = flag:newsfeed_type_culture }
-}
-
-newsfeed_reset_settings_to_default = {
-    newsfeed_clear_all_settings = yes
-    newsfeed_set_default_settings = yes
-}
-
-newsfeed_clear_all_settings = {
-    save_temporary_scope_as = newsfeed_clear_all_settings_player
-
-    every_in_global_list = {
-        variable = newsfeed_subjects
-        
-        save_temporary_scope_as = newsfeed_clear_all_settings_subject
-
-        every_in_global_list = {
-            variable = newsfeed_types
-
-            save_temporary_scope_as = newsfeed_clear_all_settings_type
-
-            scope:newsfeed_clear_all_settings_player = {
-                newsfeed_disable_setting = {
-                    SUBJECT = scope:newsfeed_clear_all_settings_subject
-                    type = scope:newsfeed_clear_all_settings_type
-                }
-            }
-        }
-    }
-}
-
-newsfeed_ensure_global_subjects_and_types = {
-    clear_global_variable_list = newsfeed_subjects
-    newsfeed_create_subject = { SUBJECT = self }
-    newsfeed_create_subject = { SUBJECT = spouse }
-    newsfeed_create_subject = { SUBJECT = close_dynastic_family }
-    newsfeed_create_subject = { SUBJECT = extended_dynastic_family }
-    newsfeed_create_subject = { SUBJECT = dynasty }
-    newsfeed_create_subject = { SUBJECT = liege }
-    newsfeed_create_subject = { SUBJECT = direct_vassal }
-    newsfeed_create_subject = { SUBJECT = courtier }
-    newsfeed_create_subject = { SUBJECT = pinned_character }
-
-    clear_global_variable_list = newsfeed_types
-    newsfeed_create_type = { type = marriage }
-    newsfeed_create_type = { type = pregnancy }
-    newsfeed_create_type = { type = birth }
-    newsfeed_create_type = { type = death }
-    newsfeed_create_type = { type = offensive_war }
-    newsfeed_create_type = { type = defensive_war }
-    newsfeed_create_type = { type = titles }
-    newsfeed_create_type = { type = faith }
-    newsfeed_create_type = { type = culture }
-}
-
-newsfeed_ensure_correct_setting_containers = {
-    newsfeed_remove_obsolete_setting_containers = yes
-
-    every_in_global_list = {
-        variable = newsfeed_subjects
-        save_temporary_scope_as = newsfeed_subject
-        prev = {
-            ordered_in_list = {
-                variable = newsfeed_setting_containers
-                limit = {
-                    var:newsfeed_subject = scope:newsfeed_subject
-                }
-                max = 1
-                save_scope_as = newsfeed_initialization_setting_container
-            }
-
-            if = {
-                limit = {
-                    exists = scope:newsfeed_initialization_setting_container
-                }
-
-                scope:newsfeed_initialization_setting_container = {
-                    newsfeed_remove_obsolete_types_from_container = yes
-                }
-            }
-            else = {
-                newsfeed_create_setting_container = {
-                    SUBJECT = scope:newsfeed_subject
-                }
-            }
-
-            clear_saved_scope = newsfeed_initialization_setting_container
-        }
-    }
-}
-
-newsfeed_remove_obsolete_setting_containers = {
-    every_in_list = {
-        variable = newsfeed_setting_containers
-        limit = {
-            NOT = {
-                is_target_in_global_variable_list = {
-                    name = newsfeed_subjects
-                    target = var:newsfeed_subject
-                }
-            }
-        }
-
-        prev = {
-            remove_list_variable = {
-                name = newsfeed_setting_containers
-                target = prev
-            }
-        }
-
-        end_story = yes
-    }
-}
-
-newsfeed_remove_obsolete_types_from_container = {
-    every_in_list = {
-        variable = newsfeed_enabled_types
-        limit = {
-            NOT = {
-                is_target_in_global_variable_list = {
-                    name = newsfeed_types
-                    target = this
-                }
-            }
-        }
-        prev = {
-            remove_list_variable = {
-                name = newsfeed_enabled_types
-                target = prev
-            }
-        }
-    }
-}
-
-newsfeed_create_setting_container = {
-    create_story = {
-        type = story_newsfeed_setting
-        save_scope_as = newsfeed_new_container
-    }
-
-    scope:newsfeed_new_container = {
-        set_variable = {
-            name = newsfeed_subject
-            value = $SUBJECT$
-        }
-    }
-
-    add_to_variable_list = {
-        name = newsfeed_setting_containers
-        target = scope:newsfeed_new_container
-    }
-}
-
-newsfeed_sort_setting_containers = {
-    every_newsfeed_setting_container = {
-        prev = {
-            add_to_variable_list = {
-                name = newsfeed_temp_setting_containers
-                target = prev
-            }
-        }
-    }
-
-    clear_variable_list = newsfeed_setting_containers
-
-    ordered_in_list = {
-        variable = newsfeed_temp_setting_containers
-        order_by = {
-            value = 0
-            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_self } add = 100 }
-            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_spouse } add = 90 }
-            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_close_dynastic_family } add = 80 }
-            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_extended_dynastic_family } add = 70 }
-            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_dynasty } add = 60 }
-            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_liege } add = 50 }
-            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_direct_vassal } add = 40 }
-            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_courtier } add = 30 }
-            if = { limit = { var:newsfeed_subject = flag:newsfeed_subject_pinned_character } add = 20 }
-        }
-        max = 1000
-        check_range_bounds = no
-
-        prev = {
-            add_to_variable_list = {
-                name = newsfeed_setting_containers
-                target = prev
-            }
-        }
-    }
-    
-    clear_variable_list = newsfeed_temp_setting_containers
-}
-
-newsfeed_create_subject = {
-    add_to_global_variable_list = {
-        name = newsfeed_subjects
-        target = flag:newsfeed_subject_$SUBJECT$
-    }
-}
-
-newsfeed_create_type = {
-    add_to_global_variable_list = {
-        name = newsfeed_types
-        target = flag:newsfeed_type_$type$
-    }
-}
-
-newsfeed_remove_type = {
-    remove_list_global_variable = {
-        name = newsfeed_types
-        target = flag:newsfeed_type_$type$
-    }
-}
-
-newsfeed_enable_setting = {
-    ordered_in_list = {
-        variable = newsfeed_setting_containers
-        limit = {
-            var:newsfeed_subject = $SUBJECT$
-        }
-        max = 1
-        add_to_variable_list = {
-            name = newsfeed_enabled_types
-            target = $type$
-        }
+﻿newsfeed_enable_setting = {
+    set_variable = {
+        name = newsfeed_enabled_setting_subject_$SUBJECT$_type_$TYPE$
+        value = yes
     }
 }
 
 newsfeed_disable_setting = {
-    ordered_in_list = {
-        variable = newsfeed_setting_containers
-        limit = {
-            var:newsfeed_subject = $SUBJECT$
-        }
-        max = 1
-        remove_list_variable = {
-            name = newsfeed_enabled_types
-            target = $type$
-        }
+    set_variable = {
+        name = newsfeed_enabled_setting_subject_$SUBJECT$_type_$TYPE$
+        value = no
     }
+}
+
+newsfeed_clear_setting = {
+    remove_variable = newsfeed_enabled_setting_subject_$SUBJECT$_type_$TYPE$
 }
 
 newsfeed_toggle_setting = {
@@ -341,117 +21,175 @@ newsfeed_toggle_setting = {
         limit = {
             newsfeed_is_setting_enabled = {
                 SUBJECT = $SUBJECT$
-                type = $type$
+                TYPE = $TYPE$
             }
         }
 
         newsfeed_disable_setting = {
             SUBJECT = $SUBJECT$
-            type = $type$
+            TYPE = $TYPE$
         }
     }
     else = {
         newsfeed_enable_setting = {
             SUBJECT = $SUBJECT$
-            type = $type$
+            TYPE = $TYPE$
         }
     }
 }
 
-newsfeed_enable_type_for_all_subjects = {
-    every_in_global_list = {
-        variable = newsfeed_subjects
-
-        save_temporary_scope_as = newsfeed_subject
-
-        root = {
-            newsfeed_enable_setting = {
-                SUBJECT = scope:newsfeed_subject
-                type = $TYPE$
+newsfeed_copy_setting = {
+    $TARGET$ = {
+        if = {
+            limit = {
+                prev = {
+                    has_variable = newsfeed_enabled_setting_subject_$SUBJECT$_type_$TYPE$
+                }
             }
         }
-    }
-}
-
-newsfeed_disable_type_for_all_subjects = {
-    every_in_global_list = {
-        variable = newsfeed_subjects
-
-        save_temporary_scope_as = newsfeed_subject
-
-        root = {
-            newsfeed_disable_setting = {
-                SUBJECT = scope:newsfeed_subject
-                type = $TYPE$
-            }
+        set_variable = {
+            name = newsfeed_enabled_setting_subject_$SUBJECT$_type_$TYPE$
+            value = prev.var:newsfeed_enabled_setting_subject_$SUBJECT$_type_$TYPE$
         }
     }
 }
 
-newsfeed_toggle_type_for_all_subjects = {
+newsfeed_migrate_setting_from_old_style = {
     if = {
         limit = {
-            newsfeed_is_type_enabled_for_all_subjects = {
+            any_owned_story = {
+                story_type = story_newsfeed_setting
+                var:newsfeed_subject = flag:newsfeed_subject_$SUBJECT$
+                is_target_in_variable_list = {
+                    name = newsfeed_enabled_types
+                    target = flag:newsfeed_type_$TYPE$
+                }
+            }
+        }
+
+        newsfeed_enable_setting = {
+            SUBJECT = $SUBJECT$
+            TYPE = $TYPE$
+        }
+    }
+    else = {
+        newsfeed_disable_setting = {
+            SUBJECT = $SUBJECT$
+            TYPE = $TYPE$
+        }
+    }
+}
+
+newsfeed_toggle_select_all_for_subject = {
+    if = {
+        limit = {
+            newsfeed_selected_all_for_subject = {
+                SUBJECT = $SUBJECT$
+            }
+        }
+
+        newsfeed_deselect_all_for_subject = {
+            SUBJECT = $SUBJECT$
+        }
+    }
+    else = {
+        newsfeed_select_all_for_subject = {
+            SUBJECT = $SUBJECT$
+        }
+    }
+}
+
+newsfeed_toggle_select_all_for_type = {
+    if = {
+        limit = {
+            newsfeed_selected_all_for_type = {
                 TYPE = $TYPE$
             }
         }
 
-        newsfeed_disable_type_for_all_subjects = {
+        newsfeed_deselect_all_for_type = {
             TYPE = $TYPE$
         }
     }
     else = {
-        newsfeed_enable_type_for_all_subjects = {
+        newsfeed_select_all_for_type = {
             TYPE = $TYPE$
         }
     }
 }
 
-newsfeed_enable_subject_for_all_types = {
-    every_in_global_list = {
-        variable = newsfeed_types
-
-        save_temporary_scope_as = newsfeed_type
-
-        root = {
-            newsfeed_enable_setting = {
-                SUBJECT = $SUBJECT$
-                type = scope:newsfeed_type
-            }
-        }
-    }
+newsfeed_set_default_settings = {
+    newsfeed_set_default_setting = { SUBJECT = self TYPE = marriage }
+    newsfeed_set_default_setting = { SUBJECT = self TYPE = pregnancy }
+    newsfeed_set_default_setting = { SUBJECT = self TYPE = birth }
+    newsfeed_set_default_setting = { SUBJECT = self TYPE = death }
+    newsfeed_set_default_setting = { SUBJECT = self TYPE = offensive_war }
+    newsfeed_set_default_setting = { SUBJECT = self TYPE = defensive_war }
+    newsfeed_set_default_setting = { SUBJECT = self TYPE = titles }
+    newsfeed_set_default_setting = { SUBJECT = self TYPE = faith }
+    newsfeed_set_default_setting = { SUBJECT = self TYPE = culture }
+    
+    newsfeed_set_default_setting = { SUBJECT = spouse TYPE = pregnancy }
+    newsfeed_set_default_setting = { SUBJECT = spouse TYPE = birth }
+    newsfeed_set_default_setting = { SUBJECT = spouse TYPE = death }
+    newsfeed_set_default_setting = { SUBJECT = spouse TYPE = offensive_war }
+    newsfeed_set_default_setting = { SUBJECT = spouse TYPE = defensive_war }
+    newsfeed_set_default_setting = { SUBJECT = spouse TYPE = titles }
+    newsfeed_set_default_setting = { SUBJECT = spouse TYPE = faith }
+    newsfeed_set_default_setting = { SUBJECT = spouse TYPE = culture }
+    
+    newsfeed_set_default_setting = { SUBJECT = close_dynastic_family TYPE = marriage }
+    newsfeed_set_default_setting = { SUBJECT = close_dynastic_family TYPE = birth }
+    newsfeed_set_default_setting = { SUBJECT = close_dynastic_family TYPE = death }
+    newsfeed_set_default_setting = { SUBJECT = close_dynastic_family TYPE = offensive_war }
+    newsfeed_set_default_setting = { SUBJECT = close_dynastic_family TYPE = defensive_war }
+    newsfeed_set_default_setting = { SUBJECT = close_dynastic_family TYPE = titles }
+    newsfeed_set_default_setting = { SUBJECT = close_dynastic_family TYPE = faith }
+    newsfeed_set_default_setting = { SUBJECT = close_dynastic_family TYPE = culture }
+    
+    newsfeed_set_default_setting = { SUBJECT = extended_dynastic_family TYPE = birth }
+    newsfeed_set_default_setting = { SUBJECT = extended_dynastic_family TYPE = death }
+    
+    newsfeed_set_default_setting = { SUBJECT = liege TYPE = death }
+    newsfeed_set_default_setting = { SUBJECT = liege TYPE = offensive_war }
+    newsfeed_set_default_setting = { SUBJECT = liege TYPE = defensive_war }
+    newsfeed_set_default_setting = { SUBJECT = liege TYPE = titles }
+    newsfeed_set_default_setting = { SUBJECT = liege TYPE = faith }
+    newsfeed_set_default_setting = { SUBJECT = liege TYPE = culture }
+    
+    newsfeed_set_default_setting = { SUBJECT = direct_vassal TYPE = death }
+    newsfeed_set_default_setting = { SUBJECT = direct_vassal TYPE = offensive_war }
+    newsfeed_set_default_setting = { SUBJECT = direct_vassal TYPE = defensive_war }
+    newsfeed_set_default_setting = { SUBJECT = direct_vassal TYPE = titles }
+    newsfeed_set_default_setting = { SUBJECT = direct_vassal TYPE = faith }
+    newsfeed_set_default_setting = { SUBJECT = direct_vassal TYPE = culture }
+    
+    newsfeed_set_default_setting = { SUBJECT = courtier TYPE = marriage }
+    newsfeed_set_default_setting = { SUBJECT = courtier TYPE = birth }
+    newsfeed_set_default_setting = { SUBJECT = courtier TYPE = death }
+    
+    newsfeed_set_default_setting = { SUBJECT = pinned_character TYPE = marriage }
+    newsfeed_set_default_setting = { SUBJECT = pinned_character TYPE = pregnancy }
+    newsfeed_set_default_setting = { SUBJECT = pinned_character TYPE = birth }
+    newsfeed_set_default_setting = { SUBJECT = pinned_character TYPE = death }
+    newsfeed_set_default_setting = { SUBJECT = pinned_character TYPE = offensive_war }
+    newsfeed_set_default_setting = { SUBJECT = pinned_character TYPE = defensive_war }
+    newsfeed_set_default_setting = { SUBJECT = pinned_character TYPE = titles }
+    newsfeed_set_default_setting = { SUBJECT = pinned_character TYPE = faith }
+    newsfeed_set_default_setting = { SUBJECT = pinned_character TYPE = culture }
 }
 
-newsfeed_disable_subject_for_all_types = {
-    every_in_global_list = {
-        variable = newsfeed_types
-
-        save_temporary_scope_as = newsfeed_type
-
-        root = {
-            newsfeed_disable_setting = {
-                SUBJECT = $SUBJECT$
-                type = scope:newsfeed_type
-            }
-        }
-    }
-}
-
-newsfeed_toggle_subject_for_all_types = {
+newsfeed_set_default_setting = {
     if = {
         limit = {
-            newsfeed_is_subject_enabled_for_all_types = {
-                SUBJECT = $SUBJECT$
+            NOT = {
+                has_variable = newsfeed_enabled_setting_subject_$SUBJECT$_type_$TYPE$
             }
         }
 
-        newsfeed_disable_subject_for_all_types = {
+        newsfeed_enable_setting = {
             SUBJECT = $SUBJECT$
-        }
-    }
-    else = {
-        newsfeed_enable_subject_for_all_types = {
-            SUBJECT = $SUBJECT$
+            TYPE = $TYPE$
         }
     }
 }

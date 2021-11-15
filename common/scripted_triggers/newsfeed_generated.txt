@@ -1,0 +1,179 @@
+﻿newsfeed_selected_all_for_subject = {
+	newsfeed_is_setting_enabled = {
+		SUBJECT = $SUBJECT$
+		TYPE = marriage
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = $SUBJECT$
+		TYPE = pregnancy
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = $SUBJECT$
+		TYPE = birth
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = $SUBJECT$
+		TYPE = death
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = $SUBJECT$
+		TYPE = offensive_war
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = $SUBJECT$
+		TYPE = defensive_war
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = $SUBJECT$
+		TYPE = titles
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = $SUBJECT$
+		TYPE = faith
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = $SUBJECT$
+		TYPE = culture
+	}
+}
+newsfeed_selected_all_for_type = {
+	newsfeed_is_setting_enabled = {
+		SUBJECT = self
+		TYPE = $TYPE$
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = spouse
+		TYPE = $TYPE$
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = close_dynastic_family
+		TYPE = $TYPE$
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = extended_dynastic_family
+		TYPE = $TYPE$
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = dynasty
+		TYPE = $TYPE$
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = liege
+		TYPE = $TYPE$
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = direct_vassal
+		TYPE = $TYPE$
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = courtier
+		TYPE = $TYPE$
+	}
+	newsfeed_is_setting_enabled = {
+		SUBJECT = pinned_character
+		TYPE = $TYPE$
+	}
+}
+newsfeed_is_interested_in = {
+	OR = {
+		newsfeed_is_interested_in_as_subject = {
+			PERSON = $PERSON$
+			SUBJECT = self
+			TYPE = $TYPE$
+		}
+		newsfeed_is_interested_in_as_subject = {
+			PERSON = $PERSON$
+			SUBJECT = spouse
+			TYPE = $TYPE$
+		}
+		newsfeed_is_interested_in_as_subject = {
+			PERSON = $PERSON$
+			SUBJECT = close_dynastic_family
+			TYPE = $TYPE$
+		}
+		newsfeed_is_interested_in_as_subject = {
+			PERSON = $PERSON$
+			SUBJECT = extended_dynastic_family
+			TYPE = $TYPE$
+		}
+		newsfeed_is_interested_in_as_subject = {
+			PERSON = $PERSON$
+			SUBJECT = dynasty
+			TYPE = $TYPE$
+		}
+		newsfeed_is_interested_in_as_subject = {
+			PERSON = $PERSON$
+			SUBJECT = liege
+			TYPE = $TYPE$
+		}
+		newsfeed_is_interested_in_as_subject = {
+			PERSON = $PERSON$
+			SUBJECT = direct_vassal
+			TYPE = $TYPE$
+		}
+		newsfeed_is_interested_in_as_subject = {
+			PERSON = $PERSON$
+			SUBJECT = courtier
+			TYPE = $TYPE$
+		}
+		newsfeed_is_interested_in_as_subject = {
+			PERSON = $PERSON$
+			SUBJECT = pinned_character
+			TYPE = $TYPE$
+		}
+	}
+}
+newsfeed_is_interested_in_marriage = {
+	newsfeed_is_interested_in = {
+		PERSON = $PERSON$
+		TYPE = marriage
+	}
+}
+newsfeed_is_interested_in_pregnancy = {
+	newsfeed_is_interested_in = {
+		PERSON = $PERSON$
+		TYPE = pregnancy
+	}
+}
+newsfeed_is_interested_in_birth = {
+	newsfeed_is_interested_in = {
+		PERSON = $PERSON$
+		TYPE = birth
+	}
+}
+newsfeed_is_interested_in_death = {
+	newsfeed_is_interested_in = {
+		PERSON = $PERSON$
+		TYPE = death
+	}
+}
+newsfeed_is_interested_in_offensive_war = {
+	newsfeed_is_interested_in = {
+		PERSON = $PERSON$
+		TYPE = offensive_war
+	}
+}
+newsfeed_is_interested_in_defensive_war = {
+	newsfeed_is_interested_in = {
+		PERSON = $PERSON$
+		TYPE = defensive_war
+	}
+}
+newsfeed_is_interested_in_titles = {
+	newsfeed_is_interested_in = {
+		PERSON = $PERSON$
+		TYPE = titles
+	}
+}
+newsfeed_is_interested_in_faith = {
+	newsfeed_is_interested_in = {
+		PERSON = $PERSON$
+		TYPE = faith
+	}
+}
+newsfeed_is_interested_in_culture = {
+	newsfeed_is_interested_in = {
+		PERSON = $PERSON$
+		TYPE = culture
+	}
+}

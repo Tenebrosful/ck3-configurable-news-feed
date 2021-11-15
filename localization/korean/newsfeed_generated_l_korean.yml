@@ -1,4 +1,6 @@
 ﻿l_korean:
+  newsfeed_subject_label: "[Localize(Concatenate(Concatenate('newsfeed_subject_', SCOPE.GetFlagName('newsfeed_subject')), '_label'))|l]"
+  newsfeed_type_label: "[Localize(Concatenate(Concatenate('newsfeed_type_', SCOPE.GetFlagName('newsfeed_type')), '_label'))|l]"
   newsfeed_type_faith_label: "[faith|E]"
   newsfeed_type_culture_label: "[culture|E]"
   newsfeed_suppress: "newsfeed_suppress"

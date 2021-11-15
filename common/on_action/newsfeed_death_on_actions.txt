@@ -2,7 +2,7 @@
     on_actions = {
         newsfeed_on_death
         newsfeed_on_death_transfer_message_containers
-        newsfeed_on_death_transfer_setting_containers
+        newsfeed_on_death_transfer_settings
     }
 }
 
@@ -68,7 +68,7 @@ newsfeed_on_death_transfer_message_containers = {
     }
 }
 
-newsfeed_on_death_transfer_setting_containers = {
+newsfeed_on_death_transfer_settings = {
     trigger = {
         is_ai = no
     }
@@ -79,18 +79,13 @@ newsfeed_on_death_transfer_setting_containers = {
                 exists = player_heir
             }
 
-            every_in_list = {
-                variable = newsfeed_setting_containers
+            player_heir = {
+                save_scope_as = newsfeed_copy_settings_target
+            }
 
-                prev.player_heir = {
-                    add_to_variable_list = {
-                        name = newsfeed_setting_containers
-                        target = prev
-                    }
-                }
+            newsfeed_copy_all_settings = {
+                TARGET = scope:newsfeed_copy_settings_target
             }
         }
-
-        clear_variable_list = newsfeed_setting_containers
     }
 }

@@ -1,4 +1,13 @@
-﻿newsfeed_relation_prefix = {
+﻿newsfeed_select_all_for_type_tooltip = {
+    type = character
+
+    text = {
+        fallback = yes
+        localization_key = newsfeed_select_all_for_type_tooltip
+    }
+}
+
+newsfeed_relation_prefix = {
     type = character
 
     text = {
