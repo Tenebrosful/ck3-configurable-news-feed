@@ -58,8 +58,6 @@ types NewsFeed {
 
                 hbox = {
                     margin_top = 40
-
-                    #newsfeed_settings_select_all_column = {}
                     newsfeed_settings_columns = {}
                 }
 
@@ -141,7 +139,57 @@ types NewsFeed {
         size = { 30 83 }
     }
 
-    type newsfeed_select_all_checkbox = button_checkbox {
+    type newsfeed_subject_column = flowcontainer {
+        direction = vertical
 
+        flowcontainer = {
+            widget = {
+                size = { 30 30 }
+                block "icon" {}
+                using = tooltip_ne
+            }
+            margin_bottom = 8
+        }
+
+        flowcontainer = {
+            newsfeed_select_all_checkbox = {
+                block "select_all" {}
+            }
+            margin_bottom = 16
+        }
+    }
+
+    type newsfeed_type_label_column = vbox {
+        margin_right = 8
+        newsfeed_column_spacer = {}
+    }
+
+    type newsfeed_type_label_row = hbox {
+        margin_right = 8
+        layoutpolicy_horizontal = expanding
+
+        text_single = {
+            layoutpolicy_horizontal = expanding
+            align = right|nobaseline
+            block "text" {}
+            default_format = "#high"
+            margin_right = 8
+        }
+
+        newsfeed_select_all_checkbox = {
+            block "select_all" {}
+        }
+    }
+
+    type newsfeed_setting_checkbox = flowcontainer {
+        margin_right = 8
+        button_checkbox = {
+            block "checkbox" {}
+            using = tooltip_ne
+        }
+    }
+
+    type newsfeed_select_all_checkbox = button_checkbox {
+        using = tooltip_ne
     }
 }
