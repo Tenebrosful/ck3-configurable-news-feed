@@ -111,10 +111,7 @@ def gui_template():
     return f"""
         types NewsFeed {{
             type newsfeed_settings_columns = hbox {{
-                vbox = {{
-                    margin_right = 8
-
-                    newsfeed_column_spacer = {{}}
+                newsfeed_type_label_column = {{
                     {lines(label_row(type) for type in types)}
                 }}
 
@@ -125,50 +122,31 @@ def gui_template():
 
 def label_row(type):
     return f"""
-        hbox = {{
-            margin_right = 8
-            layoutpolicy_horizontal = expanding
-
-            text_single = {{
-                layoutpolicy_horizontal = expanding
-                align = right|nobaseline
+        newsfeed_type_label_row = {{
+            blockoverride "text" {{
                 text = newsfeed_type_{type}_label
-                default_format = "#high"
-                margin_right = 8
             }}
 
-            newsfeed_select_all_checkbox = {{
+            blockoverride "select_all" {{
                 checked = "[GetScriptedGui('newsfeed_select_all_state_type_{type}').IsValid( GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
                 onclick = "[GetScriptedGui('newsfeed_select_all_toggle_type_{type}').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
                 tooltip = "[GetScriptedGui('newsfeed_select_all_for_type_tooltip').BuildTooltip( GuiScope.AddScope( 'newsfeed_type', MakeScopeFlag('{type}') ).End )]"
-                using = tooltip_ne
             }}
         }}
     """
 
 def subject_column(subject):
     return f"""
-        flowcontainer = {{
-            direction = vertical
-
-            flowcontainer = {{
-                widget = {{
-                    size = {{ 30 30 }}
-                    {subject.icon}
-                    tooltip = newsfeed_subject_{subject}_label
-                    using = tooltip_ne
-                }}
-                margin_bottom = 8
+        newsfeed_subject_column = {{
+            blockoverride "icon" {{
+                {subject.icon}
+                tooltip = newsfeed_subject_{subject}_label
             }}
 
-            flowcontainer = {{
-                newsfeed_select_all_checkbox = {{
-                    checked = "[GetScriptedGui('newsfeed_select_all_state_subject_{subject}').IsValid( GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
-                    onclick = "[GetScriptedGui('newsfeed_select_all_toggle_subject_{subject}').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
-                    tooltip = "[GetScriptedGui('newsfeed_select_all_for_subject_tooltip').BuildTooltip( GuiScope.AddScope( 'newsfeed_subject', MakeScopeFlag('{subject}') ).End )]"
-                    using = tooltip_ne
-                }}
-                margin_bottom = 16
+            blockoverride "select_all" {{
+                checked = "[GetScriptedGui('newsfeed_select_all_state_subject_{subject}').IsValid( GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
+                onclick = "[GetScriptedGui('newsfeed_select_all_toggle_subject_{subject}').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
+                tooltip = "[GetScriptedGui('newsfeed_select_all_for_subject_tooltip').BuildTooltip( GuiScope.AddScope( 'newsfeed_subject', MakeScopeFlag('{subject}') ).End )]"
             }}
             
             {lines(setting_checkbox(subject, type) for type in types)}
@@ -177,13 +155,11 @@ def subject_column(subject):
 
 def setting_checkbox(subject, type):
     return f"""
-        flowcontainer = {{
-            margin_right = 8
-            button_checkbox = {{
+        newsfeed_setting_checkbox = {{
+            blockoverride "checkbox" {{
                 checked = "[GetScriptedGui('newsfeed_setting_state_subject_{subject}_type_{type}').IsValid( GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
                 onclick = "[GetScriptedGui('newsfeed_setting_toggle_subject_{subject}_type_{type}').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
                 tooltip = "[GetScriptedGui('newsfeed_setting_tooltip').BuildTooltip( GuiScope.AddScope( 'newsfeed_subject', MakeScopeFlag('{subject}') ).AddScope( 'newsfeed_type', MakeScopeFlag('{type}') ).End )]"
-                using = tooltip_ne
             }}
         }}
     """
@@ -291,25 +267,25 @@ def toggle_gui(subject, type):
 
 def select_all_for_subject_gui(subject):
     return f"""
-    newsfeed_select_all_state_subject_{subject} = {{
-        scope = character
+        newsfeed_select_all_state_subject_{subject} = {{
+            scope = character
 
-        is_valid = {{
-            newsfeed_selected_all_for_subject = {{
-                SUBJECT = {subject}
+            is_valid = {{
+                newsfeed_selected_all_for_subject = {{
+                    SUBJECT = {subject}
+                }}
             }}
         }}
-    }}
 
-    newsfeed_select_all_toggle_subject_{subject} = {{
-        scope = character
+        newsfeed_select_all_toggle_subject_{subject} = {{
+            scope = character
 
-        effect = {{
-            newsfeed_toggle_select_all_for_subject = {{
-                SUBJECT = {subject}
+            effect = {{
+                newsfeed_toggle_select_all_for_subject = {{
+                    SUBJECT = {subject}
+                }}
             }}
         }}
-    }}
     """
 
 def select_all_for_type_gui(type):
