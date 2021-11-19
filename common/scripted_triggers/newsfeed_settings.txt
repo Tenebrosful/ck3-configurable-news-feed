@@ -1,5 +1,6 @@
 ﻿newsfeed_is_setting_enabled = {
     has_variable = newsfeed_enabled_setting_subject_$SUBJECT$_type_$TYPE$
+    exists = var:newsfeed_enabled_setting_subject_$SUBJECT$_type_$TYPE$
 	var:newsfeed_enabled_setting_subject_$SUBJECT$_type_$TYPE$ = yes
 }
 
