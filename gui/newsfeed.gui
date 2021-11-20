@@ -3,23 +3,14 @@ types NewsFeed {
         name = "message_feed_widget"
         visible = "[And(And(And( Not(SinglePlayerShowingPausedSuccession), IsDefaultGUIMode), Not(IsPauseMenuShown)), Not(IsRightWindowOpen))]"
         parentanchor = bottom|right
-        resizable = yes
+        movable = "[Not(GetVariableSystem.Exists('newsfeed_window_locked'))]"
+        resizable = "[Not(GetVariableSystem.Exists('newsfeed_window_locked'))]"
         size = { 600 400 }
         position = { 0 -70 }
         minimumsize = { 600 0 }
         maximumsize = { 600 9999 }
-        using = Background_Area_Dark
         allow_outside = yes
-
-        state = {
-            name = _mouse_hierarchy_enter
-            on_start = "[PdxGuiWidget.FindChild('button_settings').TriggerAnimation('hover_enter')]"
-        }
-
-        state = {
-            name = _mouse_hierarchy_leave
-            on_start = "[PdxGuiWidget.FindChild('button_settings').TriggerAnimation('hover_leave')]"
-        }
+        alwaystransparent = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
 
         state = {
             name = newsfeed_initialize
@@ -28,15 +19,21 @@ types NewsFeed {
         }
 
         vbox = {
-            margin_left = 20
+            background = {
+                visible = "[Not(GetVariableSystem.Exists('newsfeed_window_locked'))]"
+                using = NewsFeed_Border_Background
+            }
+
+            visible = "[Not(IsDataModelEmpty(GetPlayer.MakeScope.GetList('newsfeed_recent_message_containers')))]"
+            alwaystransparent = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
 
             layoutpolicy_vertical = expanding
             layoutpolicy_horizontal = expanding
 
             scrollarea = {
-                layoutpolicy_vertical = expanding
-                layoutpolicy_horizontal = expanding
-                
+                size = "[PdxGetWidgetScreenSize(PdxGuiWidget.AccessParent.AccessParent.Self)]"
+                alwaystransparent = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
+
                 scrollbarpolicy_horizontal = always_off
 
                 scrollbar_vertical = {
@@ -45,7 +42,15 @@ types NewsFeed {
                 
         		scrollwidget = {
                     flowcontainer = {
+                        alwaystransparent = yes
+
+                        background = {
+                            visible = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
+                            using = NewsFeed_Border_Background
+                        }
+
                         margin_top = 20
+                        margin_left = 20
                         direction = vertical
                         layoutpolicy_horizontal = expanding
                         flowcontainer = {
@@ -78,62 +83,31 @@ types NewsFeed {
                     }
                 }
             }
+
+            expand = {}
         }
         
         vbox = {
             layoutpolicy_vertical = expanding
             layoutpolicy_horizontal = expanding
 
-            visible = "[IsDataModelEmpty(GetPlayer.MakeScope.GetList('newsfeed_recent_message_containers'))]"
+            visible = "[And(IsDataModelEmpty(GetPlayer.MakeScope.GetList('newsfeed_recent_message_containers')), Not(GetVariableSystem.Exists('newsfeed_window_locked')))]"
 
             expand = {}
 
             text_single = {
                 text = newsfeed_empty_text
-                default_format = "#weak"
                 align = center
+            }
+
+            background = {
+                using = NewsFeed_Border_Background
             }
 
             expand = {}
         }
 
-        button_icon = {
-            name = "button_settings"
-
-            parentanchor = bottom|right
-            position = { -10 -5 }
-            size = { 40 40 }
-            texture = "gfx/interface/icons/flat_icons/menu.dds"
-            onclick = "[GetVariableSystem.Toggle('newsfeed_settings_shown')]"
-
-            alpha = 0.5
-
-            state = {
-                name = open_settings
-                trigger_when = "[GetVariableSystem.Exists('newsfeed_settings_shown')]"
-                on_start = "[ExecuteConsoleCommand('gui.CreateWidget gui/newsfeed_settings.gui newsfeed_settings_window')]"
-            }
-
-            state = {
-                name = close_settings
-                trigger_when = "[Not(GetVariableSystem.Exists('newsfeed_settings_shown'))]"
-                on_start = "[ExecuteConsoleCommand('gui.ClearWidgets newsfeed_settings_window')]"
-            }
-
-            state = {
-                name = hover_enter
-                alpha = 1
-                duration = 0.05
-                using = Animation_Curve_Default
-            }
-
-            state = {
-                name = hover_leave
-                alpha = 0.2
-                duration = 0.2
-                using = Animation_Curve_Default
-            }
-        }
+        newsfeed_toolbar = {}
 
         button = {
             name = "newsfeed_clear_hotkey"
@@ -142,8 +116,133 @@ types NewsFeed {
             onclick = "[GetScriptedGui('newsfeed_delete_all_messages_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
         }
     }
+
+    type newsfeed_toolbar = window {
+        position = { 0 -55 }
+
+        background = {
+            using = Background_Area_Dark
+			color = { 0.15 0.15 0.15 0.75 }
+        }
+
+        movable = yes
+
+        flowcontainer = {
+			margin_left = 10
+			margin_bottom = 10
+			margin_top = 10
+			margin_right = 10
+
+            resizeparent = yes
+            ignoreinvisible = yes
+
+            newsfeed_drag_icon = {
+                visible = "[Not(GetVariableSystem.Toggle('newsfeed_window_locked'))]"
+            }
+
+            newsfeed_toolbar_icon = {
+                down = "[GetVariableSystem.Exists('newsfeed_settings_shown')]"
+
+                blockoverride "icon" {
+                    texture = "gfx/interface/icons/flat_icons/menu.dds"
+                    down = "[GetVariableSystem.Exists('newsfeed_settings_shown')]"
+                }
+
+                tooltip = newsfeed_open_settings_tooltip
+                onclick = "[GetVariableSystem.Toggle('newsfeed_settings_shown')]"
+
+                state = {
+                    name = open_settings
+                    trigger_when = "[GetVariableSystem.Exists('newsfeed_settings_shown')]"
+                    on_start = "[ExecuteConsoleCommand('gui.CreateWidget gui/newsfeed_settings.gui newsfeed_settings_window')]"
+                }
+
+                state = {
+                    name = close_settings
+                    trigger_when = "[Not(GetVariableSystem.Exists('newsfeed_settings_shown'))]"
+                    on_start = "[ExecuteConsoleCommand('gui.ClearWidgets newsfeed_settings_window')]"
+                }
+            }
+
+            newsfeed_toolbar_icon = {
+                blockoverride "icon" {
+                    texture = "gfx/coat_of_arms/colored_emblems/ce_letter_a.dds"
+                }
+                tooltip = newsfeed_change_font_size_tooltip
+                onclick = "[GetVariableSystem.Set('newsfeed_font_size', Select_CString(EqualTo_string(GetVariableSystem.Get('newsfeed_font_size'), 'large'), 'small', 'large'))]"
+            }
+
+            newsfeed_toolbar_icon = {
+                down = "[Not(GetVariableSystem.Exists('newsfeed_disable_portraits'))]"
+
+                blockoverride "icon" {
+                    texture = "gfx/interface/icons/icon_group_of_characters.dds"
+                    size = { 20 20 }
+                    down = "[Not(GetVariableSystem.Exists('newsfeed_disable_portraits'))]"
+                }
+                tooltip = newsfeed_show_portraits_tooltip
+                onclick = "[GetVariableSystem.Toggle('newsfeed_disable_portraits')]"
+            }
+
+            newsfeed_toolbar_icon = {
+                down = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
+
+                blockoverride "icon" {
+                    texture = "gfx/tools/padlock_checkbutton.dds"
+                    framesize = { 16 16 }
+                    down = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
+                }
+
+                tooltip = newsfeed_lock_window_tooltip
+                onclick = "[GetVariableSystem.Toggle('newsfeed_window_locked')]"
+            }
+        }
+    }
+
+    type newsfeed_toolbar_icon = button_round {
+        size = { 32 32 }
+        using = tooltip_ne
+
+        button = {
+            alwaystransparent = yes
+            parentanchor = center
+
+            size = { 24 24 }
+
+            gfxtype = togglepushbuttongfx
+            effectname = "NoHighlight"
+
+            upframe = 1
+            uphoverframe = 2
+            uppressedframe = 2
+            downframe = 2
+            downhoverframe = 2
+            downpressedframe = 2
+
+            block "icon" {}
+
+            modify_texture = {
+                texture = "gfx/interface/colors/black.dds"
+                blend_mode = multiply
+                spritetype = corneredtiled
+            }
+        
+            modify_texture = {
+                texture = "gfx/interface/colors/colors_textured.dds"
+                blend_mode = add
+                framesize = { 96 96 }
+                spritetype = corneredtiled
+            }
+        }
+    }
+
     type newsfeed_item = flowcontainer {
         margin_right = 20
+        
+        button = {
+            visible = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
+            size = { 100% 100% }
+        }
 
         flowcontainer = {
             margin_bottom = 20
@@ -152,134 +251,173 @@ types NewsFeed {
 
             flowcontainer = {
                 allow_outside = yes
-
-                widget = {
-                    size = { 24 20 }
-                
-                    state = {
-                        name = _mouse_hierarchy_enter
-                        on_start = "[PdxGuiWidget.FindChild('newsfeed_type').TriggerAnimation('hover_enter')]"
-                        on_start = "[PdxGuiWidget.FindChild('newsfeed_dismiss').TriggerAnimation('hover_enter')]"
-                    }
-            
-                    state = {
-                        name = _mouse_hierarchy_leave
-                        on_start = "[PdxGuiWidget.FindChild('newsfeed_type').TriggerAnimation('hover_leave')]"
-                        on_start = "[PdxGuiWidget.FindChild('newsfeed_dismiss').TriggerAnimation('hover_leave')]"
-                    }
-
-                    newsfeed_type_icon = {
-                        name = "newsfeed_type"
-
-                        state = {
-                            name = hover_enter
-                            alpha = 0
-                            duration = 0.2
-                            using = Animation_Curve_Default
-                        }
-            
-                        state = {
-                            name = hover_leave
-                            alpha = 1
-                            duration = 0.2
-                            using = Animation_Curve_Default
-                        }
-                    }
-        
-                    button_clear = {
-                        name = "newsfeed_dismiss"
-                        size = { 20 20 }
-
-                        alpha = 0
-
-                        onclick = "[GetScriptedGui('newsfeed_delete_message_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'newsfeed_message_index', MakeScopeValue(Scope.GetVariable('newsfeed_message_index').GetValue) ).End )]"
-                        onrightclick = "[GetScriptedGui('newsfeed_delete_all_messages_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-                        button_ignore = none
-
-                        state = {
-                            name = hover_enter
-                            alpha = 1
-                            duration = 0.2
-                            using = Animation_Curve_Default
-                        }
-            
-                        state = {
-                            name = hover_leave
-                            alpha = 0
-                            duration = 0.2
-                            using = Animation_Curve_Default
-                        }
-
-                        tooltip = MESSAGE_CLEAR_ALL_TOOLTIP
-
-                        tooltipwidget = {
-                            using = TooltipWithFakeShortcut
-                            blockoverride "shortcut_text" {
-                                text = F
-                                default_format = "#bold"
-                            }
-                        }
-                    }
-                }
-
-                text_single = {
-                    text = "[Scope.GetVariable('newsfeed_message_title').GetFlagName]"
-                    default_format = "#high"
-                    fontsize = 14
-                    align = left|nobaseline
-                }
-
-                text_single = {
-                    text = "[Scope.GetVariable('newsfeed_message_date').GetFlagName]"
-                    default_format = "#weak"
-                    fontsize = 14
-                    align = left|nobaseline
-                    margin_left = 8
-                }
-            }
-
-            flowcontainer = {
-                margin_right = 10
                 ignoreinvisible = yes
 
-                # Two icons
-                newsfeed_message_desc = {
-                    visible = "[And(Scope.GetVariable('newsfeed_message_left_character').GetCharacter.IsValid, Scope.GetVariable('newsfeed_message_right_character').GetCharacter.IsValid)]"
-                    minimumsize = { 430 0 }
-                    max_width = 430
-                }
+                newsfeed_icon_area = {}
+                newsfeed_title_area = {}
+            }
+
+            newsfeed_description_area = {}
+        }
+
+        newsfeed_portraits = {
+            visible = "[Not(GetVariableSystem.Exists('newsfeed_disable_portraits'))]"
+        }
+    }
+
+    type newsfeed_dismiss_button = button_clear {
+        size = { 20 20 }
+
+        onclick = "[GetScriptedGui('newsfeed_delete_message_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'newsfeed_message_index', MakeScopeValue(Scope.GetVariable('newsfeed_message_index').GetValue) ).End )]"
+        onrightclick = "[GetScriptedGui('newsfeed_delete_all_messages_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        button_ignore = none
+
+        tooltip = MESSAGE_CLEAR_ALL_TOOLTIP
+
+        tooltipwidget = {
+            using = TooltipWithFakeShortcut
+            blockoverride "shortcut_text" {
+                text = F
+                default_format = "#bold"
+            }
+        }
+    }
+
+    type newsfeed_icon_area = widget {
+        size = { 24 20 }
     
-                # One icon
-                newsfeed_message_desc = {
-                    visible = "[And(Or(Scope.GetVariable('newsfeed_message_left_character').GetCharacter.IsValid, Scope.GetVariable('newsfeed_message_right_character').GetCharacter.IsValid), Not(And(Scope.GetVariable('newsfeed_message_left_character').GetCharacter.IsValid, Scope.GetVariable('newsfeed_message_right_character').GetCharacter.IsValid)))]"
-                    minimumsize = { 490 0 }
-                    max_width = 490
-                }
-    
-                # No icons
-                newsfeed_message_desc = {
-                    visible = "[Not(Or(Scope.GetVariable('newsfeed_message_left_character').GetCharacter.IsValid, Scope.GetVariable('newsfeed_message_right_character').GetCharacter.IsValid))]"
-                    minimumsize = { 550 0 }
+        state = {
+            name = _mouse_hierarchy_enter
+            on_start = "[PdxGuiWidget.FindChild('newsfeed_type').TriggerAnimation('fade_out')]"
+            on_start = "[PdxGuiWidget.FindChild('newsfeed_dismiss').TriggerAnimation('fade_in')]"
+        }
+
+        state = {
+            name = _mouse_hierarchy_leave
+            on_start = "[PdxGuiWidget.FindChild('newsfeed_type').TriggerAnimation('fade_in')]"
+            on_start = "[PdxGuiWidget.FindChild('newsfeed_dismiss').TriggerAnimation('fade_out')]"
+        }
+
+        newsfeed_type_icon = {
+            name = "newsfeed_type"
+            using = NewsFeed_Fade_States
+        }
+
+        newsfeed_dismiss_button = {
+            name = "newsfeed_dismiss"
+            alpha = 0
+            using = NewsFeed_Fade_States
+        }
+    }
+
+    type newsfeed_title_area = flowcontainer {
+        ignoreinvisible = yes
+
+        text_single = {
+            visible = "[Not(EqualTo_string(GetVariableSystem.Get('newsfeed_font_size'), 'large'))]"
+            text = "[Scope.GetVariable('newsfeed_message_title').GetFlagName]"
+            default_format = "#high"
+            fontsize = 14
+            align = left|nobaseline
+        }
+
+        text_single = {
+            visible = "[EqualTo_string(GetVariableSystem.Get('newsfeed_font_size'), 'large')]"
+            text = "[Scope.GetVariable('newsfeed_message_title').GetFlagName]"
+            default_format = "#high"
+            margin_top = -6
+            fontsize = 18
+        }
+
+        text_single = {
+            text = "[Scope.GetVariable('newsfeed_message_date').GetFlagName]"
+            default_format = "#weak"
+            fontsize = 14
+            align = left|nobaseline
+            margin_left = 8
+        }
+    }
+
+    type newsfeed_description_area = flowcontainer {
+        margin_right = 10
+        ignoreinvisible = yes
+
+        flowcontainer = {
+            visible = "[GetVariableSystem.Exists('newsfeed_disable_portraits')]"
+
+            newsfeed_message_desc = {
+                minimumsize = { 550 0 }
+                blockoverride "width" {
                     max_width = 550
                 }
             }
         }
 
         flowcontainer = {
-            direction = horizontal
-            ignoreinvisible = yes
+            visible = "[Not(GetVariableSystem.Exists('newsfeed_disable_portraits'))]"
 
-            newsfeed_portrait = {
-                name = "portrait_left"
-                visible = "[Scope.GetVariable('newsfeed_message_left_character').GetCharacter.IsValid]"
-                datacontext = "[Scope.GetVariable('newsfeed_message_left_character').GetCharacter]"
-            }
-
-            newsfeed_portrait = {
-                name = "portrait_right"
+            flowcontainer = {
                 visible = "[Scope.GetVariable('newsfeed_message_right_character').GetCharacter.IsValid]"
-                datacontext = "[Scope.GetVariable('newsfeed_message_right_character').GetCharacter]"
+                ignoreinvisible = yes
+
+                # Two icons
+                newsfeed_message_desc = {
+                    visible = "[Scope.GetVariable('newsfeed_message_left_character').GetCharacter.IsValid]"
+                    minimumsize = { 430 0 }
+                    blockoverride "width" {
+                        max_width = 430
+                    }
+                }
+        
+                # One icon
+                newsfeed_message_desc = {
+                    visible = "[Not(Scope.GetVariable('newsfeed_message_left_character').GetCharacter.IsValid)]"
+                    minimumsize = { 490 0 }
+                    blockoverride "width" {
+                        max_width = 490
+                    }
+                }
             }
+
+            flowcontainer = {
+                visible = "[Not(Scope.GetVariable('newsfeed_message_right_character').GetCharacter.IsValid)]"
+                ignoreinvisible = yes
+
+                # One icon
+                newsfeed_message_desc = {
+                    visible = "[Scope.GetVariable('newsfeed_message_left_character').GetCharacter.IsValid]"
+                    minimumsize = { 490 0 }
+                    blockoverride "width" {
+                        max_width = 490
+                    }
+                }
+        
+                # No icons
+                newsfeed_message_desc = {
+                    visible = "[Not(Scope.GetVariable('newsfeed_message_left_character').GetCharacter.IsValid)]"
+                    minimumsize = { 550 0 }
+                    blockoverride "width" {
+                        max_width = 550
+                    }
+                }
+            }
+        }
+    }
+
+    type newsfeed_portraits = flowcontainer {
+        direction = horizontal
+        ignoreinvisible = yes
+
+        newsfeed_portrait = {
+            name = "portrait_left"
+            visible = "[Scope.GetVariable('newsfeed_message_left_character').GetCharacter.IsValid]"
+            datacontext = "[Scope.GetVariable('newsfeed_message_left_character').GetCharacter]"
+        }
+
+        newsfeed_portrait = {
+            name = "portrait_right"
+            visible = "[Scope.GetVariable('newsfeed_message_right_character').GetCharacter.IsValid]"
+            datacontext = "[Scope.GetVariable('newsfeed_message_right_character').GetCharacter]"
         }
     }
 
@@ -297,7 +435,6 @@ types NewsFeed {
         }
 
         background = {
-            block "empty_character" {}
             texture = "gfx/portraits/portrait_frame.dds"
             using = Color_Grey
             margin = { -4 -4 }
@@ -307,8 +444,6 @@ types NewsFeed {
         widget = {
             size = { 100% 100% }
             using = Portrait_Background_Glows
-
-            block "empty_character" {}
         }
 
         portrait_button = {
@@ -342,7 +477,6 @@ types NewsFeed {
 
         widget = {
             size = { 100% 100% }
-            block "empty_character" {}
 
             background = {
                 texture = "gfx/portraits/portrait_frame.dds"
@@ -378,23 +512,93 @@ types NewsFeed {
             framesize = { 384 480 }
             upframe = 1
             overframe = 2
-            block "glow_visible" {
-
-                visible = "[Not(Character.IsValid)]"
-            }
-
-            block "glow_flip" {}
-
-            block "onclick" {}
+            visible = "[Not(Character.IsValid)]"
         }
     }
 
-    type newsfeed_message_desc = text_multi {
+    type newsfeed_message_desc = flowcontainer {
+        ignoreinvisible = yes
+
+        newsfeed_message_desc_impl = {
+            visible = "[Not(EqualTo_string(GetVariableSystem.Get('newsfeed_font_size'), 'large'))]"
+            block "width" {}
+            fontsize = 14
+        }
+        newsfeed_message_desc_impl = {
+            visible = "[EqualTo_string(GetVariableSystem.Get('newsfeed_font_size'), 'large')]"
+            block "width" {}
+            fontsize = 16
+        }
+    }
+
+    type newsfeed_message_desc_impl = text_multi {
+        visible = "[EqualTo_string(GetVariableSystem.Get('newsfeed_font_size'), 'large')]"
         block "width" {}
         autoresize = yes
         layoutpolicy_horizontal = expanding
         text = "[Scope.GetVariable('newsfeed_message_desc').GetFlagName]"
-        fontsize = 14
+        fontsize = 16
         align = left|nobaseline
+    }
+
+    type newsfeed_drag_icon = widget {
+        size = { 32 32 }
+
+        line = {
+            from = { 5 10 }
+            to = { 25 10 }
+            using = NewsFeed_Drag_Line
+        }
+        line = {
+            from = { 5 14 }
+            to = { 25 14 }
+            using = NewsFeed_Drag_Line
+        }
+        line = {
+            from = { 5 18 }
+            to = { 25 18 }
+            using = NewsFeed_Drag_Line
+        }
+        line = {
+            from = { 5 22 }
+            to = { 25 22 }
+            using = NewsFeed_Drag_Line
+        }
+
+        tooltip = newsfeed_drag_icons_tooltip
+        using = tooltip_ne
+    }
+}
+
+template NewsFeed_Border_Background {
+    using = Background_Area_Border_Solid
+    alpha = 0.75
+}
+
+template NewsFeed_Drag_Line {
+    width = 2
+
+    color = { 1 1 1 0.7 }
+
+    texture = "gfx/lines/line_mask.dds"
+    uv_scale = { 1.0 1.0 }
+
+    mask = "gfx/lines/mask.dds"
+    mask_uv_scale = { 0.1 1.0 }
+}
+
+template NewsFeed_Fade_States {
+    state = {
+        name = fade_out
+        alpha = 0
+        duration = 0.2
+        using = Animation_Curve_Default
+    }
+
+    state = {
+        name = fade_in
+        alpha = 1
+        duration = 0.2
+        using = Animation_Curve_Default
     }
 }
