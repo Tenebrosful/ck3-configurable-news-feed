@@ -32,5 +32,12 @@ types NewsFeed {
             trigger_when = "[Not(GetVariableSystem.Exists('newsfeed_settings_shown'))]"
             on_start = "[ExecuteConsoleCommand('gui.ClearWidgets newsfeed_settings_window')]"
         }
+
+        button = {
+            name = "newsfeed_clear_hotkey"
+            size = { 0 0 }
+            shortcut = "army_split_half"
+            onclick = "[GetScriptedGui('newsfeed_delete_all_messages_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        }
     }   
 }

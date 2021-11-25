@@ -110,13 +110,6 @@ types NewsFeed {
         newsfeed_toolbar = {
 			using = NewsFeed_Dim_States
 		}
-
-        button = {
-            name = "newsfeed_clear_hotkey"
-            size = { 0 0 }
-            shortcut = "army_split_half"
-            onclick = "[GetScriptedGui('newsfeed_delete_all_messages_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-        }
     }
 
     type newsfeed_item = flowcontainer {
