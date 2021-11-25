@@ -45,19 +45,9 @@ types NewsFeed {
 							spacing = 2
 							alwaystransparent = no
 							filter_mouse = all
-
+	
 							visible = "[GreaterThan_CFixedPoint(Scope.GetVariable('newsfeed_message_datestamp').GetValue, Subtract_CFixedPoint( EmptyScope.ScriptValue('newsfeed_current_datestamp'), '(CFixedPoint)120' ))]"
-
-							state = {
-								name = _show
-								alpha = 1
-							}
-
-							state = {
-								name = _hide
-								using = Animation_FadeOut_Quick
-							}
-
+	
 							background = {
 								using = Background_Area_Dark
 							}
@@ -227,7 +217,7 @@ types NewsFeed {
 								state = {
 									name = _show
 									size = { 450 180 }
-									duration = 0.15
+									duration = 0.2
 								}
 
 								state = {
@@ -238,7 +228,7 @@ types NewsFeed {
 								state = {
 									name = hide_clicked
 									size = { 450 0 }
-									duration = 0.15
+									duration = 0.2
 									on_finish = "[GetVariableSystem.Set('newsfeed_expanded_message_index', '')]"
 								}
 
