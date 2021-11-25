@@ -193,26 +193,19 @@ types NewsFeed {
 								on_start = "[GetVariableSystem.Set('newsfeed_expanded_message_index', Scope.Story.Custom('newsfeed_message_index_string'))]"
 							}
 
-							widget = {
+							container = {
 								name = "message_feed_text_area"
 
 								visible = "[EqualTo_string(GetVariableSystem.Get('newsfeed_expanded_message_index'), Scope.Story.Custom('newsfeed_message_index_string'))]"
 
 								layoutpolicy_horizontal = expanding
-								size = { 450 0 }
 								scissor = yes
+
+								size = { 450 180 }
 
 								state = {
 									name = _show
-									size = { 450 0 }
-									alpha = 0.2
-									next = show_finish
-								}
-
-								state = {
-									name = show_finish
 									size = { 450 180 }
-									alpha = 1.0
 									duration = 0.15
 								}
 
