@@ -5,6 +5,10 @@
 }
 
 newsfeed_on_pregnancy_mother = {
+    trigger = {
+        exists = scope:mother
+    }
+
     effect = {
         every_player = {
             limit = {
