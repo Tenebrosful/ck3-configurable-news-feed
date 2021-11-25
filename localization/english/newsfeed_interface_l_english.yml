@@ -11,6 +11,5 @@
   newsfeed_lock_window_tooltip: "#high Lock/unlock window#!\nYou can move or vertically resize the news feed window as long as it is unlocked. When locked, the news feed window cannot be moved or resized, and will expand and contract dynamically up to its set maximum size, disappearing when there are no messages to be shown."
   newsfeed_change_font_size_tooltip: "#high Toggle font size#!"
   newsfeed_show_portraits_tooltip: "#high Show/hide character portraits#!"
-  newsfeed_use_vanilla_tooltip: "#high Toggle vanilla-style feed#!\nUse this setting if you prefer to see an interface closely resembling the base game's message feed rather than the "scrolling box" message feed."
+  newsfeed_use_vanilla_tooltip: "#high Toggle vanilla-style feed#!\nUse this setting if you prefer to see an interface closely resembling the base game's message feed rather than the \"scrolling box\" message feed."
   newsfeed_drag_icons_tooltip: "Click and drag to move this toolbar"
-
