@@ -9,13 +9,6 @@ types NewsFeed {
 
 		using = Animation_ShowHide_Quick
 
-        button = {
-            name = "newsfeed_clear_hotkey"
-            size = { 0 0 }
-            shortcut = "army_split_half"
-            onclick = "[GetScriptedGui('newsfeed_delete_all_messages_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-        }
-
 		flowcontainer = {
 			direction = vertical
 
@@ -57,25 +50,21 @@ types NewsFeed {
 								using = Background_Area_Dark
 							}
 
-							button = {
+							widget = {
 								name = "header"
-								layoutpolicy_horizontal = expanding
-								size = { 0 32 }
-								onclick = "[GetVariableSystem.Set('newsfeed_expanded_message_index', Scope.Story.Custom('newsfeed_message_index_string'))]"
-								onrightclick = "[GetScriptedGui('newsfeed_delete_message_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'newsfeed_message_index', MakeScopeValue(Scope.GetVariable('newsfeed_message_index').GetValue) ).End )]"
-								button_ignore = none
+								size = { 450 32 }
 								tooltip = "MESSAGE_CLICK_TOOLTIP"
-
-								using = situation_entry_parent_hover_states
 
 								state = {
 									name = _mouse_hierarchy_enter
-									on_start = "[PdxGuiWidget.FindChild('button_dismiss_all').TriggerAnimation('hover_enter')]"
+									on_start = "[PdxGuiWidget.FindChild('message_date').TriggerAnimation('hover_enter')]"
+									on_start = "[PdxGuiWidget.FindChild('button_dismiss').TriggerAnimation('hover_enter')]"
 								}
 
 								state = {
 									name = _mouse_hierarchy_leave
-									on_start = "[PdxGuiWidget.FindChild('button_dismiss_all').TriggerAnimation('hover_leave')]"
+									on_start = "[PdxGuiWidget.FindChild('message_date').TriggerAnimation('hover_leave')]"
+									on_start = "[PdxGuiWidget.FindChild('button_dismiss').TriggerAnimation('hover_leave')]"
 								}
 
 								background = {
@@ -121,7 +110,7 @@ types NewsFeed {
 
 									hbox = {
 										vbox = {
-											name = "button_dismiss"
+											name = "message_date"
 											alpha = 1
 
 											state = {
@@ -149,7 +138,7 @@ types NewsFeed {
 											allow_outside = yes
 
 											button_clear = {
-												name = "button_dismiss_all"
+												name = "button_dismiss"
 												widgetanchor = right
 												position = { 0 -3 }
 												alpha = 0
@@ -187,6 +176,13 @@ types NewsFeed {
 										}
 
 									}
+								}
+								
+								button = {
+									size = { 414 32 }
+									onclick = "[GetVariableSystem.Set('newsfeed_expanded_message_index', Scope.Story.Custom('newsfeed_message_index_string'))]"
+									onrightclick = "[GetScriptedGui('newsfeed_delete_message_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'newsfeed_message_index', MakeScopeValue(Scope.GetVariable('newsfeed_message_index').GetValue) ).End )]"	
+									button_ignore = none
 								}
 							}
 
