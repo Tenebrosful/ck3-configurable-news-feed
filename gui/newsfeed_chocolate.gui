@@ -11,12 +11,6 @@ types NewsFeed {
         allow_outside = yes
         alwaystransparent = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
 
-        state = {
-            name = newsfeed_initialize
-            trigger_when = "[GetScriptedGui('newsfeed_ensure_settings_initialized_gui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-            on_start = "[GetScriptedGui('newsfeed_ensure_settings_initialized_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
-        }
-
 		onmousehierarchyenter = "[PdxGuiWidget.FindChild('newsfeed_toolbar').TriggerAnimation('fade_in')]"
 		onmousehierarchyleave = "[PdxGuiWidget.FindChild('newsfeed_toolbar').TriggerAnimation('fade_out')]"
 
