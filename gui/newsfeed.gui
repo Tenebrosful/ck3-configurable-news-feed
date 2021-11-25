@@ -16,6 +16,12 @@ types NewsFeed {
         }
 
         state = {
+            name = newsfeed_initialize
+            trigger_when = "[GetScriptedGui('newsfeed_ensure_settings_initialized_gui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            on_start = "[GetScriptedGui('newsfeed_ensure_settings_initialized_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        }
+
+        state = {
             name = open_settings
             trigger_when = "[GetVariableSystem.Exists('newsfeed_settings_shown')]"
             on_start = "[ExecuteConsoleCommand('gui.CreateWidget gui/newsfeed_settings.gui newsfeed_settings_window')]"
