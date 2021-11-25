@@ -11,9 +11,6 @@ types NewsFeed {
         allow_outside = yes
         alwaystransparent = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
 
-		onmousehierarchyenter = "[PdxGuiWidget.FindChild('newsfeed_toolbar').TriggerAnimation('fade_in')]"
-		onmousehierarchyleave = "[PdxGuiWidget.FindChild('newsfeed_toolbar').TriggerAnimation('fade_out')]"
-
         using = Animation_ShowHide_Quick
 
         vbox = {
@@ -107,9 +104,7 @@ types NewsFeed {
             expand = {}
         }
 
-        newsfeed_toolbar = {
-			using = NewsFeed_Dim_States
-		}
+        newsfeed_toolbar = {}
     }
 
     type newsfeed_item = flowcontainer {
