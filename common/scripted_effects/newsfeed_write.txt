@@ -50,6 +50,10 @@
             name = newsfeed_message_right_character
             value = $right_character$
         }
+        set_variable = {
+            name = newsfeed_message_datestamp
+            value = newsfeed_current_datestamp
+        }
     }
 
     newsfeed_resort_message_containers = yes
