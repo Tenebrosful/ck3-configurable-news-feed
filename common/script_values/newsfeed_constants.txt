@@ -1,1 +1,9 @@
 ﻿newsfeed_scrollback = 100
+
+newsfeed_current_datestamp = {
+	value = current_year
+	multiply = 12
+	add = current_month
+	multiply = 31
+	add = current_day
+}

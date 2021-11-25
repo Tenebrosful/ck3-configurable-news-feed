@@ -1041,7 +1041,7 @@
     ######################################################
     type notifications_message_feed = window {
         name = "message_feed_widget"
-        visible = "[And(And(And( Not(SinglePlayerShowingPausedSuccession), IsDefaultGUIMode), Not(IsPauseMenuShown)), Not(IsRightWindowOpen))]"
+        visible = "[And(And( Not(SinglePlayerShowingPausedSuccession), IsDefaultGUIMode), Not(IsPauseMenuShown)))]"
         parentanchor = bottom|right
         alwaystransparent = yes
         allow_outside = yes

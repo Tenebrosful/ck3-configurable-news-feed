@@ -46,6 +46,18 @@ types NewsFeed {
 							alwaystransparent = no
 							filter_mouse = all
 
+							visible = "[GreaterThan_CFixedPoint(Scope.GetVariable('newsfeed_message_datestamp').GetValue, Subtract_CFixedPoint( EmptyScope.ScriptValue('newsfeed_current_datestamp'), '(CFixedPoint)120' ))]"
+
+							state = {
+								name = _show
+								alpha = 1
+							}
+
+							state = {
+								name = _hide
+								using = Animation_FadeOut_Quick
+							}
+
 							background = {
 								using = Background_Area_Dark
 							}
@@ -65,6 +77,13 @@ types NewsFeed {
 									name = _mouse_hierarchy_leave
 									on_start = "[PdxGuiWidget.FindChild('button_dismiss').TriggerAnimation('hover_leave')]"
 									on_start = "[PdxGuiWidget.FindChild('button_dismiss_all').TriggerAnimation('hover_leave')]"
+								}
+						
+								state = {
+									name = "expand_latest"
+									trigger_when = "[And(EqualTo_CFixedPoint(Scope.GetVariable('newsfeed_message_index').GetValue, GetPlayer.MakeScope.GetVariable('newsfeed_next_message_index').GetValue), Not(EqualTo_string(Scope.Story.Custom('newsfeed_message_index_string'), GetVariableSystem.Get('newsfeed_latest_message_index'))))]"
+									on_start = "[GetVariableSystem.Set('newsfeed_latest_message_index', Scope.Story.Custom('newsfeed_message_index_string'))]"
+									on_start = "[GetVariableSystem.Set('newsfeed_expanded_message_index', Scope.Story.Custom('newsfeed_message_index_string'))]"
 								}
 
 								background = {
@@ -179,21 +198,23 @@ types NewsFeed {
 								}
 								
 								button = {
+									visible = "[Not(EqualTo_string(GetVariableSystem.Get('newsfeed_expanded_message_index'), Scope.Story.Custom('newsfeed_message_index_string')))]"
 									size = { 414 32 }
 									onclick = "[GetVariableSystem.Set('newsfeed_expanded_message_index', Scope.Story.Custom('newsfeed_message_index_string'))]"
 									onrightclick = "[GetScriptedGui('newsfeed_delete_message_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'newsfeed_message_index', MakeScopeValue(Scope.GetVariable('newsfeed_message_index').GetValue) ).End )]"	
 									button_ignore = none
 								}
+								
+								button = {
+									visible = "[EqualTo_string(GetVariableSystem.Get('newsfeed_expanded_message_index'), Scope.Story.Custom('newsfeed_message_index_string'))]"
+									size = { 414 32 }
+									onclick = "[PdxGuiWidget.AccessParent.AccessParent.FindChild('message_feed_text_area').TriggerAnimation('hide_clicked')]"
+									onrightclick = "[GetScriptedGui('newsfeed_delete_message_gui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'newsfeed_message_index', MakeScopeValue(Scope.GetVariable('newsfeed_message_index').GetValue) ).End )]"	
+									button_ignore = none
+								}
 							}
 
-							state = {
-								name = "expand_latest"
-								trigger_when = "[And(EqualTo_CFixedPoint(Scope.GetVariable('newsfeed_message_index').GetValue, GetPlayer.MakeScope.GetVariable('newsfeed_next_message_index').GetValue), Not(EqualTo_string(Scope.Story.Custom('newsfeed_message_index_string'), GetVariableSystem.Get('newsfeed_latest_message_index'))))]"
-								on_start = "[GetVariableSystem.Set('newsfeed_latest_message_index', Scope.Story.Custom('newsfeed_message_index_string'))]"
-								on_start = "[GetVariableSystem.Set('newsfeed_expanded_message_index', Scope.Story.Custom('newsfeed_message_index_string'))]"
-							}
-
-							container = {
+							widget = {
 								name = "message_feed_text_area"
 
 								visible = "[EqualTo_string(GetVariableSystem.Get('newsfeed_expanded_message_index'), Scope.Story.Custom('newsfeed_message_index_string'))]"
@@ -212,6 +233,13 @@ types NewsFeed {
 								state = {
 									name = _hide
 									size = { 450 0 }
+								}
+
+								state = {
+									name = hide_clicked
+									size = { 450 0 }
+									duration = 0.15
+									on_finish = "[GetVariableSystem.Set('newsfeed_expanded_message_index', '')]"
 								}
 
 								hbox = {
@@ -307,10 +335,19 @@ types NewsFeed {
 				}
 			}
 
-			widget = {
-				size = { 0 80 }
-			}
+            widget = {
+                name = "push_up"
+                size = { 0 80 }
+
+                visible = "[Not(IsRightWindowOpen)]"
+            }
 		}
+
+        widget = {
+            name = "push_left"
+            size = { 630 0 }
+            visible = "[IsRightWindowOpen]"
+        }
 	}
 
     type newsfeed_msg_different_width_text_hack = widget {
