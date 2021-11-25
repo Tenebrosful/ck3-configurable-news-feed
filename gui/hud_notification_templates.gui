@@ -520,7 +520,7 @@
         state = {
             name = toast_feed
             trigger_when = "[And(ToastMessageHandler.HasMessage, GetVariableSystem.Exists('newsfeed_toast_pump'))]"
-            on_start = "[GetScriptedGui('newsfeed_write_message_gui').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('newsfeed_message_title', MakeScopeFlag(ToastMessageHandler.GetMessage.GetTitle)).AddScope('newsfeed_message_desc', MakeScopeFlag(ToastMessageHandler.GetMessage.GetDescription)).AddScope('newsfeed_message_tooltip', MakeScopeFlag(Select_CString(StringIsEmpty(ToastMessageHandler.GetMessage.GetTooltip), 'newsfeed_type__default', ToastMessageHandler.GetMessage.GetTooltip))).AddScope('newsfeed_message_date', MakeScopeFlag(ToastMessageHandler.GetMessage.GetDate.GetStringShort)).AddScope('newsfeed_message_left_character', ToastMessageHandler.GetMessage.GetLeftCharacter.MakeScope).AddScope('newsfeed_message_right_character', ToastMessageHandler.GetMessage.GetRightCharacter.MakeScope).End )]"
+            on_start = "[GetScriptedGui('newsfeed_write_message_gui').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('newsfeed_message_title', MakeScopeFlag(ToastMessageHandler.GetMessage.GetTitle)).AddScope('newsfeed_message_desc', MakeScopeFlag(ToastMessageHandler.GetMessage.GetDescription)).AddScope('newsfeed_message_tooltip', MakeScopeFlag(Select_CString(StringIsEmpty(ToastMessageHandler.GetMessage.GetTooltip), 'newsfeed_type__default', ToastMessageHandler.GetMessage.GetTooltip))).AddScope('newsfeed_message_date', MakeScopeFlag(ToastMessageHandler.GetMessage.GetDate.GetStringShort)).AddScope('newsfeed_message_left_character', ToastMessageHandler.GetMessage.GetLeftCharacter.MakeScope).AddScope('newsfeed_message_right_character', ToastMessageHandler.GetMessage.GetRightCharacter.MakeScope).AddScope( 'newsfeed_message_goodness', MakeScopeFlag(Select_CString( ToastMessageHandler.GetMessage.GetType.IsGood, 'good', Select_CString( ToastMessageHandler.GetMessage.GetType.IsBad, 'bad', 'neutral' ) )) ).End )]"
             on_finish = "[ToastMessageHandler.DismissMessage]"
         }
     }
@@ -1046,9 +1046,6 @@
         alwaystransparent = yes
         allow_outside = yes
 
-        resizable = yes
-        size = { 600 400 }
-
         flowcontainer = {
             datamodel = "[MessageFeedHandler.GetItems]"
 
@@ -1059,7 +1056,7 @@
                     state = {
                         name = write_message
                         trigger_on_create = yes
-                        on_start = "[GetScriptedGui('newsfeed_write_message_gui').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('newsfeed_message_title', MakeScopeFlag(PlayerMessageItem.GetTitle)).AddScope('newsfeed_message_desc', MakeScopeFlag(PlayerMessageItem.GetDescription)).AddScope('newsfeed_message_tooltip', MakeScopeFlag(Select_CString(StringIsEmpty(PlayerMessageItem.GetTooltip), 'newsfeed_type__default', PlayerMessageItem.GetTooltip))).AddScope('newsfeed_message_date', MakeScopeFlag(PlayerMessageItem.GetDate.GetStringShort)).AddScope('newsfeed_message_left_character', PlayerMessageItem.GetLeftCharacter.MakeScope).AddScope('newsfeed_message_right_character', PlayerMessageItem.GetRightCharacter.MakeScope).End )]"
+                        on_start = "[GetScriptedGui('newsfeed_write_message_gui').Execute( GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('newsfeed_message_title', MakeScopeFlag(PlayerMessageItem.GetTitle)).AddScope('newsfeed_message_desc', MakeScopeFlag(PlayerMessageItem.GetDescription)).AddScope('newsfeed_message_tooltip', MakeScopeFlag(Select_CString(StringIsEmpty(PlayerMessageItem.GetTooltip), 'newsfeed_type__default', PlayerMessageItem.GetTooltip))).AddScope('newsfeed_message_date', MakeScopeFlag(PlayerMessageItem.GetDate.GetStringShort)).AddScope('newsfeed_message_left_character', PlayerMessageItem.GetLeftCharacter.MakeScope).AddScope('newsfeed_message_right_character', PlayerMessageItem.GetRightCharacter.MakeScope).AddScope( 'newsfeed_message_goodness', MakeScopeFlag(Select_CString( PlayerMessageItem.GetType.IsGood, 'good', Select_CString( PlayerMessageItem.GetType.IsBad, 'bad', 'neutral' ) )) ).End )]"
                         next = delete_message
                     }
 
@@ -1071,7 +1068,7 @@
             }
         }
 
-        newsfeed_window = {}
+        newsfeed_root = {}
     }
 }
 

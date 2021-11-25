@@ -1,0 +1,297 @@
+types NewsFeed {
+    type newsfeed_toolbar = newsfeed_toolbar_layout {
+		name = "newsfeed_toolbar"
+
+		blockoverride "size" {
+			size = { 200 40 }
+		}
+
+		blockoverride "icons" {
+			newsfeed_toolbar_icon_lock = {}
+			newsfeed_toolbar_icon_vanilla = {}
+			newsfeed_toolbar_icon_font = {}
+			newsfeed_toolbar_icon_portraits = {}
+			newsfeed_toolbar_icon_settings = {}
+		}
+    }
+
+	type newsfeed_toolbar_layout = window {
+		movable = yes
+
+		block "position" {
+			parentanchor = bottom|right
+			position = { -10 -10 }
+		}
+
+        size = { 40 68 }
+
+        allow_outside = yes
+
+		newsfeed_drag_icon = {
+			name = "newsfeed_drag_icon"
+			parentanchor = bottom
+			position = { 5 -32 }
+
+			visible = no
+			using = Animation_ShowHide_Quick
+		}
+
+		using = Animation_ShowHide_Quick
+
+		onmousehierarchyenter = "[PdxGuiWidget.FindChild('newsfeed_drag_icon').Show]"
+		onmousehierarchyleave = "[PdxGuiWidget.FindChild('newsfeed_drag_icon').Hide]"
+
+		vbox = {
+			size = { 100% 100% }
+			expand = {}
+
+			parentanchor = bottom|right
+			allow_outside = yes
+
+			widget = {
+				size = { 40 40 }
+				allow_outside = yes
+
+				hbox = {		
+					name = "newsfeed_toolbar_icons"
+
+					parentanchor = bottom|right
+					margin_left = 10
+					margin_bottom = 10
+					margin_top = 10
+					margin_right = 40
+		
+					ignoreinvisible = yes
+
+					visible = no
+					size = { 0 40 }
+		
+					state = {
+						name = _show
+						block "size" {
+							size = { 140 40 }
+						}
+						duration = 0.1
+						using = Animation_Curve_Default
+						alpha = 1
+					}
+		
+					state = {
+						name = _hide
+						size = { 0 40 }
+						duration = 0.1
+						using = Animation_Curve_Default
+						alpha = 0
+					}
+		
+					block "icons" {}
+				}
+
+				widget = {
+					name = "newsfeed_toolbar_open"
+					size = { 100% 100% }
+
+					button_round = {
+						onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_icons').Show]"
+						onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_open').Hide]"
+						onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_close').Show]"
+
+						button_icon = {
+							parentanchor = center
+							texture = "gfx/interface/icons/flat_icons/menu.dds"
+							alwaystransparent = yes
+						}
+
+						tooltip = newsfeed_open_toolbar_tooltip
+						using = tooltip_se
+					}
+				}
+
+				widget = {
+					name = "newsfeed_toolbar_close"
+					size = { 100% 100% }
+
+					visible = no
+
+					button_round = {
+						onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_icons').Hide]"
+						onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_open').Show]"
+						onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_close').Hide]"
+
+						down = yes
+
+						button_icon = {
+							parentanchor = center
+							texture = "gfx/interface/icons/flat_icons/menu.dds"
+							alwaystransparent = yes
+							down = yes
+						}
+
+						tooltip = newsfeed_open_toolbar_tooltip
+						using = tooltip_se
+					}
+				}
+			}
+		}
+	}
+
+	type newsfeed_toolbar_icon_font = newsfeed_toolbar_icon {
+		blockoverride "icon" {
+			texture = "gfx/coat_of_arms/colored_emblems/ce_letter_a.dds"
+		}
+
+		blockoverride "button" {
+			enabled = "[Not(GetVariableSystem.Exists('newsfeed_use_vanilla'))]"
+			tooltip = newsfeed_change_font_size_tooltip
+			onclick = "[GetVariableSystem.Set('newsfeed_font_size', Select_CString(EqualTo_string(GetVariableSystem.Get('newsfeed_font_size'), 'large'), 'small', 'large'))]"
+		}
+	}
+
+	type newsfeed_toolbar_icon_lock = newsfeed_toolbar_icon {
+		blockoverride "icon" {
+			texture = "gfx/tools/padlock_checkbutton.dds"
+			framesize = { 16 16 }
+			down = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
+		}
+
+		blockoverride "button" {
+			enabled = "[Not(GetVariableSystem.Exists('newsfeed_use_vanilla'))]"
+			tooltip = newsfeed_lock_window_tooltip
+			onclick = "[GetVariableSystem.Toggle('newsfeed_window_locked')]"
+			down = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
+		}
+	}
+
+	type newsfeed_toolbar_icon_portraits = newsfeed_toolbar_icon {
+		blockoverride "icon" {
+			texture = "gfx/interface/icons/icon_group_of_characters.dds"
+			size = { 20 20 }
+			down = "[Not(GetVariableSystem.Exists('newsfeed_disable_portraits'))]"
+		}
+
+		blockoverride "button" {
+			tooltip = newsfeed_show_portraits_tooltip
+			onclick = "[GetVariableSystem.Toggle('newsfeed_disable_portraits')]"
+			down = "[Not(GetVariableSystem.Exists('newsfeed_disable_portraits'))]"
+		}
+	}
+
+	type newsfeed_toolbar_icon_settings = newsfeed_toolbar_icon {
+		blockoverride "icon" {
+			texture = "gfx/interface/icons/symbols/icon_check.dds"
+			down = "[GetVariableSystem.Exists('newsfeed_settings_shown')]"
+		}
+
+		blockoverride "button" {
+			tooltip = newsfeed_open_settings_tooltip
+			onclick = "[GetVariableSystem.Toggle('newsfeed_settings_shown')]"
+			down = "[GetVariableSystem.Exists('newsfeed_settings_shown')]"
+		}
+	}
+
+	type newsfeed_toolbar_icon_vanilla = newsfeed_toolbar_icon {
+		blockoverride "icon" {
+			texture = "gfx/coat_of_arms/colored_emblems/ce_paradox.dds"
+			size = { 40 40 }
+			down = "[GetVariableSystem.Exists('newsfeed_use_vanilla')]"
+		}
+
+		blockoverride "button" {
+			tooltip = newsfeed_use_vanilla_tooltip
+
+			# Close the toolbar since this is about to go away
+			onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_icons').Hide]"
+			onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_open').Show]"
+			onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_close').Hide]"
+			onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_drag_icon').Hide]"
+
+			onclick = "[GetVariableSystem.Toggle('newsfeed_use_vanilla')]"
+			down = "[GetVariableSystem.Exists('newsfeed_use_vanilla')]"
+		}
+	}
+
+    type newsfeed_toolbar_icon = widget {
+        size = { 0 0 }
+        allow_outside = yes
+
+        button_round = {
+            size = { 32 32 }
+            using = tooltip_ne
+            parentanchor = center
+
+            block "button" {}
+
+            button = {
+                alwaystransparent = yes
+                parentanchor = center
+
+                size = { 24 24 }
+
+                gfxtype = togglepushbuttongfx
+                effectname = "NoHighlight"
+
+                upframe = 1
+                uphoverframe = 2
+                uppressedframe = 2
+                downframe = 2
+                downhoverframe = 2
+                downpressedframe = 2
+
+                block "icon" {}
+
+                modify_texture = {
+                    texture = "gfx/interface/colors/black.dds"
+                    blend_mode = multiply
+                    spritetype = corneredtiled
+                }
+            
+                modify_texture = {
+                    texture = "gfx/interface/colors/colors_textured.dds"
+                    blend_mode = add
+                    framesize = { 96 96 }
+                    spritetype = corneredtiled
+                }
+            }
+        }
+    }
+
+    type newsfeed_drag_icon = widget {
+        size = { 32 32 }
+
+        line = {
+            from = { 6 12 }
+            to = { 24 12 }
+            using = NewsFeed_Drag_Line
+        }
+        line = {
+            from = { 6 15 }
+            to = { 24 15 }
+            using = NewsFeed_Drag_Line
+        }
+        line = {
+            from = { 6 18 }
+            to = { 24 18 }
+            using = NewsFeed_Drag_Line
+        }
+        line = {
+            from = { 6 21 }
+            to = { 24 21 }
+            using = NewsFeed_Drag_Line
+        }
+
+        tooltip = newsfeed_drag_icons_tooltip
+        using = tooltip_ne
+    }
+}
+
+template NewsFeed_Drag_Line {
+    width = 2
+
+    color = { 1 1 1 0.5 }
+
+    texture = "gfx/lines/line_mask.dds"
+    uv_scale = { 1.0 1.0 }
+
+    mask = "gfx/lines/mask.dds"
+    mask_uv_scale = { 0.1 1.0 }
+}

@@ -39,6 +39,10 @@
             value = $date$
         }
         set_variable = {
+            name = newsfeed_message_goodness
+            value = $goodness$
+        }
+        set_variable = {
             name = newsfeed_message_left_character
             value = $left_character$
         }

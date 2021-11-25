@@ -1,5 +1,9 @@
 types NewsFeed {
     type newsfeed_type_icon = widget {
+        block "size" {
+            size = { 20 20 }
+        }
+
         newsfeed_message_icon = {
             visible = "[EqualTo_string('newsfeed_type_alliance', Scope.GetVariable('newsfeed_message_type').GetFlagName)]"
             texture = "gfx/interface/icons/message_feed/alliance.dds"
@@ -317,7 +321,9 @@ types NewsFeed {
     }
 
     type newsfeed_message_icon = icon {
-        size = { 20 20 }
+        block "size" {
+            size = { 20 20 }
+        }
     }
 
     type newsfeed_subject_icon_template = icon {
