@@ -56,10 +56,6 @@ types NewsFeed {
 					name = "newsfeed_toolbar_icons"
 
 					parentanchor = bottom|right
-					margin_left = 10
-					margin_bottom = 10
-					margin_top = 10
-					margin_right = 40
 
 					visible = "[GetVariableSystem.Exists('newsfeed_toolbar_expanded')]"
 
