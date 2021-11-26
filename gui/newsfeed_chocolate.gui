@@ -13,7 +13,9 @@ types NewsFeed {
 
         using = Animation_ShowHide_Quick
 
-        vbox = {
+        widget = {
+            size = { 100% 100% }
+
             background = {
                 visible = "[Not(GetVariableSystem.Exists('newsfeed_window_locked'))]"
                 using = NewsFeed_Textured_Background
@@ -26,7 +28,8 @@ types NewsFeed {
             layoutpolicy_horizontal = expanding
 
             scrollarea = {
-                size = "[PdxGetWidgetScreenSize(PdxGuiWidget.AccessParent.AccessParent.Self)]"
+                size = { 100% 100% }
+
                 alwaystransparent = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
 
                 scrollbarpolicy_horizontal = always_off
@@ -78,8 +81,6 @@ types NewsFeed {
                     }
                 }
             }
-
-            expand = {}
         }
         
         vbox = {
