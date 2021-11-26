@@ -2,10 +2,6 @@ types NewsFeed {
     type newsfeed_toolbar = newsfeed_toolbar_layout {
 		name = "newsfeed_toolbar"
 
-		blockoverride "size" {
-			size = { 200 40 }
-		}
-
 		blockoverride "icons" {
 			newsfeed_toolbar_icon_lock = {}
 			newsfeed_toolbar_icon_vanilla = {}
@@ -59,15 +55,11 @@ types NewsFeed {
 
 					visible = "[GetVariableSystem.Exists('newsfeed_toolbar_expanded')]"
 
-					block "size" {
-						size = { 140 40 }
-					}
+					size = { 200 40 }
 
 					state = {
 						name = _show
-						block "size" {
-							size = { 140 40 }
-						}
+						size = { 200 40 }
 						duration = 0.1
 						using = Animation_Curve_Default
 						alpha = 1
@@ -82,7 +74,6 @@ types NewsFeed {
 					}
 
 					hbox = {
-						size = { 100% 100% }
 						ignoreinvisible = yes
 						block "icons" {}
 						widget = {
