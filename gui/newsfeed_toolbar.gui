@@ -52,7 +52,7 @@ types NewsFeed {
 				size = { 40 40 }
 				allow_outside = yes
 
-				hbox = {		
+				widget = {		
 					name = "newsfeed_toolbar_icons"
 
 					parentanchor = bottom|right
@@ -60,12 +60,13 @@ types NewsFeed {
 					margin_bottom = 10
 					margin_top = 10
 					margin_right = 40
-		
-					ignoreinvisible = yes
 
-					visible = no
-					size = { 0 40 }
-		
+					visible = "[GetVariableSystem.Exists('newsfeed_toolbar_expanded')]"
+
+					block "size" {
+						size = { 140 40 }
+					}
+
 					state = {
 						name = _show
 						block "size" {
@@ -83,48 +84,30 @@ types NewsFeed {
 						using = Animation_Curve_Default
 						alpha = 0
 					}
-		
-					block "icons" {}
-				}
 
-				widget = {
-					name = "newsfeed_toolbar_open"
-					size = { 100% 100% }
-
-					button_round = {
-						onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_icons').Show]"
-						onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_open').Hide]"
-						onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_close').Show]"
-
-						button_icon = {
-							parentanchor = center
-							texture = "gfx/interface/icons/flat_icons/menu.dds"
-							alwaystransparent = yes
+					hbox = {
+						size = { 100% 100% }
+						ignoreinvisible = yes
+						block "icons" {}
+						widget = {
+							size = { 10 10 }
 						}
-
-						tooltip = newsfeed_open_toolbar_tooltip
-						using = tooltip_se
 					}
 				}
 
 				widget = {
-					name = "newsfeed_toolbar_close"
+					name = "newsfeed_toolbar_toggle"
 					size = { 100% 100% }
 
-					visible = no
-
 					button_round = {
-						onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_icons').Hide]"
-						onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_open').Show]"
-						onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_close').Hide]"
-
-						down = yes
+						onclick = "[GetVariableSystem.Toggle('newsfeed_toolbar_expanded')]"
+						down = "[GetVariableSystem.Exists('newsfeed_toolbar_expanded')]"
 
 						button_icon = {
 							parentanchor = center
 							texture = "gfx/interface/icons/flat_icons/menu.dds"
 							alwaystransparent = yes
-							down = yes
+							down = "[GetVariableSystem.Exists('newsfeed_toolbar_expanded')]"
 						}
 
 						tooltip = newsfeed_open_toolbar_tooltip
@@ -198,12 +181,6 @@ types NewsFeed {
 
 		blockoverride "button" {
 			tooltip = newsfeed_use_vanilla_tooltip
-
-			# Close the toolbar since this is about to go away
-			onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_icons').Hide]"
-			onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_open').Show]"
-			onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_toolbar_close').Hide]"
-			onclick = "[PdxGuiWidget.AccessParent.AccessParent.AccessParent.AccessParent.FindChild('newsfeed_drag_icon').Hide]"
 
 			onclick = "[GetVariableSystem.Toggle('newsfeed_use_vanilla')]"
 			down = "[GetVariableSystem.Exists('newsfeed_use_vanilla')]"
