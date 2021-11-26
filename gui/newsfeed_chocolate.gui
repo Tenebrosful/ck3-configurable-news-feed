@@ -24,9 +24,6 @@ types NewsFeed {
             visible = "[Not(IsDataModelEmpty(GetPlayer.MakeScope.GetList('newsfeed_recent_message_containers')))]"
             alwaystransparent = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
 
-            layoutpolicy_vertical = expanding
-            layoutpolicy_horizontal = expanding
-
             scrollarea = {
                 size = { 100% 100% }
 
