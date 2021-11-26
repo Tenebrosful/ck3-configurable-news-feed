@@ -3,11 +3,11 @@ types NewsFeed {
         allow_outside = yes
 
         newsfeed_chocolate_feed = {
-            visible = "[Not(GetVariableSystem.Exists('newsfeed_use_vanilla'))]"
+            visible = "[And(Not(GetVariableSystem.Exists('newsfeed_use_vanilla')), And(And(And( Not(SinglePlayerShowingPausedSuccession), IsDefaultGUIMode), Not(IsPauseMenuShown)), Not(IsRightWindowOpen)))]"
         }
 
         newsfeed_vanilla_feed = {
-            visible = "[GetVariableSystem.Exists('newsfeed_use_vanilla')]"
+            visible = "[And(GetVariableSystem.Exists('newsfeed_use_vanilla'), And(And( Not(SinglePlayerShowingPausedSuccession), IsDefaultGUIMode), Not(IsPauseMenuShown)))]"
         }
 
         newsfeed_toolbar = {

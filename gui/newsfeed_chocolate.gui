@@ -1,6 +1,5 @@
 types NewsFeed {
 	type newsfeed_chocolate_feed = window {
-        visible = "[And(And(And( Not(SinglePlayerShowingPausedSuccession), IsDefaultGUIMode), Not(IsPauseMenuShown)), Not(IsRightWindowOpen))]"
         parentanchor = bottom|right
         movable = "[Not(GetVariableSystem.Exists('newsfeed_window_locked'))]"
         resizable = "[Not(GetVariableSystem.Exists('newsfeed_window_locked'))]"
