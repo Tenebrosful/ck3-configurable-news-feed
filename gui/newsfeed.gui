@@ -11,7 +11,7 @@ types NewsFeed {
         }
 
         newsfeed_toolbar = {
-            visible = "[GetVariableSystem.Exists('newsfeed_use_vanilla')]"
+            visible = "[And(GetVariableSystem.Exists('newsfeed_use_vanilla'), And(And(And( Not(SinglePlayerShowingPausedSuccession), IsDefaultGUIMode), Not(IsPauseMenuShown)), Not(IsRightWindowOpen)))]"
             position = { -10 -90 }
         }
 
