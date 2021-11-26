@@ -1,7 +1,7 @@
 types NewsFeed {
 	type newsfeed_vanilla_feed = flowcontainer {
 		name = "message_feed_widget"
-		visible = "[And(And( Not(SinglePlayerShowingPausedSuccession), IsDefaultGUIMode), Not(IsPauseMenuShown))]"
+
 		parentanchor = bottom|right
 		alwaystransparent = yes
 		allow_outside = yes
