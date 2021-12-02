@@ -5,7 +5,7 @@ types NewsFeed {
         resizable = "[Not(GetVariableSystem.Exists('newsfeed_window_locked'))]"
         size = { 600 400 }
         position = { 0 -80 }
-        minimumsize = { 600 0 }
+        minimumsize = { 600 85 }
         maximumsize = { 600 9999 }
         allow_outside = yes
         alwaystransparent = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
