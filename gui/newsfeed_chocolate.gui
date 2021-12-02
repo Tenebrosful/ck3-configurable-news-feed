@@ -5,7 +5,7 @@ types NewsFeed {
         resizable = "[Not(GetVariableSystem.Exists('newsfeed_window_locked'))]"
         size = { 600 400 }
         position = { 0 -80 }
-        minimumsize = { 600 0 }
+        minimumsize = { 600 85 }
         maximumsize = { 600 9999 }
         allow_outside = yes
         alwaystransparent = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
@@ -35,7 +35,7 @@ types NewsFeed {
                 }
                 
         		scrollwidget = {
-                    flowcontainer = {
+                    vbox = {
                         alwaystransparent = yes
 
                         background = {
@@ -45,17 +45,36 @@ types NewsFeed {
 
                         margin_top = 20
                         margin_left = 20
-                        direction = vertical
                         layoutpolicy_horizontal = expanding
-                        flowcontainer = {
-                            direction = vertical
+
+                        vbox = {
                             allow_outside = yes
                             layoutpolicy_horizontal = expanding
+                            bottomtotop = yes
                             
                             datamodel = "[GetPlayer.MakeScope.GetList('newsfeed_recent_message_containers')]"
     
                             item = {
-                                newsfeed_item = {}
+                                newsfeed_item = {
+                                    state = {
+                                        name = "newsfeed_chocolate_item_fade_in_latest"
+                                        trigger_when = "[And(EqualTo_CFixedPoint(Scope.GetVariable('newsfeed_message_index').GetValue, GetPlayer.MakeScope.GetVariable('newsfeed_next_message_index').GetValue), Not(EqualTo_string(Scope.Story.Custom('newsfeed_message_index_string'), GetVariableSystem.Get('newsfeed_latest_message_index'))))]"
+                                        on_start = "[GetVariableSystem.Set('newsfeed_latest_message_index', Scope.Story.Custom('newsfeed_message_index_string'))]"
+                                        on_start = "[PdxGuiWidget.TriggerAnimation('newsfeed_chocolate_item_fade_in')]"
+                                    }
+
+                                    state = {
+                                        name = "newsfeed_chocolate_item_fade_in"
+                                        alpha = 0.2
+                                        next = newsfeed_chocolate_item_fade_in_active
+                                    }
+
+                                    state = {
+                                        name = "newsfeed_chocolate_item_fade_in_active"
+                                        alpha = 1
+                                        duration = 1
+                                    }
+                                }
                             }
                         }
 
@@ -74,6 +93,8 @@ types NewsFeed {
                                 newsfeed_item = {}
                             }
                         }
+
+                        expand = {}
                     }
                 }
             }
@@ -106,7 +127,17 @@ types NewsFeed {
 
     type newsfeed_item = flowcontainer {
         margin_right = 20
-        
+
+        state = {
+            name = _show
+            using = Animation_FadeIn_Quick
+            trigger_on_create = yes
+        }
+        state = {
+            name = _hide
+            using = Animation_FadeOut_Quick
+        }
+
         button = {
             visible = "[GetVariableSystem.Exists('newsfeed_window_locked')]"
             size = { 100% 100% }
